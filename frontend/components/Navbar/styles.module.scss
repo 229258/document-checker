@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  position: static;
+  width: 100vw;
+  height: 110px;
+}
+
+.logo {
+  pointer-events: none;
+  padding-top: 7px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.navList {
+  list-style-type: none;
+}
+
+.navList .navListItem {
+  display: inline-block;
+
+  padding: 20px 3.5vw;
+}
+
+.navListItem {
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #fad247;
+}
+
+@media screen and (min-width: 768px) {
+  //   .logo {
+  //     // display: flexbox;
+  //     justify-content: flex-start;
+  //   }
+
+  //   //   .nav div {
+  //   //     display: flex;
+  //   //     justify-content: flex-start;
+  //   //   }
+
+  //   .nav ul {
+  //     display: flex;
+  //     justify-content: flex-end;
+  //   }
+
+  //   .nav li {
+  //     // flex: 1 1 0;
+  //     // justify-content: flex-end;
+  //   }
+}
+
+// .list {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+//   justify-content: flex-end;
+// }
+
+// .element {
+//   float: left;
+// }
+
+// .element a {
+//   display: block;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+// }
+
+// /* Change the link color to #111 (black) on hover */
+// .element a:hover {
+//   background-color: #111;
+// }
