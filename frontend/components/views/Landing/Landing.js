@@ -3,6 +3,7 @@ import Main from "../../Main";
 import Fullscreen from "../../Layout/Fullscreen";
 
 import styles from "./styles.module.scss";
+import Globe from "../../Globe";
 
 const Identification = () => {
   return (
@@ -24,7 +25,12 @@ const Identification = () => {
 };
 
 const Landing = () => {
-  return <Fullscreen component={<Main args={Identification} />} />;
+  return (
+    <Fullscreen
+      component={<Main args={Identification} />}
+      secondComponent={<Globe />}
+    />
+  );
 };
 
 export default Landing;

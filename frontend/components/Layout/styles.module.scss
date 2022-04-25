@@ -1,12 +1,3 @@
-/* body {
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    linear-gradient(240.01deg, #56ccf2 3.35%, #2f80ed 97.53%);
-} */
-
 .fullscreen {
   position: relative;
   width: 100vw;
@@ -22,4 +13,11 @@
   height: 110px;
   left: 0px;
   top: 0px;
+}
+
+#globe {
+  margin-left: 45%;
+
+  background-color: transparent;
+  position: absolute;
 }
