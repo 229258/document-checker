@@ -8,8 +8,8 @@ const Fullscreen = (props) => {
   const { component, secondComponent } = props;
   return (
     <div className={styles.fullscreen}>
-      <div id={styles.globe}>{secondComponent}</div>
       <Navbar />
+      <div className={styles.globe}>{secondComponent}</div>
       {component}
     </div>
   );
