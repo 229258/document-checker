@@ -5,10 +5,10 @@ import Navbar from "../Navbar";
 import styles from "./styles.module.scss";
 
 const Fullscreen = (props) => {
-  const { component, secondComponent } = props;
+  const { component, secondComponent, page } = props;
   return (
     <div className={styles.fullscreen}>
-      <Navbar />
+      <Navbar page={page} />
       <div className={styles.globe}>{secondComponent}</div>
       {component}
     </div>

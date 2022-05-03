@@ -1,7 +1,9 @@
 .fullscreen {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
+  min-height: 100vh;
+  height: auto;
 
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     linear-gradient(240.01deg, #56ccf2 3.35%, #2f80ed 97.53%);
@@ -20,7 +22,7 @@
 
 .globe {
   margin-left: 45%;
-  margin-top: -3%;
+  // margin-top: 0%;
   // background-color: transparent;
   position: absolute;
   z-index: 2;

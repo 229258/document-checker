@@ -9,7 +9,6 @@
 }
 
 .logo {
-  pointer-events: none;
   padding-top: 7px;
 }
 
@@ -39,51 +38,12 @@
 
 .nav a:hover {
   color: #fad247;
+  // border-bottom: 3px solid #fad247;
+}
+
+.nav .current {
+  border-bottom: 3px solid #fad247;
 }
 
 @media screen and (min-width: 768px) {
-  //   .logo {
-  //     // display: flexbox;
-  //     justify-content: flex-start;
-  //   }
-
-  //   //   .nav div {
-  //   //     display: flex;
-  //   //     justify-content: flex-start;
-  //   //   }
-
-  //   .nav ul {
-  //     display: flex;
-  //     justify-content: flex-end;
-  //   }
-
-  //   .nav li {
-  //     // flex: 1 1 0;
-  //     // justify-content: flex-end;
-  //   }
 }
-
-// .list {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-//   justify-content: flex-end;
-// }
-
-// .element {
-//   float: left;
-// }
-
-// .element a {
-//   display: block;
-//   color: white;
-//   text-align: center;
-//   padding: 14px 16px;
-//   text-decoration: none;
-// }
-
-// /* Change the link color to #111 (black) on hover */
-// .element a:hover {
-//   background-color: #111;
-// }

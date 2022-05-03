@@ -20,6 +20,9 @@ const Identification = () => {
       <div className={styles.fourthItem}>
         <h1 className={styles.h1Bold}>gone prosto.</h1>
       </div>
+      <button className={styles.button}>
+        <a href={"/distinguishing"}>rozpoznaj kraj</a>
+      </button>
     </div>
   );
 };
