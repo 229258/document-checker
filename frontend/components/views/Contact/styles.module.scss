@@ -76,14 +76,31 @@
   grid-row-start: 3;
 }
 
-.elipse {
-  // background-color: #c4c4c4;
-  background-image: url("https://i.ibb.co/pwh7950/avatar.png");
+.bartek,
+.wojtek,
+.justyna,
+.czarek {
   background-repeat: no-repeat;
   background-size: cover;
   height: 202px;
   width: 202px;
   border-radius: 50%;
+}
+
+.bartek {
+  background-image: url("https://i.ibb.co/C8nGpqt/full-Robert.png");
+}
+
+.wojtek {
+  background-image: url("https://i.ibb.co/xsnTjp9/rockerfeler.jpg");
+}
+
+.justyna {
+  background-image: url("https://i.ibb.co/Pm9x1SP/elonMusk.jpg");
+}
+
+.czarek {
+  background-color: #c4c4c4;
 }
 
 .albumNumber {

@@ -18,7 +18,7 @@ const Team = () => {
       </div>
 
       <div className={styles.firstPerson}>
-        <div className={styles.elipse} />
+        <div className={styles.justyna} />
 
         <div className={styles.firstPersonName}>
           <div className={styles.contentAlbumNumber}>
@@ -32,7 +32,7 @@ const Team = () => {
       </div>
 
       <div className={styles.secondPerson}>
-        <div className={styles.elipse} />
+        <div className={styles.wojtek} />
 
         <div className={styles.secondPersonName}>
           <div className={styles.contentAlbumNumber}>
@@ -46,7 +46,7 @@ const Team = () => {
       </div>
 
       <div className={styles.thirdPerson}>
-        <div className={styles.elipse} />
+        <div className={styles.czarek} />
 
         <div className={styles.thirdPersonName}>
           <div className={styles.contentAlbumNumber}>
@@ -60,7 +60,7 @@ const Team = () => {
       </div>
 
       <div className={styles.fourthPerson}>
-        <div className={styles.elipse} />
+        <div className={styles.bartek} />
 
         <div className={styles.fourthPersonName}>
           <div className={styles.contentAlbumNumber}>
