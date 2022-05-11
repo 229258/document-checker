@@ -8,60 +8,9 @@
   column-gap: 30px;
 }
 
-.firstPerson {
+.contactTeamGrid {
   grid-column-start: 1;
-  grid-column-end: 3;
   grid-row-start: 5;
-  height: 202px;
-  width: 202px;
-
-  &.firstPersonName {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 9;
-  }
-}
-
-.secondPerson {
-  grid-column-start: 4;
-  grid-column-end: 6;
-  grid-row-start: 5;
-  height: 202px;
-  width: 202px;
-
-  &.secondPersonName {
-    grid-column-start: 3;
-    grid-column-end: 6;
-    grid-row-start: 9;
-  }
-}
-
-.thirdPerson {
-  grid-column-start: 7;
-  grid-column-end: 9;
-  grid-row-start: 5;
-  height: 202px;
-  width: 202px;
-
-  &.thirdPersonName {
-    grid-column-start: 5;
-    grid-column-end: 8;
-    grid-row-start: 9;
-  }
-}
-
-.fourthPerson {
-  grid-column-start: 10;
-  grid-column-end: 12;
-  grid-row-start: 5;
-  height: 202px;
-  width: 202px;
-
-  &.fourthPersonName {
-    grid-column-start: 7;
-    grid-column-end: 10;
-    grid-row-start: 9;
-  }
 }
 
 .title {
@@ -74,54 +23,6 @@
   grid-column-start: 3;
   grid-column-end: 11;
   grid-row-start: 3;
-}
-
-.bartek,
-.wojtek,
-.justyna,
-.czarek {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 202px;
-  width: 202px;
-  border-radius: 50%;
-}
-
-.bartek {
-  background-image: url("https://i.ibb.co/C8nGpqt/full-Robert.png");
-}
-
-.wojtek {
-  background-image: url("https://i.ibb.co/xsnTjp9/rockerfeler.jpg");
-}
-
-.justyna {
-  background-image: url("https://i.ibb.co/Pm9x1SP/elonMusk.jpg");
-}
-
-.czarek {
-  background-image: url("https://i.ibb.co/QMRgGC2/czarro.png");
-}
-
-.albumNumber {
-  background-color: #c4c4c4;
-}
-
-.names {
-  background-color: #c4c4c4;
-}
-
-.contentAlbumNumber {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.contentName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .h1Light {
@@ -148,8 +49,6 @@
 }
 
 .h4Light {
-  // margin-left: 15px;
-  // margin-top: 10px;
   margin: 0;
   margin-bottom: 0;
   margin-right: 0;

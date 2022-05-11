@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
+
+.container {
+  min-height: 800px;
+  display: grid;
+  grid-template-columns: repeat(12, 58px);
+  grid-template-rows: repeat(12, 66.6px);
+  column-gap: 30px;
+}
+
+.title {
+  grid-column-start: 5;
+  grid-column-end: 10;
+  grid-row-start: 2;
+}
+
+.subTitle {
+  margin-left: 42px;
+  grid-column-start: 3;
+  grid-column-end: 11;
+  grid-row-start: 3;
+}
+
+.progressBarGrid {
+  grid-row-start: 5;
+}
+
+.h1Light {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 72px;
+  color: white;
+}
+
+.h3Light {
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-right: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: white;
+}
