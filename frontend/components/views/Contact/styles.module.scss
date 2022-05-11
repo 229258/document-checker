@@ -13,61 +13,6 @@
   grid-row-start: 5;
 }
 
-.title {
-  grid-column-start: 6;
-  grid-column-end: 8;
+.titleGrid {
   grid-row-start: 2;
-}
-
-.subTitle {
-  grid-column-start: 3;
-  grid-column-end: 11;
-  grid-row-start: 3;
-}
-
-.h1Light {
-  margin: 0;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 48px;
-  line-height: 72px;
-  color: white;
-}
-
-.h3Light {
-  margin-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 0;
-  margin-right: 0;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
-  color: white;
-}
-
-.h4Light {
-  margin: 0;
-  margin-bottom: 0;
-  margin-right: 0;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  color: white;
-}
-
-.h1Bold {
-  margin: 0;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 96px;
-  color: white;
-  border: none;
-  padding: 0;
 }
