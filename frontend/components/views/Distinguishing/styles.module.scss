@@ -8,17 +8,8 @@
   column-gap: 30px;
 }
 
-.title {
-  grid-column-start: 5;
-  grid-column-end: 10;
+.titleGrid {
   grid-row-start: 2;
-}
-
-.subTitle {
-  margin-left: 42px;
-  grid-column-start: 3;
-  grid-column-end: 11;
-  grid-row-start: 3;
 }
 
 .progressBarGrid {
