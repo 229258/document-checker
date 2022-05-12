@@ -2,45 +2,64 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const ProgressBar = (props) => {
-  const { page } = props;
+const BarElement = (props) => {
+  const { position, number, firstDescription, secondDescription, status, bar } =
+    props;
+  return (
+    <>
+      <div className={styles[`${position}StepGrid`]}>
+        <div className={styles.flex}>
+          <div className={`${styles.elipse} ${styles[status]}`}>
+            <div className={styles.number}>{number}</div>
+          </div>
+        </div>
+      </div>
+      {bar && (
+        <div
+          className={`${styles[`${position}StepBarGrid`]} ${
+            styles.flexStepBar
+          }`}
+        >
+          <div className={styles[`${status}StepBar`]} />
+        </div>
+      )}
+
+      <div className={styles[`${position}StepDescriptionGrid`]}>
+        <div className={styles.flex}>{firstDescription}</div>
+        <div className={styles.flex}>{secondDescription}</div>
+      </div>
+    </>
+  );
+};
+
+const ProgressBar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.stepFirstGrid}>
-        <div className={styles.flex}>
-          <div className={`${styles.elipse} ${styles.active}`}>
-            <div className={styles.number}>1</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.stepOneDescriptionGrid}>
-        <div className={styles.flex}>Wybierz metodę</div>
-        <div className={styles.flex}>wprowadzenia dokumentów</div>
-      </div>
+      <BarElement
+        position={"first"}
+        number={1}
+        firstDescription={"Wybierz metodę"}
+        secondDescription={"wprowadzenia dokumentów"}
+        status={"active"}
+        bar={true}
+      />
 
-      <div className={styles.stepSecondGrid}>
-        <div className={styles.flex}>
-          <div className={`${styles.elipse} ${styles.nonActive}`}>
-            <div className={styles.number}>2</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.stepSecondDescriptionGrid}>
-        <div className={styles.flex}>Prześlij skan przodu</div>
-        <div className={styles.flex}>oraz tyłu dokumentu</div>
-      </div>
+      <BarElement
+        position={"second"}
+        number={2}
+        firstDescription={"Prześlij skan przodu"}
+        secondDescription={"oraz tyłu dokumentu"}
+        status={"nonActive"}
+        bar={true}
+      />
 
-      <div className={styles.stepThirdGrid}>
-        <div className={styles.flex}>
-          <div className={`${styles.elipse} ${styles.nonActive}`}>
-            <div className={styles.number}>3</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.stepThirdDescriptionGrid}>
-        <div className={styles.flex}>Sprawdź kraj pochodzenia</div>
-        <div className={styles.flex}>dokumentu</div>
-      </div>
+      <BarElement
+        position={"third"}
+        number={3}
+        firstDescription={"Sprawdź kraj pochodzenia"}
+        secondDescription={"dokumentu"}
+        status={"nonActive"}
+      />
     </div>
   );
 };

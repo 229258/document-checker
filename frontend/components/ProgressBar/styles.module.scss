@@ -13,19 +13,52 @@
   font-family: "Poppins";
 }
 
-.stepFirstGrid {
+.firstStepGrid {
   grid-column-start: 1;
   grid-row-start: 1;
 }
 
-.stepSecondGrid {
+.secondStepGrid {
   grid-column-start: 2;
   grid-row-start: 1;
 }
 
-.stepThirdGrid {
+.thirdStepGrid {
   grid-column-start: 3;
   grid-row-start: 1;
+}
+
+.firstStepDescriptionGrid {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.secondStepDescriptionGrid {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.thirdStepDescriptionGrid {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.firstStepBarGrid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+}
+
+.secondStepBarGrid {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+
+.flexStepBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .number {
@@ -65,23 +98,20 @@
   border-radius: 50%;
 }
 
-.stepOneDescriptionGrid {
-  grid-column-start: 1;
-  grid-row-start: 2;
-}
-
-.stepSecondDescriptionGrid {
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-
-.stepThirdDescriptionGrid {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.activeStepBar {
+  width: 228px;
+  height: 0px;
+  border-top: 5px solid #ffffff;
+}
+
+.nonActiveStepBar {
+  width: 228px;
+  height: 0px;
+  border-top: 5px solid rgba(255, 255, 255, 0.2);
 }
