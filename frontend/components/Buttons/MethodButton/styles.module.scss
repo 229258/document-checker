@@ -1,0 +1,87 @@
+.container {
+  width: 1024px;
+  max-width: 1140px;
+  height: 380px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 43px 337px;
+  column-gap: 27px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: white;
+  font-family: "Poppins";
+}
+
+.leftGrid {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.rightGrid {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.box {
+  width: 499px;
+  height: 337px;
+  background: rgba(196, 196, 196, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 149.5px 200px 149.5px;
+  grid-template-rows: 54px 200px 19px 30px 34px;
+}
+
+.box:hover {
+  background-color: rgba(196, 196, 196, 0.7);
+}
+
+.descriptionGrid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+}
+
+.imageGrid {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+
+  background-image: url("https://i.ibb.co/TbVtMJC/proper-img.png");
+}
+
+.camera {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+
+  background-image: url("https://i.ibb.co/5BRrrqR/video.png");
+}

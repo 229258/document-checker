@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
 
 .container {
-  min-height: 800px;
+  min-height: 1332px;
   display: grid;
   grid-template-columns: repeat(12, 58px);
-  grid-template-rows: repeat(12, 66.6px);
+  grid-template-rows: repeat(20, 66.6px);
   column-gap: 30px;
 }
 
@@ -14,4 +14,12 @@
 
 .progressBarGrid {
   grid-row-start: 5;
+}
+
+.textGrid {
+  grid-row-start: 9;
+}
+
+.buttonsGrid {
+  grid-row-start: 11;
 }

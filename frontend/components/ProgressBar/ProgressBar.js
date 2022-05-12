@@ -32,7 +32,9 @@ const BarElement = (props) => {
   );
 };
 
-const ProgressBar = () => {
+const ProgressBar = (props) => {
+  const { statusFirst, statusSecond, statusThird } = props;
+
   return (
     <div className={styles.container}>
       <BarElement
@@ -40,7 +42,7 @@ const ProgressBar = () => {
         number={1}
         firstDescription={"Wybierz metodę"}
         secondDescription={"wprowadzenia dokumentów"}
-        status={"active"}
+        status={statusFirst}
         bar={true}
       />
 
@@ -49,7 +51,7 @@ const ProgressBar = () => {
         number={2}
         firstDescription={"Prześlij skan przodu"}
         secondDescription={"oraz tyłu dokumentu"}
-        status={"nonActive"}
+        status={statusSecond}
         bar={true}
       />
 
@@ -58,7 +60,7 @@ const ProgressBar = () => {
         number={3}
         firstDescription={"Sprawdź kraj pochodzenia"}
         secondDescription={"dokumentu"}
-        status={"nonActive"}
+        status={statusThird}
       />
     </div>
   );

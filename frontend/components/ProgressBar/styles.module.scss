@@ -104,7 +104,8 @@
   align-items: center;
 }
 
-.activeStepBar {
+.activeStepBar,
+.successStepBar {
   width: 228px;
   height: 0px;
   border-top: 5px solid #ffffff;
