@@ -2,9 +2,11 @@
 
 .container {
   min-height: 1332px;
+  height: 100vh;
+  //min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 58px);
-  grid-template-rows: repeat(20, 66.6px);
+  grid-template-rows: repeat(20, 66.6px); //66.6px
   column-gap: 30px;
 }
 
@@ -21,5 +23,5 @@
 }
 
 .buttonsGrid {
-  grid-row-start: 11;
+  grid-row-start: 10;
 }

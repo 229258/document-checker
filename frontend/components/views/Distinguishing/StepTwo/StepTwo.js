@@ -23,6 +23,8 @@ const SecondPage = () => {
           statusFirst={"success"}
           statusSecond={"active"}
           statusThird={"nonActive"}
+          firstBarStatus={"active"}
+          secondBarStatus={"nonActive"}
         />
       </div>
 

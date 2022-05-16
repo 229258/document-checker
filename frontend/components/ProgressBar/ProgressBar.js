@@ -3,8 +3,15 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const BarElement = (props) => {
-  const { position, number, firstDescription, secondDescription, status, bar } =
-    props;
+  const {
+    position,
+    number,
+    firstDescription,
+    secondDescription,
+    status,
+    bar,
+    barStatus,
+  } = props;
   return (
     <>
       <div className={styles[`${position}StepGrid`]}>
@@ -20,7 +27,7 @@ const BarElement = (props) => {
             styles.flexStepBar
           }`}
         >
-          <div className={styles[`${status}StepBar`]} />
+          <div className={styles[`${barStatus}StepBar`]} />
         </div>
       )}
 
@@ -33,7 +40,13 @@ const BarElement = (props) => {
 };
 
 const ProgressBar = (props) => {
-  const { statusFirst, statusSecond, statusThird } = props;
+  const {
+    statusFirst,
+    statusSecond,
+    statusThird,
+    firstBarStatus,
+    secondBarStatus,
+  } = props;
 
   return (
     <div className={styles.container}>
@@ -44,6 +57,7 @@ const ProgressBar = (props) => {
         secondDescription={"wprowadzenia dokumentów"}
         status={statusFirst}
         bar={true}
+        barStatus={firstBarStatus}
       />
 
       <BarElement
@@ -53,6 +67,7 @@ const ProgressBar = (props) => {
         secondDescription={"oraz tyłu dokumentu"}
         status={statusSecond}
         bar={true}
+        barStatus={secondBarStatus}
       />
 
       <BarElement

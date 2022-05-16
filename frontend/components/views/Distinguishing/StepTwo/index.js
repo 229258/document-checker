@@ -1,3 +1,3 @@
-import StepOne from "./StepTwo";
+import StepTwo from "./StepTwo";
 
-export { StepOne as default };
+export { StepTwo as default };

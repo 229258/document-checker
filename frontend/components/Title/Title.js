@@ -4,6 +4,8 @@ import styles from "./styles.module.scss";
 
 const Title = (props) => {
   const { title, subTitle } = props;
+
+  const subTitleStyle = title ? styles.subTitle : styles.optionalSubTitle;
   return (
     <div className={styles.container}>
       {title && (
@@ -13,7 +15,7 @@ const Title = (props) => {
       )}
 
       {subTitle && (
-        <div className={`${styles.subTitle} ${styles.h3Light} ${styles.flex}`}>
+        <div className={`${subTitleStyle} ${styles.h3Light} ${styles.flex}`}>
           {subTitle}
         </div>
       )}

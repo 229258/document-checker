@@ -1,47 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
 
+.container {
+  height: 110px;
+  margin: 0 auto auto auto;
+
+  width: 1140px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  position: static;
+}
+
 .navbar {
   font-family: "Poppins", sans-serif;
   font-size: 1.2em;
   position: static;
-  width: 100vw;
-  height: 110px;
 }
 
 .logo {
+  height: 40px;
   padding-top: 7px;
+
+  background-image: url("https://i.ibb.co/Cwd2HJR/logo.png");
+  background-repeat: none;
 }
 
-.nav {
-  display: flex;
+.logo:hover {
+  cursor: pointer;
+}
+
+.logoGrid {
+  grid-column-start: 1;
+}
+
+.navListGrid {
+  grid-column-start: 3;
+}
+
+.innerListGrid {
+  display: grid;
+  width: 696px;
+  grid-template-columns: 208px 280px 208px;
+}
+
+.informationGrid {
+  grid-column-start: 1;
+}
+
+.distinguishingGrid {
+  grid-column-start: 2;
+}
+
+.contactGrid {
+  grid-column-start: 3;
+}
+
+.navGrid {
+  display: grid;
   justify-content: space-around;
   align-items: center;
-  color: white;
+  grid-template-columns: 240px 204px 696px;
+  height: 110px;
 }
 
-.navList {
-  list-style-type: none;
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.navList .navListItem {
-  display: inline-block;
-
-  padding: 20px 3.5vw;
-}
-
-.navListItem {
+.contact {
+  // margin-left: 20px;
 }
 
 .nav a {
   text-decoration: none;
 }
 
-.nav a:hover {
+.navListItem a:hover {
   color: #fad247;
   // border-bottom: 3px solid #fad247;
 }
 
-.nav .current {
+.current {
   border-bottom: 3px solid #fad247;
 }
 

@@ -23,6 +23,8 @@ const FirstPage = () => {
           statusFirst={"active"}
           statusSecond={"nonActive"}
           statusThird={"nonActive"}
+          firstBarStatus={"nonActive"}
+          secondBarStatus={"nonActive"}
         />
       </div>
 
