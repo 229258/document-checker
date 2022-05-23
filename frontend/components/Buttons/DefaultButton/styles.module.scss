@@ -1,0 +1,80 @@
+.primary,
+.secondary,
+.primaryBig,
+.secondaryBig,
+.secondaryLarge,
+.primaryLarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 5px;
+  font-family: "Poppins";
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+}
+
+.primaryBig,
+.secondaryBig {
+  width: 259px;
+}
+
+.primary,
+.primaryBig,
+.primaryLarge {
+  background-color: #fad247;
+  color: black;
+}
+
+.secondaryLarge {
+  width: 323px;
+}
+
+.primaryLarge {
+  width: 337px;
+}
+
+.primary,
+.secondary {
+  width: 232px;
+}
+
+.secondary,
+.secondaryBig,
+.secondaryLarge {
+  border: 1px solid #fad247;
+  color: white;
+}
+
+.primary:hover,
+.primaryBig:hover,
+.secondary:hover,
+.secondaryBig:hover,
+.secondaryLarge:hover,
+.primaryLarge:hover {
+  background-color: #fbdd6f;
+  color: black;
+  text-emphasis-color: black;
+}
+
+.primary,
+.primaryLarge {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.primaryBig {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.secondary,
+.secondaryBig,
+.secondaryLarge {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+}

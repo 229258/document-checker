@@ -4,7 +4,7 @@ import * as animationData from "./data.json";
 
 import styles from "./styles.module.scss";
 
-const Globe = () => {
+const Globe = (speed) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -21,6 +21,8 @@ const Globe = () => {
       width={1504}
       isStopped={false}
       isPaused={false}
+      speed={0.25}
+      isClickToPauseDisabled={true}
     />
   );
 };

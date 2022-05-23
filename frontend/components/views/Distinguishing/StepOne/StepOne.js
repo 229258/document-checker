@@ -6,7 +6,7 @@ import styles from "../styles.module.scss";
 import ProgressBar from "../../../ProgressBar";
 import Title from "../../../Title";
 import MethodButton from "../../../Buttons/MethodButton";
-import { leftButton, rightButton } from "../helper";
+import { leftElementData, rightElementData } from "../helper";
 
 const FirstPage = () => {
   return (
@@ -33,7 +33,10 @@ const FirstPage = () => {
       </div>
 
       <div className={styles.buttonsGrid}>
-        <MethodButton leftButton={leftButton} rightButton={rightButton} />
+        <MethodButton
+          leftButton={leftElementData}
+          rightButton={rightElementData}
+        />
       </div>
     </div>
   );

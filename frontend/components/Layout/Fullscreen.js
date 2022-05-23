@@ -9,7 +9,9 @@ const Fullscreen = (props) => {
   return (
     <div className={styles.fullscreen}>
       <Navbar page={page} />
-      <div className={styles.globe}>{secondComponent}</div>
+      <div className={styles.globeColors}>
+        <div className={styles.globe}>{secondComponent}</div>
+      </div>
       {component}
     </div>
   );

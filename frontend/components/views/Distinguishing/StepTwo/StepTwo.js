@@ -5,8 +5,8 @@ import Fullscreen from "../../../Layout/Fullscreen";
 import styles from "../styles.module.scss";
 import ProgressBar from "../../../ProgressBar";
 import Title from "../../../Title";
-import MethodButton from "../../../Buttons/MethodButton";
-import { leftButton, rightButton } from "../helper";
+import FileUploaderButton from "../../../Buttons/FileUploaderButton/FileUploaderButton";
+import { leftElementData, rightElementData } from "../helper";
 
 const SecondPage = () => {
   return (
@@ -33,7 +33,17 @@ const SecondPage = () => {
       </div>
 
       <div className={styles.buttonsGrid}>
-        <MethodButton leftButton={leftButton} rightButton={rightButton} />
+        <FileUploaderButton
+          leftButton={{
+            ...leftElementData,
+            description: "Kliknij, aby przesłać zdjęcie przodu",
+          }}
+          rightButton={{
+            ...rightElementData,
+            image: "picture",
+            description: "Kliknij, aby przesłać zdjęcie tyłu",
+          }}
+        />
       </div>
     </div>
   );
