@@ -3,7 +3,8 @@
 .primaryBig,
 .secondaryBig,
 .secondaryLarge,
-.primaryLarge {
+.primaryLarge,
+.primaryDisabled {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +28,11 @@
   color: black;
 }
 
+.primaryDisabled {
+  background-color: #bb9d35;
+  cursor: default;
+}
+
 .secondaryLarge {
   width: 323px;
 }
@@ -36,6 +42,7 @@
 }
 
 .primary,
+.primaryDisabled,
 .secondary {
   width: 232px;
 }
@@ -59,7 +66,8 @@
 }
 
 .primary,
-.primaryLarge {
+.primaryLarge,
+.primaryDisabled {
   font-weight: 700;
   font-size: 22px;
   line-height: 33px;
@@ -77,4 +85,8 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 33px;
+}
+
+.primaryDisabled {
+  color: rgba(0, 0, 0, 0.5);
 }

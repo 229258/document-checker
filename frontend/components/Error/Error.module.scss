@@ -1,0 +1,65 @@
+.container {
+  width: 1026px;
+  height: 148px;
+  display: grid;
+  grid-template-columns: 46px 50px 21px 753px 62px 64px 30px;
+  grid-template-rows: 148px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: white;
+  font-family: "Poppins";
+  background-color: #ff6b6c;
+}
+
+.warningIconGrid {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.warningIcon {
+  width: 50px;
+  height: 50px;
+  background-image: url("https://i.ibb.co/2yJ33hq/warning-Icon.png");
+  background-repeat: no-repeat;
+}
+
+.angleGrid {
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+
+.angleDown {
+  width: 64px;
+  height: 64px;
+  background-image: url("https://i.ibb.co/HNrB9GF/angle-Down.png");
+  cursor: pointer;
+}
+
+.angleUp {
+  width: 64px;
+  height: 64px;
+  background-image: url("https://i.ibb.co/vJChwrg/angleUp.png");
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textGrid {
+  grid-column-start: 4;
+  grid-column-end: 5;
+
+  display: grid;
+  width: 753px;
+}
+
+.titleGrid {
+}
+
+// .subTitleGrid {
+//   grid-column-start: 4;
+//   grid-column-end: 5;
+// }

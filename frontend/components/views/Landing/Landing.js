@@ -5,6 +5,7 @@ import Fullscreen from "../../Layout/Fullscreen";
 import styles from "./styles.module.scss";
 import Globe from "../../Globe";
 import DefaultButton from "../../Buttons/DefaultButton";
+import Error from "../../Error";
 
 const Identification = () => {
   return (
@@ -29,10 +30,13 @@ const Identification = () => {
         />
       </div>
 
+      <Error />
+
       {/* <DefaultButton
         description={"prześlij zdjęcie"}
         link={"/"}
-        style={"primary"}
+        style={"primaryDisabled"}
+        disabled={true}
       /> */}
 
       {/* <DefaultButton
@@ -68,7 +72,7 @@ const Landing = () => {
   return (
     <Fullscreen
       component={<Main args={Identification} />}
-      secondComponent={globe}
+      // secondComponent={globe}
     />
   );
 };
