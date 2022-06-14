@@ -20,7 +20,7 @@ const Identification = () => {
         <h1 className={styles.h1Light}>osobistych</h1>
       </div>
       <div className={styles.fourthItem}>
-        <h1 className={styles.h1Bold}>gone prosto.</h1>
+        <h1 className={styles.h1Bold}>w 3 krokach</h1>
       </div>
       <div className={styles.buttonGrid}>
         <DefaultButton

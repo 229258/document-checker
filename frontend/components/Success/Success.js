@@ -56,7 +56,7 @@ const CheckSteps = () => {
   );
 };
 
-const Error = () => {
+const Success = () => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -122,4 +122,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default Success;
