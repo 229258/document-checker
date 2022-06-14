@@ -1,57 +1,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import ErrorStyles from "./Error.module.scss";
+import SuccessStyles from "./Success.module.scss";
 
 const IdCards = () => {
   return (
-    <div className={`${ErrorStyles.idCardsGrid}`}>
-      <div className={`${ErrorStyles.frontIdCard}`} />
-      <div className={`${ErrorStyles.frontDocument} ${ErrorStyles.flex}`}>
+    <div className={`${SuccessStyles.idCardsGrid}`}>
+      <div className={`${SuccessStyles.frontIdCard}`} />
+      <div className={`${SuccessStyles.frontDocument} ${SuccessStyles.flex}`}>
         Przód
       </div>
 
-      <div className={`${ErrorStyles.backIdCard}`} />
-      <div className={`${ErrorStyles.backDocument} ${ErrorStyles.flex}`}>
+      <div className={`${SuccessStyles.backIdCard}`} />
+      <div className={`${SuccessStyles.backDocument} ${SuccessStyles.flex}`}>
         Tył
       </div>
-    </div>
-  );
-};
-
-const Element = (props) => {
-  const { position, text } = props;
-
-  const grid = `${position}Grid`;
-  return (
-    <div className={`${ErrorStyles[grid]}`}>
-      <div className={`${ErrorStyles.mark}`} />
-      <div className={`${ErrorStyles.text}`}>{text}</div>
-    </div>
-  );
-};
-
-const CheckSteps = () => {
-  return (
-    <div className={`${ErrorStyles.stepsGrid}`}>
-      <Element
-        position={"first"}
-        text={"Upewnij się, że wszystkie dane są wyraźne"}
-      />
-      <Element
-        position={"second"}
-        text={"Zawrzyj jedynie wskazaną stronę dokumentu w danym pliku"}
-      />
-      <Element
-        position={"third"}
-        text={"Możesz zeskanować dokument albo zrobić jego zdjęcie"}
-      />
-      <Element
-        position={"fourth"}
-        text={
-          "W przypadku problemów ze zdjęciem, pokaż dowód do kamerki - system poinstruuje Cię krok po kroku"
-        }
-      />
     </div>
   );
 };
@@ -70,33 +33,27 @@ const Success = () => {
   return (
     <>
       <div
-        className={`${ErrorStyles.container} ${
-          clicked ? ErrorStyles.halfBorders : ErrorStyles.fullBorders
-        }`}
+        className={`${SuccessStyles.container} ${
+          clicked ? SuccessStyles.halfBorders : SuccessStyles.fullBorders
+        } ${clicked && SuccessStyles.shadow}`}
       >
-        <div className={`${ErrorStyles.warningIconGrid} ${ErrorStyles.flex}`}>
-          <div className={`${ErrorStyles.warningIcon}`} />
+        <div className={`${SuccessStyles.flagGrid} ${SuccessStyles.flex}`}>
+          <div className={`${SuccessStyles.flag}`} />
         </div>
 
-        <div className={`${ErrorStyles.textGrid}`}>
-          <div className={`${ErrorStyles.titleGrid}`}>
-            <div className={`${ErrorStyles.title}`}>
-              Niestety nie byliśmy w stanie rozpoznać Twojego dokumentu
-            </div>
-          </div>
-
-          <div className={`${ErrorStyles.subTitleGrid}`}>
-            <div className={`${ErrorStyles.subTitle}`}>
-              Upewnij się, że zdjęcia są wyraźne i zawierają odpowiednią stronę
-              dokumentu, a dane można bez problemu odczytać.
-            </div>
+        <div className={`${SuccessStyles.titleGrid} ${SuccessStyles.flexText}`}>
+          <div className={`${SuccessStyles.title} ${SuccessStyles.flex}`}>
+            Rzeczpospolita Republika Polska
+            <div className={`${SuccessStyles.subTitle}`}>(89% pewności)</div>
           </div>
         </div>
 
-        <div className={`${ErrorStyles.angleGrid} ${ErrorStyles.flex}`}>
+        <div className={`${SuccessStyles.angleGrid} ${SuccessStyles.flex}`}>
           <div
             className={
-              clicked ? `${ErrorStyles.angleUp}` : `${ErrorStyles.angleDown}`
+              clicked
+                ? `${SuccessStyles.angleUp}`
+                : `${SuccessStyles.angleDown}`
             }
             onClick={() => handleClick()}
           />
@@ -104,16 +61,26 @@ const Success = () => {
       </div>
       <div>
         {clicked && (
-          <div className={`${ErrorStyles.box}`}>
-            <div className={`${ErrorStyles.boxTitle}`}>
-              Jak przygotować dokument do rozpoznania?
+          <div className={`${SuccessStyles.box}`}>
+            <div className={`${SuccessStyles.boxText}`}>
+              Jakiś opis zasad dokumentów itede itepe, to wszystko dynamicznie
+              się rozszerza, w kilku krajach może być różna liczba dokumentów,
+              no limit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <br />
+              Duis non ultricies nibh. Suspendisse imperdiet, lacus eu congue
+              gravida, mi nisi fermentum magna, eu faucibus lorem nunc nec erat.
+              In imperdiet, purus at aliquet viverra, libero purus molestie
+              mauris, ut consequat ligula urna nec enim. Class aptent taciti
+              sociosqu ad litora torquent per conubia nostra, per inceptos
+              himenaeos. Vestibulum nec consequat lorem. Curabitur ultricies,
+              dolor vel mattis luctus, mauris mauris condimentum libero, sit
+              amet rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
+              scelerisque, dolor justo vulputate erat, nec feugiat turpis est in
+              turpis.
             </div>
 
-            <div className={`${ErrorStyles.boxImages}`}>
+            <div className={`${SuccessStyles.boxImages} ${SuccessStyles.flex}`}>
               <IdCards />
-            </div>
-            <div className={`${ErrorStyles.boxInfo}`}>
-              <CheckSteps />
             </div>
           </div>
         )}

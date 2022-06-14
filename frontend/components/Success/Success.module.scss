@@ -1,0 +1,171 @@
+.container {
+  width: 1026px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 45px 50px 21px 686px 130px 64px 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: black;
+  font-family: "Poppins";
+  background-color: #ffffff;
+  border-radius: 5px 5px 0 0;
+  z-index: 2;
+}
+
+.fullBorders {
+  border-radius: 5px;
+}
+
+.halfBorders {
+  border-radius: 5px 5px 0 0;
+}
+
+.shadow {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.flagGrid {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.flag {
+  text-shadow: 21px 2px 4px #000000;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://i.ibb.co/jD2g6V0/polska.png");
+  background-repeat: no-repeat;
+  border-radius: 50px;
+
+  box-shadow: -1px -1px 5px -2px rgba(0, 0, 0, 1);
+}
+
+.angleGrid {
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+
+.angleDown {
+  width: 64px;
+  height: 64px;
+  background-image: url("https://i.ibb.co/wNWvd4C/black-Angle-Down.png");
+  cursor: pointer;
+}
+
+.angleUp {
+  width: 64px;
+  height: 64px;
+  background-image: url("https://i.ibb.co/xLZhqYL/black-Angle-Up.png");
+  cursor: pointer;
+}
+
+.flexText {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleGrid {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.subTitle {
+  margin-top: 4px;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.box {
+  margin-top: 100px;
+  width: 1026px;
+  height: 538px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: white;
+  font-family: "Poppins";
+  background-color: white;
+  display: grid;
+  grid-template-columns: 45px 931px 50px;
+  grid-template-rows: 25px 211px 20px 262px 20px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+}
+
+.boxText {
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.boxImages {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.idCardsGrid {
+  height: 262px;
+  width: 748px;
+  display: grid;
+  grid-template-columns: 365px 18px 365px;
+  grid-template-rows: 228px 5px 24px 5px;
+}
+
+.frontIdCard {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 365px;
+  height: 228px;
+  background-image: url("https://i.ibb.co/DwF8Q37/przod-dowod.png");
+}
+
+.backIdCard {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 365px;
+  height: 228px;
+  background-image: url("https://i.ibb.co/Jvf1jD0/tyl-dowod.png");
+}
+
+.frontDocument {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.backDocument {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}

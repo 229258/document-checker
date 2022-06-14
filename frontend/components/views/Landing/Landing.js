@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import Globe from "../../Globe";
 import DefaultButton from "../../Buttons/DefaultButton";
 import Error from "../../Error";
+import Success from "../../Success";
 
 const Identification = () => {
   return (
@@ -30,7 +31,8 @@ const Identification = () => {
         />
       </div>
 
-      <Error />
+      {/* <Error /> */}
+      <Success />
 
       {/* <DefaultButton
         description={"prześlij zdjęcie"}
