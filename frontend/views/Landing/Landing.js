@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
-import Main from "../../Main";
-import Fullscreen from "../../Layout/Fullscreen";
+import Main from "../../components/Main";
+import Fullscreen from "../../components/Layout/Fullscreen";
 
-import styles from "./styles.module.scss";
-import Globe from "../../Globe";
-import DefaultButton from "../../Buttons/DefaultButton";
-import Error from "../../Error";
-import Success from "../../Success";
+import LandingStyles from "./Landing.module.scss";
+import Globe from "../../components/Globe";
+import DefaultButton from "../../components/Buttons/DefaultButton";
+import Error from "../../components/Error";
+import Success from "../../components/Success";
 
 const Identification = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.firstItem}>
-        <h1 className={styles.h1Light}>Identyfikacja</h1>
+    <div className={LandingStyles.container}>
+      <div className={LandingStyles.firstItem}>
+        <h1 className={LandingStyles.h1Light}>Identyfikacja</h1>
       </div>
-      <div className={styles.secondItem}>
-        <h1 className={styles.h1Light}>dowodów</h1>
+      <div className={LandingStyles.secondItem}>
+        <h1 className={LandingStyles.h1Light}>dowodów</h1>
       </div>
-      <div className={styles.thirdItem}>
-        <h1 className={styles.h1Light}>osobistych</h1>
+      <div className={LandingStyles.thirdItem}>
+        <h1 className={LandingStyles.h1Light}>osobistych</h1>
       </div>
-      <div className={styles.fourthItem}>
-        <h1 className={styles.h1Bold}>w 3 krokach</h1>
+      <div className={LandingStyles.fourthItem}>
+        <h1 className={LandingStyles.h1Bold}>w 3 krokach</h1>
       </div>
-      <div className={styles.buttonGrid}>
+      <div className={LandingStyles.buttonGrid}>
         <DefaultButton
           description={"rozpoznaj kraj"}
           link={"/distinguishing"}

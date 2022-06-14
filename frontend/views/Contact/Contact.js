@@ -1,25 +1,25 @@
 import React from "react";
 
-import Main from "../../Main";
-import Fullscreen from "../../Layout/Fullscreen";
-import ContactTeam from "../../ContactTeam";
-import Title from "../../Title";
+import Main from "../../components/Main";
+import Fullscreen from "../../components/Layout/Fullscreen";
+import ContactTeam from "../../components/ContactTeam";
+import Title from "../../components/Title";
 
-import styles from "./styles.module.scss";
+import ContactStyles from "./Contact.module.scss";
 
 import { justyna, wojtek, czarek, bartek } from "./helper";
 
 const Team = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.titleGrid}>
+    <div className={ContactStyles.container}>
+      <div className={ContactStyles.titleGrid}>
         <Title
           title={"Zespół"}
           subTitle={"Politechnika Łódzka, WEEIA, informatyka niestacjonarna"}
         />
       </div>
 
-      <div className={styles.contactTeamGrid}>
+      <div className={ContactStyles.contactTeamGrid}>
         <ContactTeam
           justyna={justyna}
           wojtek={wojtek}

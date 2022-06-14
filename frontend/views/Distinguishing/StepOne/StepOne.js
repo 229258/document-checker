@@ -1,24 +1,24 @@
 import React from "react";
-import Main from "../../../Main";
-import Fullscreen from "../../../Layout/Fullscreen";
+import Main from "../../../components/Main";
+import Fullscreen from "../../../components/Layout/Fullscreen";
 
-import styles from "../styles.module.scss";
-import ProgressBar from "../../../ProgressBar";
-import Title from "../../../Title";
-import MethodButton from "../../../Buttons/MethodButton";
+import DistinguishingStyles from "../Distinguishing.module.scss";
+import ProgressBar from "../../../components/ProgressBar";
+import Title from "../../../components/Title";
+import MethodButton from "../../../components/Buttons/MethodButton";
 import { leftElementData, rightElementData } from "../helper";
 
 const FirstPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.titleGrid}>
+    <div className={DistinguishingStyles.container}>
+      <div className={DistinguishingStyles.titleGrid}>
         <Title
           title={"3 proste kroki"}
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
 
-      <div className={styles.progressBarGrid}>
+      <div className={DistinguishingStyles.progressBarGrid}>
         <ProgressBar
           statusFirst={"active"}
           statusSecond={"nonActive"}
@@ -28,11 +28,11 @@ const FirstPage = () => {
         />
       </div>
 
-      <div className={styles.textGrid}>
+      <div className={DistinguishingStyles.textGrid}>
         <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
       </div>
 
-      <div className={styles.buttonsGrid}>
+      <div className={DistinguishingStyles.buttonsGrid}>
         <MethodButton
           leftButton={leftElementData}
           rightButton={rightElementData}
