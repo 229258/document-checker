@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-
-import styles from "../../styles/Home.module.css";
 import Information from "../../views/Information/Information";
 
 const InformationPage = () => {
