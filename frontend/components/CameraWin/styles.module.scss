@@ -1,0 +1,29 @@
+.cameraWindow {
+    // grid-row: 5;
+    height: 671px;
+    width: 1025px;
+  }
+.cameraSize {
+    height: 671px;
+    width: 1020px;
+}
+.container {
+    min-height: 1332px;
+    height: 100vh;
+    //min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 58px);
+    grid-template-rows: repeat(20, 66.6px); //66.6px
+    column-gap: 30px;
+  }
+
+  .button{
+    background-color: yellow;
+    color: black;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+    position: absolute;
+  }
