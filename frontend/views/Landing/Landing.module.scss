@@ -10,20 +10,20 @@
 
 .firstItem {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 6;
   grid-row-start: 5;
 }
 
-.secondItem {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 6;
-}
-.thirdItem {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 7;
-}
+// .secondItem {
+//   grid-column-start: 1;
+//   grid-column-end: 5;
+//   grid-row-start: 6;
+// }
+// .thirdItem {
+//   grid-column-start: 1;
+//   grid-column-end: 5;
+//   grid-row-start: 7;
+// }
 
 .fourthItem {
   grid-column-start: 1;
@@ -32,8 +32,17 @@
 }
 
 .buttonGrid {
+  margin-top: 50px;
   grid-column-start: 1;
   grid-row-start: 10;
+  // text-align: center;
+}
+
+.globeGrid {
+  margin-right: 10px;
+  margin-top: 30px;
+  grid-column-start: 6;
+  grid-row-start: 1;
   // text-align: center;
 }
 

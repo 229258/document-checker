@@ -1,0 +1,23 @@
+.lottie {
+  display: flex;
+  mix-blend-mode: color-burn;
+  position: absolute;
+}
+
+.gradient {
+  margin-top: 7.35rem;
+  margin-left: 6.1rem;
+  display: flex;
+  height: 640px;
+  width: 640px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgb(235, 235, 235) 0%,
+    rgba(138, 138, 138, 1) 28%,
+    rgba(0, 0, 0, 1) 75%
+  );
+
+  position: absolute;
+}

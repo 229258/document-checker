@@ -2,9 +2,9 @@ import React from "react";
 import Lottie from "react-lottie";
 import * as animationData from "./data.json";
 
-import styles from "./styles.module.scss";
+import GlobeStyles from "./Globe.module.scss";
 
-const Globe = (speed) => {
+const Globe = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -15,15 +15,20 @@ const Globe = (speed) => {
   };
 
   return (
-    <Lottie
-      options={defaultOptions}
-      height={1434}
-      width={1504}
-      isStopped={false}
-      isPaused={false}
-      speed={0.25}
-      isClickToPauseDisabled={true}
-    />
+    <div>
+      <div className={GlobeStyles.gradient} />
+
+      <div className={GlobeStyles.lottie}>
+        <Lottie
+          options={defaultOptions}
+          height={877}
+          width={835}
+          isStopped={false}
+          isPaused={false}
+          isClickToPauseDisabled={true}
+        />
+      </div>
+    </div>
   );
 };
 
