@@ -25,6 +25,35 @@
   grid-column-end: 2;
 }
 
+.uploadedImage {
+  max-width: 480px;
+  max-height: 317px;
+}
+
+.fileUploader {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.uploadedImageGrid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
 .box {
   width: 499px;
   height: 337px;

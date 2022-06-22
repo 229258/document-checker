@@ -26,14 +26,24 @@
   grid-row-start: 10;
 }
 
-.textCamWinGrid{
+.buttonGrid {
+  margin-top: 25px;
+  grid-row-start: 16;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textCamWinGrid {
   grid-row-start: 12;
 }
 .cameraWindow {
   grid-row: 5;
   height: 671px;
   width: 1025px;
-  background-color: rgba(196, 196, 196, 0.5); 
+  background-color: rgba(196, 196, 196, 0.5);
   background-repeat: no-repeat;
   background-size: 300px;
   background-position-x: 53%;
@@ -42,7 +52,7 @@
   background-image: url("https://i.ibb.co/5BRrrqR/video.png");
 }
 
-.button{
+.button {
   grid-row: 6;
   background-color: yellow;
   color: black;
