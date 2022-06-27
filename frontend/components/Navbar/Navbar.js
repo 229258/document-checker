@@ -72,7 +72,7 @@ const Navbar = (props) => {
           }
         </div>
 
-        {!isMobile || isNavActive && <NavList page={page} />}
+        {(!isMobile || isNavActive) && <NavList page={page} />}
       </div>
     </div>
   );
