@@ -17,12 +17,16 @@ const DefaultButton = (props) => {
       formData.append("images", singleImage);
     }
 
+    new Response(formData).text().then(console.log); // To see the entire raw body
+
     const response = await fetch("https://dokumenciki.herokuapp.com/", {
       method: "POST",
       body: formData,
     });
 
     const status = await response.json();
+
+    console.log("status to", status);
 
     if (status) {
       router.push("/distinguisging/final");
