@@ -10,20 +10,23 @@ import { leftElementData, rightElementData } from "../helper";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
 
 const SecondPage = () => {
-  const [frontImageLoaded, setFrontImageLoaded] = useState(false);
-  const [backImageLoaded, setBackImageLoaded] = useState(false);
+  const [frontImage, setFrontImage] = useState(null);
+  const [backImage, setBackImage] = useState(null);
 
-  const getFrontImage = (frontImage) => {
-    if (frontImageLoaded) return;
+  const getFrontImage = (data) => {
+    if (frontImage) return;
 
-    if (frontImage) setFrontImageLoaded(true);
+    setFrontImage(data);
   };
 
-  const getBackImage = (backImage) => {
-    if (backImageLoaded) return;
+  const getBackImage = (data) => {
+    if (backImage) return;
 
-    if (backImage) setBackImageLoaded(true);
+    setBackImage(data);
   };
+
+  console.log("second page frontImage", frontImage);
+  console.log("second page back image", backImage);
 
   return (
     <div className={DistinguishingStyles.container}>
@@ -44,9 +47,9 @@ const SecondPage = () => {
         />
       </div>
 
-      <div className={DistinguishingStyles.textGrid}>
+      {/* <div className={DistinguishingStyles.textGrid}>
         <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
-      </div>
+      </div> */}
 
       <div className={DistinguishingStyles.buttonsGrid}>
         <FileUploaderButton
@@ -63,13 +66,14 @@ const SecondPage = () => {
           getBackImage={getBackImage}
         />
       </div>
-      {frontImageLoaded && backImageLoaded && (
+      {frontImage && backImage && (
         <div className={DistinguishingStyles.buttonGrid}>
           <DefaultButton
             description={"Prześlij zdjęcia"}
             style={"primary"}
-            link={""}
+            // link={""}
             disabled={true}
+            dataToUpload={[frontImage, backImage]}
           />
         </div>
       )}

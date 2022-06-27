@@ -38,12 +38,12 @@ const FileUploaderComponent = (props) => {
   useEffect(() => {
     if (firstPreview) {
       setFrontImage(firstPreview);
-      getFrontImage(firstPreview);
+      getFrontImage(firstFile);
     }
 
     if (secondPreview) {
       setBackImage(secondPreview);
-      getBackImage(secondPreview);
+      getBackImage(secondFile);
     }
   }, [firstPreview, secondPreview]);
 
