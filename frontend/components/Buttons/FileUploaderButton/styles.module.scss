@@ -1,0 +1,142 @@
+.container {
+  width: 1024px;
+  max-width: 1140px;
+  height: 380px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 43px 337px;
+  column-gap: 27px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: white;
+  font-family: "Poppins";
+}
+
+.leftGrid {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.rightGrid {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.uploadedImage {
+  max-width: 480px;
+  max-height: 317px;
+}
+
+.fileUploader {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.uploadedImageGrid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.box {
+  width: 499px;
+  height: 337px;
+
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 149.5px 200px 149.5px;
+  grid-template-rows: 54px 200px 19px 30px 34px;
+}
+
+.box:hover {
+  // background-color: rgba(196, 196, 196, 0.7);
+  border: 2px dashed #fad247;
+  //rgba(255, 255, 255, 0.3);
+  // fad247
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.descriptionGrid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  margin-bottom: 2px;
+}
+
+.secondDescriptionGrid {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  margin-bottom: 11px;
+}
+
+.imageGrid {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  text-align: center;
+}
+
+.secondDescription {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  text-align: center;
+  color: #ffffff;
+
+  opacity: 0.5;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+
+  background-image: url("https://i.ibb.co/TbVtMJC/proper-img.png");
+}
+
+.camera {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+
+  background-image: url("https://i.ibb.co/5BRrrqR/video.png");
+}

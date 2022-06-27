@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
+
+.container {
+  min-height: 800px;
+  display: grid;
+  grid-template-columns: repeat(12, 58px);
+  grid-template-rows: repeat(12, 66.6px);
+  column-gap: 30px;
+}
+
+.contactTeamGrid {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.titleGrid {
+  grid-row-start: 2;
+}

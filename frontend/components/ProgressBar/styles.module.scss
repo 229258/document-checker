@@ -1,0 +1,118 @@
+.container {
+  width: 969px;
+  height: 221px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 138px 48px;
+  column-gap: 126px;
+  row-gap: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  color: white;
+  font-family: "Poppins";
+}
+
+.firstStepGrid {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.secondStepGrid {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.thirdStepGrid {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.firstStepDescriptionGrid {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.secondStepDescriptionGrid {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.thirdStepDescriptionGrid {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.firstStepBarGrid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+}
+
+.secondStepBarGrid {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+
+.flexStepBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  height: 138px;
+  left: calc(50% - 26px / 2 - 0.5px);
+  top: calc(50% - 96px / 2 - 41.5px);
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.success {
+  background-color: #06d6a0;
+}
+
+.active {
+  background-color: #fad247;
+}
+
+.nonActive {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.elipse {
+  height: 138px;
+  width: 138px;
+  border-radius: 50%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.activeStepBar,
+.successStepBar {
+  width: 228px;
+  height: 0px;
+  border-top: 5px solid #ffffff;
+}
+
+.nonActiveStepBar {
+  width: 228px;
+  height: 0px;
+  border-top: 5px solid rgba(255, 255, 255, 0.2);
+}
