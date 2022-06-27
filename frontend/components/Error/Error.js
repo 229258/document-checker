@@ -56,16 +56,8 @@ const CheckSteps = () => {
   );
 };
 
-const Error = () => {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    if (!clicked) {
-      return setClicked(true);
-    }
-
-    return setClicked(false);
-  };
+const Error = (props) => {
+  const { handleClick, clicked } = props;
 
   return (
     <>

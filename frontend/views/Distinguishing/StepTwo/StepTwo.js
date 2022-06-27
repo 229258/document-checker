@@ -71,7 +71,6 @@ const SecondPage = () => {
           <DefaultButton
             description={"Prześlij zdjęcia"}
             style={"primary"}
-            // link={""}
             disabled={true}
             dataToUpload={[frontImage, backImage]}
           />
