@@ -36,10 +36,14 @@
   }
 }
 
-.menuIcon {
-  // ikonka hamburger jest nierowno TODO:
-  // margin-right: 5px;
-  // padding: 20px;
+.menuIconContainer {
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: -7px; // I'm too lazy to modify the hamburger icon
 }
 
 .navList {

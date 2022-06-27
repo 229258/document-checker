@@ -60,15 +60,18 @@ const Navbar = (props) => {
           <Link href="/">
             <Image className={styles.logo} src={isMobile && isNavActive ? '/logo-black.svg' : '/logo-white.svg'} alt="Document checker" height="40" width={isMobile ? 200 : 240} />
           </Link>
-          {isMobile &&
-            <Image
-              className={styles.menuIcon}
-              src='/icons/menu.svg'
-              width="30"
-              height="30"
-              alt="Menu"
-              onClick={() => setIsNavActive(!isNavActive)}
-            />
+          {isMobile && (
+            <div className={styles.menuIconContainer}>
+              <Image
+                className={styles.menuIcon}
+                src='/icons/menu.svg'
+                width="30"
+                height="30"
+                alt="Menu"
+                onClick={() => setIsNavActive(!isNavActive)}
+              />
+            </div>
+          )
           }
         </div>
 
