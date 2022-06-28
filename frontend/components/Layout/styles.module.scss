@@ -1,19 +1,14 @@
 .fullscreen {
   position: relative;
-  width: 100vw;
   min-height: 100vh;
   height: auto;
   overflow: hidden;
 }
 
-.navbar {
-  position: absolute;
-  width: 100vw;
-  height: 110px;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  // overflow: hidden;
+.break {
+  height: 70px;
+  width: 100%;
+  grid-column: span 12;
 }
 
 .globeColors {
