@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
@@ -23,7 +24,7 @@ const Navbar = (props) => {
     <div className={styles.container}>
       <div className={styles.navGrid}>
         <Link href="/">
-          <div className={`${styles.logoGrid} ${styles.logo}`}></div>
+          <Image className={`${styles.logoGrid} ${styles.logo}`} src="/logo-white.svg" alt="Document checker" height="40" width="100%" />
         </Link>
 
         <div className={`${styles.navListGrid} ${styles.innerListGrid}`}>
