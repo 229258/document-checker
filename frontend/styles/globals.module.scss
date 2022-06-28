@@ -11,6 +11,7 @@ $mobile-breakpoint-width: 480px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     gap: 30px;
+
     margin: 0 auto;
     padding: 0 58px;
 
@@ -29,6 +30,7 @@ $mobile-breakpoint-width: 480px;
 
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
         gap: 8px;
 
         margin: 0 auto;
