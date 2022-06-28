@@ -12,15 +12,15 @@ const Fullscreen = (props) => {
     <div className={`${styles.fullscreen} ${globalStyles.mainContainer}`}>
       <Head>
         <title>Identyfikacja dowodów osobistych</title>
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> */}
       </Head>
       <Navbar page={page} />
-      <div className={styles.break}></div>
-      <div style={{ backgroundColor: "#476FFA", gridColumn: "span 12", height: "1000px" }}>etwas here ist</div>
-      {/* <div className={styles.globeColors}>
-        <div className={styles.globe}>{secondComponent}</div>
+      {/* <div className={styles.break}></div> TODO: remove this & grid beloew after properly griding landing page*/}
+      <div style={{ display: "grid", gridColumn: "span 12" }}>
+        <div className={styles.globeColors}>
+          <div className={styles.globe}>{secondComponent}</div>
+        </div>
+        {component}
       </div>
-      {component} */}
     </div>
   );
 };
