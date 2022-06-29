@@ -85,7 +85,6 @@ const ProgressBar = (props) => {
     <div className={styles.container}>
       <BarElement
         position={"first"}
-        number={"A"}
         status={statusFirst}
         bar={true}
         barStatus={firstBarStatus}
@@ -93,13 +92,12 @@ const ProgressBar = (props) => {
 
       <BarElement
         position={"second"}
-        number={"B"}
         status={statusSecond}
         bar={true}
         barStatus={secondBarStatus}
       />
 
-      <BarElement position={"third"} number={"C"} status={statusThird} />
+      <BarElement position={"third"} status={statusThird} />
     </div>
   );
 };

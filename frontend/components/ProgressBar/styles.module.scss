@@ -123,15 +123,12 @@
     height: 22px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 138px 48px;
-    column-gap: 126px;
+    grid-template-rows: 22px 48px;
+    column-gap: 139px;
     row-gap: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
-    color: white;
-    font-family: "Poppins";
-    background-color: red;
   }
   .firstStepGrid {
     grid-column-start: 1;
@@ -167,13 +164,11 @@
   }
 
   .success {
-    // background-color: #06d6a0;
-    background-color: blue;
+    background-color: #06d6a0;
   }
 
   .active {
-    // background-color: #fad247;
-    background-color: red;
+    background-color: #fad247;
   }
 
   .nonActive {
@@ -194,13 +189,13 @@
 
   .activeStepBar,
   .successStepBar {
-    width: 95px;
+    width: 140px;
     height: 0px;
     border-top: 5px solid #ffffff;
   }
 
   .nonActiveStepBar {
-    width: 95px;
+    width: 140px;
     height: 0px;
     border-top: 5px solid rgba(255, 255, 255, 0.2);
   }
