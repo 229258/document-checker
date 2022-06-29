@@ -20,6 +20,13 @@ $mobile-breakpoint-width: 480px;
     font-family: "Poppins", sans-serif;
 }
 
+@media screen and (max-width: calc($grid-width + 60px)) {
+    .mainContainer {
+        grid-template-rows: 90px 36px auto;
+        row-gap: 36px;
+    }
+}
+
 @media screen and (max-width: $tablet-breakpoint-width) {
 
     .mainContainer {
@@ -27,9 +34,9 @@ $mobile-breakpoint-width: 480px;
 
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 90px 20px auto;
+        grid-template-rows: 90px 36px auto;
         column-gap: 8px;
-        row-gap: 68px;
+        row-gap: 36px;
 
         margin: 0 auto;
         padding: 0 16px;

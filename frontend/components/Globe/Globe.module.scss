@@ -1,3 +1,5 @@
+@import 'styles/globals.module.scss';
+
 .lottie {
   mix-blend-mode: color-burn;
 }
@@ -23,4 +25,11 @@
   );
 
   position: absolute;
+}
+
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .container {
+    position: static;
+
+  }
 }

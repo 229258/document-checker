@@ -1,5 +1,4 @@
-.container {
-}
+@import 'styles/globals.module.scss';
 
 .break {
   margin-top: 137px;
@@ -32,6 +31,8 @@
   font-weight: 300;
   font-size: 48px;
   line-height: 72px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .h1Bold {
@@ -40,4 +41,47 @@
   font-size: 64px;
   line-height: 96px;
   padding: 0;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .break {
+    margin-top: 0;
+  }
+
+  .globeContainer {
+    grid-column: span 12;
+  }
+
+  .textContainer {
+    grid-column: span 12;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1Light {
+    font-size: 30px;
+  }
+
+  .h1Bold {
+    font-size: 48px;
+  }
+
+  .buttonContainer {
+    grid-column: span 12;
+    position: fixed;
+    bottom: 16px;
+    width: calc(100% - 116px);
+  }
+}
+
+
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .buttonContainer {
+    width: calc(100% - 32px);
+  }
 }
