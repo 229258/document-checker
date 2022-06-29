@@ -65,6 +65,7 @@
 
   .h1Light {
     font-size: 30px;
+    line-height: 1.75;
   }
 
   .h1Bold {
@@ -74,7 +75,7 @@
   .buttonContainer {
     grid-column: span 12;
     position: fixed;
-    bottom: 16px;
+    bottom: 42px;
     width: calc(100% - 116px);
   }
 }
