@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const useStepThree = (props) => {
-  const { providedData } = props;
+const useStepThree = () => {
+  if (typeof window !== "undefined") {
+    const possibleCountries = localStorage.getItem("test");
 
-  console.log("providedData to", providedData);
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    if (!providedData) return;
-
-    setData(providedData);
-  }, [providedData]);
-
-  return {
-    data,
-  };
+    return JSON.parse(possibleCountries);
+  }
 };
 
 export default useStepThree;

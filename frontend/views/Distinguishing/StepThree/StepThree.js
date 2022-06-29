@@ -5,14 +5,16 @@ import Fullscreen from "../../../components/Layout/Fullscreen";
 import DistinguishingStyles from "../Distinguishing.module.scss";
 import ProgressBar from "../../../components/ProgressBar";
 import Title from "../../../components/Title";
-import MethodButton from "../../../components/Buttons/MethodButton";
-import { leftElementData, rightElementData } from "../helper";
 import Error from "../../../components/Error";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
+import useStepThree from "./StepThree.hook";
+import Success from "../../../components/Success/Success";
 
 const ThirdPage = () => {
   const [errorClicked, setErrorClicked] = useState(false);
-  const data = null;
+  const data = useStepThree();
+
+  console.log("co w data", data);
 
   const handleClick = () => {
     if (!errorClicked) {
@@ -44,7 +46,7 @@ const ThirdPage = () => {
       <div className={DistinguishingStyles.textGrid}>
         <Title title={"Twój wynik"} />
       </div>
-      {!data && (
+      {!data?.length && (
         <>
           <div className={DistinguishingStyles.errorGrid}>
             <Error handleClick={handleClick} clicked={errorClicked} />
@@ -66,27 +68,32 @@ const ThirdPage = () => {
         </>
       )}
 
-      {data && (
-        <>
-          <div className={DistinguishingStyles.errorGrid}>
-            <Error handleClick={handleClick} clicked={errorClicked} />
-          </div>
+      {data?.length &&
+        (console.log("co w data.length", data),
+        (
+          <>
+            <div className={DistinguishingStyles.errorGrid}>
+              <Success
+                countryName={data[0].country}
+                prediction={data[0].prediction}
+              />
+            </div>
 
-          <div
-            className={
-              errorClicked
-                ? DistinguishingStyles.returnButtonGrid
-                : DistinguishingStyles.returnButtonDefaultGrid
-            }
-          >
-            <DefaultButton
-              description={"Spróbuj ponownie"}
-              style={"secondary"}
-              link={"/distinguishing"}
-            />
-          </div>
-        </>
-      )}
+            <div
+              className={
+                errorClicked
+                  ? DistinguishingStyles.returnButtonGrid
+                  : DistinguishingStyles.returnButtonDefaultGrid
+              }
+            >
+              <DefaultButton
+                description={"Spróbuj ponownie"}
+                style={"secondary"}
+                link={"/distinguishing"}
+              />
+            </div>
+          </>
+        ))}
     </div>
   );
 };
