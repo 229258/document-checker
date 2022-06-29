@@ -3,14 +3,14 @@
 }
 
 .container {
-  position: absolute;
+  position: fixed;
   top: 100px;
-  right: -100px;
+  right: 5%;
 }
 
 .gradient {
   margin-top: 7.5rem;
-  margin-left: 6.2rem;
+  margin-left: 6.1rem;
   height: 640px;
   width: 640px;
   border-radius: 50%;

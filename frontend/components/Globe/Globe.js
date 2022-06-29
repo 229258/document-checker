@@ -21,7 +21,7 @@ const Globe = () => {
         <Lottie
           options={defaultOptions}
           height={877}
-          width={836}
+          width={835}
           isStopped={false}
           isPaused={false}
           isClickToPauseDisabled={true}
