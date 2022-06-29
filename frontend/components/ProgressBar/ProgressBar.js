@@ -99,10 +99,7 @@ const ProgressBar = (props) => {
         barStatus={secondBarStatus}
       />
 
-      <BarElement 
-        position={"third"}
-        number={"C"}
-        status={statusThird} />
+      <BarElement position={"third"} number={"C"} status={statusThird} />
     </div>
   );
 };
