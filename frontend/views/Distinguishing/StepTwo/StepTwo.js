@@ -25,9 +25,6 @@ const SecondPage = () => {
     setBackImage(data);
   };
 
-  console.log("second page frontImage", frontImage);
-  console.log("second page back image", backImage);
-
   return (
     <div className={DistinguishingStyles.container}>
       <div className={DistinguishingStyles.titleGrid}>
