@@ -1,13 +1,16 @@
 .lottie {
-  display: flex;
   mix-blend-mode: color-burn;
+}
+
+.container {
   position: absolute;
+  top: 100px;
+  right: -100px;
 }
 
 .gradient {
-  margin-top: 7.35rem;
-  margin-left: 6.1rem;
-  display: flex;
+  margin-top: 7.5rem;
+  margin-left: 6.2rem;
   height: 640px;
   width: 640px;
   border-radius: 50%;

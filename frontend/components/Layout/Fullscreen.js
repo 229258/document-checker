@@ -14,11 +14,8 @@ const Fullscreen = (props) => {
         <title>Identyfikacja dowodów osobistych</title>
       </Head>
       <Navbar page={page} />
-      {/* <div className={styles.break}></div> TODO: remove this & grid beloew after properly griding landing page*/}
-      <div style={{ display: "grid", gridColumn: "span 12" }}>
-        {component}
-      </div>
-    </div>
+      {component}
+    </div >
   );
 };
 

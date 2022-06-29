@@ -9,8 +9,9 @@ $mobile-breakpoint-width: 480px;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 110px 70px auto;
-    gap: 30px;
+    grid-template-rows: 110px 68px auto;
+    column-gap: 30px;
+    row-gap: 68px;
 
     margin: 0 auto;
     padding: 0 58px;
@@ -27,7 +28,8 @@ $mobile-breakpoint-width: 480px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 90px 20px auto;
-        gap: 8px;
+        column-gap: 8px;
+        row-gap: 68px;
 
         margin: 0 auto;
         padding: 0 16px;

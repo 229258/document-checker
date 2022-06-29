@@ -12,7 +12,9 @@ const Main = (props) => {
           <div className={styles.info}></div>
         </>
       ) : null}
-      <div className={styles.wrapper}>{args()}</div>
+      {args()}
+      {/* no idea what's that */}
+      {/* <div className={styles.wrapper}>{args()}</div> */}
     </>
   );
 };

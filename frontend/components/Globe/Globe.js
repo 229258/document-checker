@@ -15,14 +15,13 @@ const Globe = () => {
   };
 
   return (
-    <div>
+    <div className={GlobeStyles.container}>
       <div className={GlobeStyles.gradient} />
-
       <div className={GlobeStyles.lottie}>
         <Lottie
           options={defaultOptions}
           height={877}
-          width={835}
+          width={836}
           isStopped={false}
           isPaused={false}
           isClickToPauseDisabled={true}
