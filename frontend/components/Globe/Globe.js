@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import * as animationData from "./data.json";
+import * as animationData from "./animation.json";
 
 import GlobeStyles from "./Globe.module.scss";
 
