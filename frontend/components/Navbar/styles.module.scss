@@ -1,36 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
-
-.container {
-  height: 110px;
-  margin: 0 auto auto auto;
-
-  max-width: 1140px;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2em;
-  position: static;
-}
-
-.navbar {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2em;
-  position: static;
-}
+@import 'styles/globals.module.scss';
 
 .logoContainer {
   width: 100%;
-  height: 90px;
+  min-width: 240px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 14px;
 }
 
 .logo {
-  grid-column-start: 1;
-
   &:hover {
     cursor: pointer;
   }
@@ -46,29 +26,27 @@
   margin-right: -7px; // I'm too lazy to modify the hamburger icon
 }
 
-.navList {
-  grid-column-start: 3;
-  
-  display: grid;
-  width: 696px;
-  grid-template-columns: 208px 280px 208px;
-}
-
 .nav {
-  display: grid;
-  justify-content: space-around;
+  margin: 0 -58px; // ignoring grid margin
+  position: static;
+  height: 110px;
+  
+  grid-column: span 12;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  grid-template-columns: 240px 204px 696px;
-  height: 100%;
 }
 
-.contact {
+.navList {
+  display: flex;
+  flex-direction: row;
 }
 
 .navListItem {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin-left: 100px;
+  // font-size: 20px; // different from design - smaller is better
 
   & a:hover {
     color: #fad247;
@@ -79,27 +57,32 @@
   border-bottom: 3px solid #fad247;
 }
 
-// 1140 px is the grid width + 30 px each side for a nice visual margin for transition 
-// between mobile and desktop views
-@media screen and (max-width: 1200px) {
-  .container {
-    height: auto;
-    max-width: 100%;
-    position: sticky;
-    z-index: 100;
-  }
-  
-  .logo {
-    height: 90px;
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .nav {
+    margin: 0;
   }
 
+  .navListItem {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint-width) {
   .nav {
+    height: 90px;
+    z-index: 100;
+
     display: flex;
     position: relative;
     flex-direction: column;
+    justify-content: flex-end;
     color: white;
 
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+    
+    .logoContainer {
+      padding-bottom: 14px;
+    }
 
     .menuIcon {
       filter: brightness(0) invert(1);
@@ -117,20 +100,36 @@
 
   .navList {
     position: absolute;
-    top: 100%;
+    top: 0;
+    left: -16px;
+    right: -16px;
+    z-index: -1;
 
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
     color: black;
     background-color: white;
   }
 
   .navListItem {
     width: 100%;
-
     height: 65px;
-    justify-content: flex-start;
+
+    display: inline-flex;
+    align-items: center;
     
     border-top: 1px solid #E4E4E4;
+    padding: 0 16px;
+    margin: 0;
+    font-size: 18px; 
+
+    &:first-of-type {
+      margin-top: 90px;
+    }
   }
+}
+
+
+@media screen and (max-width: $mobile-breakpoint-width) {
 }

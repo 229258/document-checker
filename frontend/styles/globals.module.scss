@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+$grid-width: 1140px;
+$tablet-breakpoint-width: 768px;
+$mobile-breakpoint-width: 480px;
+
+.mainContainer {
+    max-width: $grid-width;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 110px 70px auto;
+    gap: 30px;
+
+    margin: 0 auto;
+    padding: 0 58px;
+
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: $tablet-breakpoint-width) {
+
+    .mainContainer {
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 90px 20px auto;
+        gap: 8px;
+
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+}
