@@ -4,7 +4,7 @@
   height: 110px;
   margin: 0 auto auto auto;
 
-  width: 1140px;
+  max-width: 1140px;
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: 1.2em;
@@ -17,66 +17,120 @@
   position: static;
 }
 
-.logo:hover {
-  cursor: pointer;
+.logoContainer {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 14px;
 }
 
-.logoGrid {
+.logo {
   grid-column-start: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.navListGrid {
+.menuIconContainer {
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: -7px; // I'm too lazy to modify the hamburger icon
+}
+
+.navList {
   grid-column-start: 3;
-}
-
-.innerListGrid {
+  
   display: grid;
   width: 696px;
   grid-template-columns: 208px 280px 208px;
 }
 
-.informationGrid {
-  grid-column-start: 1;
-}
-
-.distinguishingGrid {
-  grid-column-start: 2;
-}
-
-.contactGrid {
-  grid-column-start: 3;
-}
-
-.navGrid {
+.nav {
   display: grid;
   justify-content: space-around;
   align-items: center;
   grid-template-columns: 240px 204px 696px;
-  height: 110px;
-}
-
-.flex {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  height: 100%;
 }
 
 .contact {
-  // margin-left: 20px;
 }
 
-.nav a {
-  text-decoration: none;
+.navListItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & a:hover {
+    color: #fad247;
+  }
 }
 
-.navListItem a:hover {
-  color: #fad247;
-  // border-bottom: 3px solid #fad247;
-}
-
-.current {
+.activeNavListItem {
   border-bottom: 3px solid #fad247;
 }
 
-@media screen and (min-width: 768px) {
+// 1140 px is the grid width + 30 px each side for a nice visual margin for transition 
+// between mobile and desktop views
+@media screen and (max-width: 1200px) {
+  .container {
+    height: auto;
+    max-width: 100%;
+    position: sticky;
+    z-index: 100;
+  }
+  
+  .logo {
+    height: 90px;
+  }
+
+  .nav {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    color: white;
+
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+
+    .menuIcon {
+      filter: brightness(0) invert(1);
+    }
+
+    .navActive {
+      color: black;
+      background-color: white;
+
+      .menuIcon {
+        filter: none;
+      }
+    }
+  }
+
+  .navList {
+    position: absolute;
+    top: 100%;
+
+    display: block;
+    width: 100%;
+    color: black;
+    background-color: white;
+  }
+
+  .navListItem {
+    width: 100%;
+
+    height: 65px;
+    justify-content: flex-start;
+    
+    border-top: 1px solid #E4E4E4;
+  }
 }
