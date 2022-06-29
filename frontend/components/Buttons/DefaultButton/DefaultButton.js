@@ -8,8 +8,6 @@ const DefaultButton = (props) => {
   const router = useRouter();
   const { description, style, link, disabled, dataToUpload } = props;
 
-  console.log("co w dataToUpload", dataToUpload);
-
   const uploadFiles = async () => {
     let formData = new FormData();
 
@@ -17,16 +15,12 @@ const DefaultButton = (props) => {
       formData.append("images", singleImage);
     }
 
-    new Response(formData).text().then(console.log); // To see the entire raw body
-
     const response = await fetch("https://dokumenciki.herokuapp.com/", {
-      method: "GET",
-      // body: formData,
+      method: "POST",
+      body: formData,
     });
 
     const status = await response.json();
-
-    console.log("status to", status);
 
     if (status) {
       router.push("/distinguishing/final");
