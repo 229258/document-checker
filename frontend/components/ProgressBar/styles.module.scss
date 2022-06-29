@@ -1,3 +1,102 @@
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 343px;
+    height: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 138px 48px;
+    column-gap: 126px;
+    row-gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    color: white;
+    font-family: "Poppins";
+     background-color: red;
+  }
+  .firstStepGrid {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  
+  .secondStepGrid {
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+  }
+  
+  .thirdStepGrid {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    
+  }
+  
+  .firstStepBarGrid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    
+  }
+  
+  .secondStepBarGrid {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+  }
+  
+  .flexStepBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  
+  .success {
+    // background-color: #06d6a0;
+    background-color: blue;
+
+  }
+  
+  .active {
+    // background-color: #fad247;
+    background-color: red;
+  }
+  
+  .nonActive {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .elipse {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+  
+  .activeStepBar,
+  .successStepBar {
+    width: 95px;
+    height: 0px;
+    border-top: 5px solid #ffffff;
+  }
+  
+  .nonActiveStepBar {
+    width: 95px;
+    height: 0px;
+    border-top: 5px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  
+}
+
+
+
 .container {
   width: 969px;
   height: 221px;
@@ -86,6 +185,7 @@
 
 .active {
   background-color: #fad247;
+
 }
 
 .nonActive {
