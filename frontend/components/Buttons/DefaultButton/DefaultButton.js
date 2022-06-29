@@ -12,15 +12,9 @@ const DefaultButton = (props) => {
   // const [providedData, setProvidedData] = useState(null);
 
   const uploadFiles = async () => {
-    let formData = new FormData();
-
-    for (const singleImage of dataToUpload) {
-      formData.append("images", singleImage);
-    }
-
     const response = await fetch("https://dokumenciki.herokuapp.com/predict/", {
       method: "POST",
-      body: {},
+      body: dataToUpload,
     });
     //formData
     const status = await response.json();
