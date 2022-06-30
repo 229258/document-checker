@@ -72,12 +72,23 @@ const ThirdPage = () => {
         (console.log("co w data.length", data),
         (
           <>
-            <div className={DistinguishingStyles.errorGrid}>
+            {data.map((item, index) => {
+              return (
+                <div className={DistinguishingStyles.errorGrid}>
+                  <Success
+                    countryName={item.country}
+                    prediction={item.prediction}
+                  />
+                </div>
+              );
+            })}
+            {/* <div className={DistinguishingStyles.errorGrid}>
+              
               <Success
                 countryName={data[0].country}
                 prediction={data[0].prediction}
               />
-            </div>
+            </div> */}
 
             <div
               className={

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "./styles.module.scss";
-import useStepThree from "../../../views/Distinguishing/StepThree/StepThree.hook";
 
 const DefaultButton = (props) => {
   const router = useRouter();
@@ -20,6 +19,8 @@ const DefaultButton = (props) => {
     //dataToUpload
     const status = await response.json();
 
+    console.log("co w status", status);
+
     if (status) {
       if (localStorage.getItem("test")) {
         localStorage.clear();
@@ -27,7 +28,7 @@ const DefaultButton = (props) => {
 
       const dataToStore = JSON.stringify(status);
 
-      localStorage.setItem("test", dataToStore);
+      localStorage.setItem("test", dataToStore); // lub pusty Array
       router.push("/distinguishing/final");
     }
   };
