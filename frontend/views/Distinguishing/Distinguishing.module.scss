@@ -2,11 +2,10 @@
 
 .container {
   min-height: 1332px;
-  height: 100vh;
-  //min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 58px);
-  grid-template-rows: repeat(20, 66.6px); //66.6px
+  grid-auto-rows: 66.6px;
+
   column-gap: 30px;
 }
 
@@ -26,9 +25,41 @@
   grid-row-start: 10;
 }
 
+.errorGrid,
+.grid0 {
+  margin-top: 25px;
+  grid-row-start: 10;
+}
+
+.grid1 {
+  margin-top: 25px;
+  grid-row-start: 13;
+}
+
 .buttonGrid {
   margin-top: 25px;
   grid-row-start: 16;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.returnButtonGrid {
+  margin-top: 25px;
+
+  grid-row-start: 21;
+  grid-row-end: 24;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  justify-content: center;
+}
+
+.returnButtonDefaultGrid {
+  margin-top: 25px;
+  grid-row-start: 13;
   grid-column-start: 1;
   grid-column-end: 13;
   display: flex;

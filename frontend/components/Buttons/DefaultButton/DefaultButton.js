@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -8,28 +8,28 @@ const DefaultButton = (props) => {
   const router = useRouter();
   const { description, style, link, disabled, dataToUpload } = props;
 
-  console.log("co w dataToUpload", dataToUpload);
+  console.log("dataToUpload", dataToUpload);
 
   const uploadFiles = async () => {
-    let formData = new FormData();
-
-    for (const singleImage of dataToUpload) {
-      formData.append("images", singleImage);
-    }
-
-    new Response(formData).text().then(console.log); // To see the entire raw body
-
-    const response = await fetch("https://dokumenciki.herokuapp.com/", {
+    const response = await fetch("https://dokumenciki.herokuapp.com/predict/", {
       method: "POST",
-      body: formData,
+      body: {},
     });
 
+    //dataToUpload
     const status = await response.json();
 
-    console.log("status to", status);
+    console.log("co w status", status);
 
     if (status) {
-      router.push("/distinguisging/final");
+      if (localStorage.getItem("test")) {
+        localStorage.clear();
+      }
+
+      const dataToStore = JSON.stringify(status);
+
+      localStorage.setItem("test", dataToStore); // lub pusty Array
+      router.push("/distinguishing/final");
     }
   };
 

@@ -15,6 +15,9 @@ const FileUploaderComponent = (props) => {
   const [firstPreview, setFirstPreview] = useState(null);
   const [secondPreview, setSecondPreview] = useState(null);
 
+  console.log("firstFile", firstFile);
+  console.log("firstPreview", firstPreview);
+
   useEffect(() => {
     if (firstFile) {
       const reader = new FileReader();
@@ -38,12 +41,12 @@ const FileUploaderComponent = (props) => {
   useEffect(() => {
     if (firstPreview) {
       setFrontImage(firstPreview);
-      getFrontImage(firstFile);
+      getFrontImage(firstPreview);
     }
 
     if (secondPreview) {
       setBackImage(secondPreview);
-      getBackImage(secondFile);
+      getBackImage(secondPreview);
     }
   }, [firstPreview, secondPreview]);
 
