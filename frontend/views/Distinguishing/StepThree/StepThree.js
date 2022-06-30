@@ -74,7 +74,7 @@ const ThirdPage = () => {
           <>
             {data.map((item, index) => {
               return (
-                <div className={DistinguishingStyles.errorGrid}>
+                <div className={DistinguishingStyles[`grid${index}`]}>
                   <Success
                     countryName={item.country}
                     prediction={item.prediction}
@@ -97,11 +97,12 @@ const ThirdPage = () => {
                   : DistinguishingStyles.returnButtonDefaultGrid
               }
             >
-              <DefaultButton
+              <Title subTitle={"Inne możliwości"} />
+              {/* <DefaultButton
                 description={"Spróbuj ponownie"}
                 style={"secondary"}
                 link={"/distinguishing"}
-              />
+              /> */}
             </div>
           </>
         ))}

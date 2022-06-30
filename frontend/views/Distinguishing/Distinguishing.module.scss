@@ -25,9 +25,15 @@
   grid-row-start: 10;
 }
 
-.errorGrid {
+.errorGrid,
+.grid0 {
   margin-top: 25px;
   grid-row-start: 10;
+}
+
+.grid1 {
+  margin-top: 25px;
+  grid-row-start: 13;
 }
 
 .buttonGrid {
