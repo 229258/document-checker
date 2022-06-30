@@ -19,7 +19,8 @@ const IdCards = () => {
   );
 };
 
-const Success = () => {
+const Success = (props) => {
+  const { countryName, countryCode, prediction } = props;
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -43,8 +44,10 @@ const Success = () => {
 
         <div className={`${SuccessStyles.titleGrid} ${SuccessStyles.flexText}`}>
           <div className={`${SuccessStyles.title} ${SuccessStyles.flex}`}>
-            Rzeczpospolita Republika Polska
-            <div className={`${SuccessStyles.subTitle}`}>(89% pewności)</div>
+            {countryName}
+            <div className={`${SuccessStyles.subTitle}`}>
+              ({prediction}% pewności)
+            </div>
           </div>
         </div>
 
