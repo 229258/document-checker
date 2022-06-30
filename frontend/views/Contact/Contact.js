@@ -15,7 +15,7 @@ const Team = () => {
       <div className={ContactStyles.title}>
         <Title
           title={"Zespół"}
-          subTitle={"Politechnika Łódzka, WEEIA, informatyka niestacjonarna"}
+          subTitle={"Politechnika Łódzka, WEEIA, informatyka\xa0niestacjonarna"}
         />
       </div>
 
