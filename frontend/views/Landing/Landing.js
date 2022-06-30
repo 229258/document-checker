@@ -48,7 +48,7 @@ const Identification = () => {
 };
 
 const Landing = () => {
-  return <Fullscreen component={<Main args={Identification} />} />;
+  return <Fullscreen component={<Main args={Identification} page={"LANDING"} />} />;
 };
 
 export default Landing;

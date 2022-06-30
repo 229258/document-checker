@@ -80,7 +80,7 @@ const SecondPage = () => {
 const StepTwo = () => {
   return (
     <Fullscreen
-      component={<Main args={SecondPage} />}
+      component={<Main args={SecondPage} page={"DISTINGUISHING"} />}
       page={"DISTINGUISHING"}
     />
   );

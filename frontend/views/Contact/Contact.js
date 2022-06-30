@@ -32,7 +32,7 @@ const Team = () => {
 };
 
 const Contact = () => {
-  return <Fullscreen component={<Main args={Team} />} page={"CONTACT"} />;
+  return <Fullscreen component={<Main args={Team} page={"CONTACT"} />} page={"CONTACT"} />;
 };
 
 export default Contact;

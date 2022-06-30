@@ -15,14 +15,14 @@ const ThirdPage = () => {
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
- 
+
       <div className={styles.textCamWinGrid}>
-          <Title
-               subTitle={"Zezwól przeglądarce na dostęp do kamerki internetowej."}
-          />
+        <Title
+          subTitle={"Zezwól przeglądarce na dostęp do kamerki internetowej."}
+        />
       </div>
       <div className={styles.cameraWindow}>
-        <CameraWin/>
+        <CameraWin />
       </div>
 
     </div>
@@ -32,7 +32,7 @@ const ThirdPage = () => {
 const StepThird = () => {
   return (
     <Fullscreen
-      component={<Main args={ThirdPage} />}
+      component={<Main args={ThirdPage} page={"DISTINGUISHING"} />}
       page={"DISTINGUISHING"}
     />
   );
