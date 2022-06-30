@@ -90,3 +90,18 @@
 .primaryDisabled {
   color: rgba(0, 0, 0, 0.5);
 }
+
+
+// 1140 px is the grid width + 30 px each side for a nice visual margin for transition 
+// between mobile and desktop views
+@media screen and (max-width: 1200px) {
+
+  .primaryBig,
+  .secondaryBig,
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+
+}
