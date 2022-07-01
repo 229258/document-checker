@@ -1,5 +1,5 @@
 import React from "react";
-
+import useMediaQuery from "../../hooks/useMediaQuery.hook";
 import styles from "./styles.module.scss";
 
 const BarElement = (props) => {
@@ -47,14 +47,44 @@ const ProgressBar = (props) => {
     firstBarStatus,
     secondBarStatus,
   } = props;
+  const isMobile = useMediaQuery(1200);
+  if (!isMobile) {
+    return (
+      <div className={styles.container}>
+        <BarElement
+          position={"first"}
+          number={1}
+          firstDescription={"Wybierz metodę"}
+          secondDescription={"wprowadzenia dokumentów"}
+          status={statusFirst}
+          bar={true}
+          barStatus={firstBarStatus}
+        />
 
+        <BarElement
+          position={"second"}
+          number={2}
+          firstDescription={"Prześlij skan przodu"}
+          secondDescription={"oraz tyłu dokumentu"}
+          status={statusSecond}
+          bar={true}
+          barStatus={secondBarStatus}
+        />
+
+        <BarElement
+          position={"third"}
+          number={3}
+          firstDescription={"Sprawdź kraj pochodzenia"}
+          secondDescription={"dokumentu"}
+          status={statusThird}
+        />
+      </div>
+    );
+  }
   return (
     <div className={styles.container}>
       <BarElement
         position={"first"}
-        number={1}
-        firstDescription={"Wybierz metodę"}
-        secondDescription={"wprowadzenia dokumentów"}
         status={statusFirst}
         bar={true}
         barStatus={firstBarStatus}
@@ -62,21 +92,12 @@ const ProgressBar = (props) => {
 
       <BarElement
         position={"second"}
-        number={2}
-        firstDescription={"Prześlij skan przodu"}
-        secondDescription={"oraz tyłu dokumentu"}
         status={statusSecond}
         bar={true}
         barStatus={secondBarStatus}
       />
 
-      <BarElement
-        position={"third"}
-        number={3}
-        firstDescription={"Sprawdź kraj pochodzenia"}
-        secondDescription={"dokumentu"}
-        status={statusThird}
-      />
+      <BarElement position={"third"} status={statusThird} />
     </div>
   );
 };
