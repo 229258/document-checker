@@ -1,13 +1,18 @@
+@import 'styles/globals.module.scss';
+
 .lottie {
-  display: flex;
   mix-blend-mode: color-burn;
-  position: absolute;
+}
+
+.container {
+  position: fixed;
+  top: 100px;
+  right: 5%;
 }
 
 .gradient {
-  margin-top: 7.35rem;
+  margin-top: 7.4rem;
   margin-left: 6.1rem;
-  display: flex;
   height: 640px;
   width: 640px;
   border-radius: 50%;
@@ -20,4 +25,20 @@
   );
 
   position: absolute;
+}
+
+
+@media screen and (min-width: 1900px) {
+  .container {
+    position: absolute;
+    top: 100px;
+    right: -100px;
+  }
+}
+
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .container {
+    position: static;
+    margin-top: 50px;
+  }
 }

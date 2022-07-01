@@ -1,49 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
+@import 'styles/globals.module.scss';
 
-.container {
-  min-height: 800px;
-  display: grid;
-  grid-template-columns: repeat(12, 58px);
-  grid-template-rows: repeat(12, 66.6px);
-  column-gap: 30px;
+.break {
+  margin-top: 137px;
+  grid-column: span 12;
 }
 
-.firstItem {
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 5;
+.textContainer {
+  grid-column: span 5;
+  z-index: 99;
 }
 
-// .secondItem {
-//   grid-column-start: 1;
-//   grid-column-end: 5;
-//   grid-row-start: 6;
-// }
-// .thirdItem {
-//   grid-column-start: 1;
-//   grid-column-end: 5;
-//   grid-row-start: 7;
-// }
-
-.fourthItem {
-  grid-column-start: 1;
-  grid-column-end: 7;
-  grid-row-start: 8;
+.globeContainer {
+  grid-column: span 7;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.buttonGrid {
+.buttonContainer {
   margin-top: 50px;
-  grid-column-start: 1;
-  grid-row-start: 10;
-  // text-align: center;
-}
-
-.globeGrid {
-  margin-right: 10px;
-  margin-top: 30px;
-  grid-column-start: 6;
-  grid-row-start: 1;
-  // text-align: center;
 }
 
 .button:hover {
@@ -52,22 +28,60 @@
 
 .h1Light {
   margin: 0;
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 300;
   font-size: 48px;
   line-height: 72px;
-  color: white;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .h1Bold {
   margin: 0;
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 700;
   font-size: 64px;
   line-height: 96px;
-  color: white;
-  border: none;
   padding: 0;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .break {
+    margin-top: 0;
+  }
+
+  .globeContainer {
+    grid-column: span 12;
+  }
+
+  .textContainer {
+    grid-column: span 12;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1Light {
+    font-size: 30px;
+    line-height: 1.75;
+  }
+
+  .h1Bold {
+    font-size: 48px;
+  }
+
+  .buttonContainer {
+    grid-column: span 12;
+    position: fixed;
+    bottom: 42px;
+    width: calc(100% - 116px);
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .buttonContainer {
+    width: calc(100% - 32px);
+  }
 }

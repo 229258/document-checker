@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import * as animationData from "./data.json";
+import * as animationData from "./animation.json";
 
 import GlobeStyles from "./Globe.module.scss";
 
@@ -15,9 +15,8 @@ const Globe = () => {
   };
 
   return (
-    <div>
+    <div className={GlobeStyles.container}>
       <div className={GlobeStyles.gradient} />
-
       <div className={GlobeStyles.lottie}>
         <Lottie
           options={defaultOptions}

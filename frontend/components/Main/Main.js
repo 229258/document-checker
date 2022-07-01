@@ -12,7 +12,12 @@ const Main = (props) => {
           <div className={styles.info}></div>
         </>
       ) : null}
-      <div className={styles.wrapper}>{args()}</div>
+      {/* TODO: remove this if all pages use correct grid system */}
+      {page !== "LANDING" ?
+        <div style={{ display: "grid", gridColumn: "span 12" }} className={styles.wrapper}>
+          {args()}
+        </div>
+        : args()}
     </>
   );
 };
