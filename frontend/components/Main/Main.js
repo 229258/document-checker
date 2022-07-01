@@ -6,18 +6,7 @@ const Main = (props) => {
   const { args, page } = props;
   return (
     <>
-      {page === "INFORMATION" ? (
-        <>
-          <div className={styles.map}></div>
-          <div className={styles.info}></div>
-        </>
-      ) : null}
-      {/* TODO: remove this if all pages use correct grid system */}
-      {page !== "LANDING" && page !== "CONTACT" && page !== "DISTINGUISHING" ?
-        <div style={{ display: "grid", gridColumn: "span 12" }} className={styles.wrapper}>
-          {args()}
-        </div>
-        : args()}
+      {args()}
     </>
   );
 };
