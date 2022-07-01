@@ -13,7 +13,7 @@ const Main = (props) => {
         </>
       ) : null}
       {/* TODO: remove this if all pages use correct grid system */}
-      {page !== "LANDING" && page !== "CONTACT" ?
+      {page !== "LANDING" && page !== "CONTACT" && page !== "DISTINGUISHING" ?
         <div style={{ display: "grid", gridColumn: "span 12" }} className={styles.wrapper}>
           {args()}
         </div>

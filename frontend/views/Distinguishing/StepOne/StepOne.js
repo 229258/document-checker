@@ -10,15 +10,15 @@ import { leftElementData, rightElementData } from "../helper";
 
 const FirstPage = () => {
   return (
-    <div className={DistinguishingStyles.container}>
-      <div className={DistinguishingStyles.titleGrid}>
+    <>
+      <div className={DistinguishingStyles.title}>
         <Title
           title={"3 proste kroki"}
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
 
-      <div className={DistinguishingStyles.progressBarGrid}>
+      <div className={DistinguishingStyles.progressBar}>
         <ProgressBar
           statusFirst={"active"}
           statusSecond={"nonActive"}
@@ -27,18 +27,19 @@ const FirstPage = () => {
           secondBarStatus={"nonActive"}
         />
       </div>
+      {/* TODO: progress bar has some flexing to remove (subtitle doesn't stay in place) */}
 
-      <div className={DistinguishingStyles.textGrid}>
+      <div className={DistinguishingStyles.subTitle}>
         <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
       </div>
 
-      <div className={DistinguishingStyles.buttonsGrid}>
-        <MethodButton
+      <div className={DistinguishingStyles.button}>
+        {/* <MethodButton
           leftButton={leftElementData}
           rightButton={rightElementData}
-        />
+        /> */}
       </div>
-    </div>
+    </>
   );
 };
 
