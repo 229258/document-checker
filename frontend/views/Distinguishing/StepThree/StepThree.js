@@ -52,15 +52,9 @@ const ThirdPage = () => {
             <Error handleClick={handleClick} clicked={errorClicked} />
           </div>
 
-          <div
-            className={
-              errorClicked
-                ? DistinguishingStyles.returnButtonGrid
-                : DistinguishingStyles.returnButtonDefaultGrid
-            }
-          >
+          <div className={DistinguishingStyles.returnButtonGrid}>
             <DefaultButton
-              description={"Spróbuj ponownie"}
+              description={"spróbuj ponownie"}
               style={"secondary"}
               link={"/distinguishing"}
             />
