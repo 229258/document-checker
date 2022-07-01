@@ -33,11 +33,11 @@ const FirstPage = () => {
         <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
       </div>
 
-      <div className={DistinguishingStyles.button}>
-        {/* <MethodButton
+      <div className={DistinguishingStyles.buttonContainer}>
+        <MethodButton
           leftButton={leftElementData}
           rightButton={rightElementData}
-        /> */}
+        />
       </div>
     </>
   );
