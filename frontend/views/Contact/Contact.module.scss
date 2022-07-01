@@ -6,17 +6,11 @@
 
 .contactTeam {
   grid-column: span 12;
-  margin-top: 100px;
-}
-
-@media screen and (max-width: $tablet-breakpoint-width) {
-  .contactTeam {
-    margin-top: 160px;
-  }
+  margin-top: 61px;
 }
 
 @media screen and (max-width: $mobile-breakpoint-width) {
   .contactTeam {
-    margin-top: 110px;
+    margin-top: 50px;
   }
 }

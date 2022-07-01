@@ -39,6 +39,6 @@
 @media screen and (max-width: calc($grid-width + 60px)) {
   .container {
     position: static;
-    margin-top: 50px;
+    margin-top: -50px;
   }
 }
