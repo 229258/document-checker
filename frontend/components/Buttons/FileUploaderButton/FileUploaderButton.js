@@ -11,46 +11,44 @@ const ButtonElement = (props) => {
 
   return (
     <>
-      <div className={styles[`${position}Grid`]}>
-        <div className={styles.box}>
-          <div className={styles.fileUploader}>
-            <FileUploaderComponent
-              getFrontImage={getFrontImage}
-              getBackImage={getBackImage}
-              setFrontImage={setFrontImage}
-              setBackImage={setBackImage}
-              position={position}
-            />
-          </div>
-          {frontImage || backImage ? (
-            position === "left" ? (
-              <div className={styles.uploadedImageGrid}>
-                <img src={frontImage} className={styles.uploadedImage} />
-              </div>
-            ) : (
-              <div className={styles.uploadedImageGrid}>
-                <img src={backImage} className={styles.uploadedImage} />
-              </div>
-            )
-          ) : (
-            <>
-              <div
-                className={`${styles[image]} ${styles.imageGrid} ${styles.flex}`}
-              />
-              <div
-                className={`${styles.flex} ${styles.descriptionGrid} ${styles.description}`}
-              >
-                {description}
-              </div>
-
-              <div
-                className={`${styles.flex} ${styles.secondDescriptionGrid} ${styles.secondDescription}`}
-              >
-                (lub przeciągnij)
-              </div>
-            </>
-          )}
+      <div className={styles.box}>
+        <div className={styles.fileUploader}>
+          <FileUploaderComponent
+            getFrontImage={getFrontImage}
+            getBackImage={getBackImage}
+            setFrontImage={setFrontImage}
+            setBackImage={setBackImage}
+            position={position}
+          />
         </div>
+        {frontImage || backImage ? (
+          position === "left" ? (
+            <div className={styles.uploadedImageGrid}>
+              <img src={frontImage} className={styles.uploadedImage} />
+            </div>
+          ) : (
+            <div className={styles.uploadedImageGrid}>
+              <img src={backImage} className={styles.uploadedImage} />
+            </div>
+          )
+        ) : (
+          <>
+            <div
+              className={styles[image]}
+            />
+            <div
+              className={styles.description}
+            >
+              {description}
+            </div>
+
+            <div
+              className={styles.secondDescription}
+            >
+              (lub przeciągnij)
+            </div>
+          </>
+        )}
       </div>
     </>
   );
