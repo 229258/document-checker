@@ -32,7 +32,7 @@ const ThirdPage = () => {
 const StepThird = () => {
   return (
     <Fullscreen
-      component={<Main args={ThirdPage} page={"DISTINGUISHING"} />}
+      component={<Main args={ThirdPage} />}
       page={"DISTINGUISHING"}
     />
   );
