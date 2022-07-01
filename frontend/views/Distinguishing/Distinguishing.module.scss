@@ -10,9 +10,9 @@
 }
 
 .progressBar {
+  display: flex;
   grid-column: span 12;
-  margin-top: 90px;
-  margin-bottom: calc(90px - 68px);
+  margin: 60px 0;
 }
 
 .buttonContainer {
@@ -93,4 +93,8 @@
   .subTitle {
     margin-bottom: 25px;
   } 
+
+  .progressBar {
+    margin: 0;
+  }
 }

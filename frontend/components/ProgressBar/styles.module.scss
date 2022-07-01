@@ -1,81 +1,32 @@
 @import 'styles/globals.module.scss';
 
 .container {
-  // TODO: this needs rewriting bc position absolute destroys rwd 
-  // width: 100%;
-  width: 969px;
-  height: 221px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 138px 48px;
-  column-gap: 126px;
-  row-gap: 20px;
-}
-
-.firstStepGrid {
-  grid-column-start: 1;
-  grid-row-start: 1;
-}
-
-.secondStepGrid {
-  grid-column-start: 2;
-  grid-row-start: 1;
-}
-
-.thirdStepGrid {
-  grid-column-start: 3;
-  grid-row-start: 1;
-}
-
-.firstStepDescriptionGrid {
-  grid-column-start: 1;
-  grid-row-start: 2;
-}
-
-.secondStepDescriptionGrid {
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-
-.thirdStepDescriptionGrid {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-
-.firstStepBarGrid {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-}
-
-.secondStepBarGrid {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 1;
-}
-
-.flexStepBar {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.description {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .number {
-  height: 138px;
-  left: calc(50% - 26px / 2 - 0.5px);
-  top: calc(50% - 96px / 2 - 41.5px);
-
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 900;
   font-size: 64px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #ffffff;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -88,114 +39,86 @@
 }
 
 .nonActive {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #8B8B8B;
 }
 
 .elipse {
   height: 138px;
   width: 138px;
   border-radius: 50%;
-}
 
-.flex {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 98;
+}
+
+.stepBar {
+  width: 210%;
+  height: 0px;
+  position: absolute;
+  top: calc(138px / 2);
+  z-index: 97;
+  left: 50%;
 }
 
 .activeStepBar,
 .successStepBar {
-  width: 228px;
-  height: 0px;
   border-top: 5px solid #ffffff;
 }
 
 .nonActiveStepBar {
-  width: 228px;
-  height: 0px;
-  border-top: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #454545;
 }
 
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 343px;
-    height: 22px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 22px 48px;
-    column-gap: 139px;
-    row-gap: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: absolute;
-  }
-  .firstStepGrid {
-    grid-column-start: 1;
-    grid-row-start: 1;
+@media screen and (max-width: 1000px) {
+  .elipse {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
   }
 
-  .secondStepGrid {
-    grid-column-start: 2;
-    grid-row-start: 1;
+  .stepBar {
+    width: calc(100vw/3 + 60px);
+    top: 50%;
   }
 
-  .thirdStepGrid {
-    grid-column-start: 3;
-    grid-row-start: 1;
+  .activeStepBar,
+  .successStepBar {
+    border-top: 3px solid #ffffff;
   }
 
-  .firstStepBarGrid {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
+  .nonActiveStepBar {
+    border-top: 3px solid #454545;
   }
+}
 
-  .secondStepBarGrid {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-  }
-
-  .flexStepBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .success {
-    background-color: #06d6a0;
-  }
-
-  .active {
-    background-color: #fad247;
-  }
-
-  .nonActive {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
+@media screen and (max-width: $mobile-breakpoint-width) {
   .elipse {
     height: 22px;
     width: 22px;
     border-radius: 50%;
   }
 
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .stepBar {
+    width: calc(100vw/3 + 44px);
+    top: 50%;
   }
 
   .activeStepBar,
   .successStepBar {
-    width: 140px;
-    height: 0px;
-    border-top: 5px solid #ffffff;
+    border-top: 1px solid #ffffff;
   }
 
   .nonActiveStepBar {
-    width: 140px;
-    height: 0px;
-    border-top: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid #454545;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .stepBar {
+    width: calc(100vw/3 + 22px);
+    top: 50%;
   }
 }
