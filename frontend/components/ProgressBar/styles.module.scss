@@ -1,4 +1,8 @@
+@import 'styles/globals.module.scss';
+
 .container {
+  // TODO: this needs rewriting bc position absolute destroys rwd 
+  // width: 100%;
   width: 969px;
   height: 221px;
   display: grid;
