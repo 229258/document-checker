@@ -1,7 +1,10 @@
 .cameraWindow {
     // grid-row: 5;
-    height: 671px;
-    width: 1025px;
+    // height: 671px;
+    // width: 1025px;
+    display: flex;
+    flex-direction: column;
+
   }
 .cameraSize {
     height: 671px;
@@ -10,10 +13,9 @@
 .container {
     min-height: 1332px;
     height: 100vh;
-    //min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(12, 58px);
-    grid-template-rows: repeat(20, 66.6px); //66.6px
+    // grid-template-columns: repeat(12, 58px);
+    // grid-template-rows: repeat(20, 66.6px); //66.6px
     column-gap: 30px;
   }
 
@@ -26,4 +28,11 @@
     margin: 10px 0px;
     cursor: pointer;
     position: absolute;
+  }
+
+  .webcamImg{
+    height: 671px;
+    width: 1020px;
+    display: flex;
+    flex-direction: column;
   }
