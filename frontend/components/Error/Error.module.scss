@@ -1,12 +1,11 @@
 .container {
-  width: 1026px;
+  width: 100%;
   height: 148px;
-  display: grid;
-  grid-template-columns: 46px 50px 21px 753px 62px 64px 30px;
-  grid-template-rows: 148px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   color: white;
   font-family: "Poppins";
   background-color: #ff6b6c;
@@ -21,34 +20,21 @@
   border-radius: 5px 5px 0 0;
 }
 
-.warningIconGrid {
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
-
 .warningIcon {
-  width: 50px;
-  height: 50px;
-  background-image: url("https://i.ibb.co/2yJ33hq/warning-Icon.png");
-  background-repeat: no-repeat;
+  margin-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.angleGrid {
-  grid-column-start: 6;
-  grid-column-end: 7;
+.angle {
+  margin-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.angleDown {
-  width: 64px;
-  height: 64px;
-  background-image: url("https://i.ibb.co/HNrB9GF/angle-Down.png");
-  cursor: pointer;
-}
-
-.angleUp {
-  width: 64px;
-  height: 64px;
-  background-image: url("https://i.ibb.co/vJChwrg/angleUp.png");
+.angleCursor {
   cursor: pointer;
 }
 
@@ -58,154 +44,70 @@
   align-items: center;
 }
 
-.textGrid {
-  grid-column-start: 4;
-  grid-column-end: 5;
-
-  display: grid;
-  grid-template-rows: 32px 36px 48px 32px;
+.textComponent {
+  margin-left: -50px;
   width: 753px;
 }
 
-.titleGrid {
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-
 .title {
+  margin-top: 30px;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
 }
 
-.subTitleGrid {
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-
 .subTitle {
+  margin-top: -12px;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
 }
 
 .box {
-  margin-top: 148px;
-  width: 1026px;
   height: 519px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  position: absolute;
   color: white;
   font-family: "Poppins";
   background-color: white;
-  display: grid;
-  grid-template-columns: 43px 757px 226px;
-  grid-template-rows: 23px 24px 20px 262px 20px 130px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 23px 43px 23px 43px;
   border-radius: 0 0 5px 5px;
 }
 
 .boxTitle {
   color: black;
   font-weight: 700;
-  grid-column-start: 2;
-  grid-row-start: 2;
 }
 
-.boxImages {
-  grid-column-start: 2;
-  grid-row-start: 4;
-}
-
-.boxInfo {
-  grid-column-start: 2;
-  grid-row-start: 6;
-}
-
-.idCardsGrid {
+.idCards {
+  margin-top: -10px;
   height: 262px;
   width: 748px;
-  display: grid;
-  grid-template-columns: 365px 18px 365px;
-  grid-template-rows: 228px 5px 24px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.frontIdCard {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  width: 365px;
-  height: 228px;
-  background-image: url("https://i.ibb.co/DwF8Q37/przod-dowod.png");
-}
-
-.backIdCard {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  width: 365px;
-  height: 228px;
-  background-image: url("https://i.ibb.co/Jvf1jD0/tyl-dowod.png");
-}
-
-.frontDocument {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
+.documentDescription {
   color: black;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
 
-.backDocument {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  color: black;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.stepsGrid {
+.steps {
   height: 132px;
   width: 745px;
-  display: grid;
-  grid-template-rows: 24px 12px 24px 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.firstGrid {
+.elementContainer {
   display: flex;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-.secondGrid {
-  display: flex;
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-.thirdGrid {
-  display: flex;
-  grid-row-start: 5;
-  grid-row-end: 6;
-}
-.fourthGrid {
-  display: flex;
-  grid-row-start: 7;
-  grid-row-end: 7;
-}
-
-.mark {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  background-image: url("https://i.ibb.co/MSrxT74/mini-success.png");
 }
 
 .text {

@@ -1,53 +1,58 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import ErrorStyles from "./Error.module.scss";
 
 const IdCards = () => {
   return (
-    <div className={`${ErrorStyles.idCardsGrid}`}>
-      <div className={`${ErrorStyles.frontIdCard}`} />
-      <div className={`${ErrorStyles.frontDocument} ${ErrorStyles.flex}`}>
-        Przód
+    <div className={ErrorStyles.idCards}>
+      <div className={ErrorStyles.frontIdCard}>
+        <Image
+          src={"/images/front-id-card.png"}
+          alt="Front id card"
+          height="228"
+          width="365"
+        />
+
+        <div className={ErrorStyles.documentDescription}>Przód</div>
       </div>
 
-      <div className={`${ErrorStyles.backIdCard}`} />
-      <div className={`${ErrorStyles.backDocument} ${ErrorStyles.flex}`}>
-        Tył
+      <div className={ErrorStyles.backIdCard}>
+        <Image
+          src={"/images/back-id-card.png"}
+          alt="Back id card"
+          height="228"
+          width="365"
+        />
+
+        <div className={ErrorStyles.documentDescription}>Tył</div>
       </div>
     </div>
   );
 };
 
 const Element = (props) => {
-  const { position, text } = props;
+  const { text } = props;
 
-  const grid = `${position}Grid`;
   return (
-    <div className={`${ErrorStyles[grid]}`}>
-      <div className={`${ErrorStyles.mark}`} />
-      <div className={`${ErrorStyles.text}`}>{text}</div>
+    <div className={ErrorStyles.elementContainer}>
+      <Image src={"/icons/marked.svg"} alt="Marked" height="24" width="24" />
+
+      <div className={ErrorStyles.text}>{text}</div>
     </div>
   );
 };
 
 const CheckSteps = () => {
   return (
-    <div className={`${ErrorStyles.stepsGrid}`}>
+    <div className={ErrorStyles.steps}>
+      <Element text={"Upewnij się, że wszystkie dane są wyraźne"} />
       <Element
-        position={"first"}
-        text={"Upewnij się, że wszystkie dane są wyraźne"}
-      />
-      <Element
-        position={"second"}
         text={"Zawrzyj jedynie wskazaną stronę dokumentu w danym pliku"}
       />
+      <Element text={"Możesz zeskanować dokument albo zrobić jego zdjęcie"} />
       <Element
-        position={"third"}
-        text={"Możesz zeskanować dokument albo zrobić jego zdjęcie"}
-      />
-      <Element
-        position={"fourth"}
         text={
           "W przypadku problemów ze zdjęciem, pokaż dowód do kamerki - system poinstruuje Cię krok po kroku"
         }
@@ -66,47 +71,50 @@ const Error = (props) => {
           clicked ? ErrorStyles.halfBorders : ErrorStyles.fullBorders
         }`}
       >
-        <div className={`${ErrorStyles.warningIconGrid} ${ErrorStyles.flex}`}>
-          <div className={`${ErrorStyles.warningIcon}`} />
+        <div className={ErrorStyles.warningIcon}>
+          <Image
+            src={"/icons/warning-icon.svg"}
+            alt="Warning icon"
+            height="50"
+            width="50"
+          />
         </div>
 
-        <div className={`${ErrorStyles.textGrid}`}>
-          <div className={`${ErrorStyles.titleGrid}`}>
-            <div className={`${ErrorStyles.title}`}>
-              Niestety nie byliśmy w stanie rozpoznać Twojego dokumentu
-            </div>
-          </div>
+        <div className={ErrorStyles.textComponent}>
+          <h1 className={ErrorStyles.title}>
+            Niestety nie byliśmy w stanie rozpoznać Twojego dokumentu
+          </h1>
 
-          <div className={`${ErrorStyles.subTitleGrid}`}>
-            <div className={`${ErrorStyles.subTitle}`}>
-              Upewnij się, że zdjęcia są wyraźne i zawierają odpowiednią stronę
-              dokumentu, a dane można bez problemu odczytać.
-            </div>
-          </div>
+          <h1 className={ErrorStyles.subTitle}>
+            Upewnij się, że zdjęcia są wyraźne i zawierają odpowiednią stronę
+            dokumentu, a dane można bez problemu odczytać.
+          </h1>
         </div>
 
-        <div className={`${ErrorStyles.angleGrid} ${ErrorStyles.flex}`}>
-          <div
-            className={
-              clicked ? `${ErrorStyles.angleUp}` : `${ErrorStyles.angleDown}`
+        <div className={ErrorStyles.angle}>
+          <Image
+            className={ErrorStyles.angleCursor}
+            src={
+              clicked
+                ? "/icons/angle-up-white.svg"
+                : "/icons/angle-down-white.svg"
             }
+            alt={clicked ? "Angle up" : "Angle down"}
+            height="64"
+            width="64"
             onClick={() => handleClick()}
           />
         </div>
       </div>
       <div>
         {clicked && (
-          <div className={`${ErrorStyles.box}`}>
-            <div className={`${ErrorStyles.boxTitle}`}>
+          <div className={ErrorStyles.box}>
+            <div className={ErrorStyles.boxTitle}>
               Jak przygotować dokument do rozpoznania?
             </div>
 
-            <div className={`${ErrorStyles.boxImages}`}>
-              <IdCards />
-            </div>
-            <div className={`${ErrorStyles.boxInfo}`}>
-              <CheckSteps />
-            </div>
+            <IdCards />
+            <CheckSteps />
           </div>
         )}
       </div>

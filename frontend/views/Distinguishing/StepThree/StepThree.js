@@ -43,16 +43,16 @@ const ThirdPage = () => {
         />
       </div>
 
-      <div className={DistinguishingStyles.textGrid}>
+      <div className={DistinguishingStyles.title}>
         <Title title={"Twój wynik"} />
       </div>
       {!data?.length && (
         <>
-          <div className={DistinguishingStyles.errorGrid}>
+          <div className={DistinguishingStyles.error}>
             <Error handleClick={handleClick} clicked={errorClicked} />
           </div>
 
-          <div className={DistinguishingStyles.returnButtonGrid}>
+          <div className={DistinguishingStyles.returnButton}>
             <DefaultButton
               description={"spróbuj ponownie"}
               style={"secondary"}
@@ -61,45 +61,6 @@ const ThirdPage = () => {
           </div>
         </>
       )}
-
-      {data?.length &&
-        (console.log("co w data.length", data),
-          (
-            <>
-              {data.map((item, index) => {
-                return (
-                  <div className={DistinguishingStyles[`grid${index}`]}>
-                    <Success
-                      countryName={item.country}
-                      prediction={item.prediction}
-                    />
-                  </div>
-                );
-              })}
-              {/* <div className={DistinguishingStyles.errorGrid}>
-              
-              <Success
-                countryName={data[0].country}
-                prediction={data[0].prediction}
-              />
-            </div> */}
-
-              <div
-                className={
-                  errorClicked
-                    ? DistinguishingStyles.returnButtonGrid
-                    : DistinguishingStyles.returnButtonDefaultGrid
-                }
-              >
-                <Title subTitle={"Inne możliwości"} />
-                {/* <DefaultButton
-                description={"Spróbuj ponownie"}
-                style={"secondary"}
-                link={"/distinguishing"}
-              /> */}
-              </div>
-            </>
-          ))}
     </>
   );
 };
