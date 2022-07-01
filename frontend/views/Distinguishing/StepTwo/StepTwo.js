@@ -59,17 +59,15 @@ const SecondPage = () => {
           getBackImage={getBackImage}
         />
       </div>
-      {/* TODO: pokaz button tylko ze disabled */}
-      {frontImage && backImage && (
-        <div className={DistinguishingStyles.buttonGrid}>
-          <DefaultButton
-            description={"Prześlij zdjęcia"}
-            style={"primary"}
-            disabled={true}
-            dataToUpload={[frontImage, backImage]}
-          />
-        </div>
-      )}
+      <div className={`${DistinguishingStyles.submitButton}`}>
+        <DefaultButton
+          description={"prześlij zdjęcia"}
+          style={frontImage && backImage ? "primary" : "primaryDisabled"}
+          tooltip={frontImage && backImage ? null : "Prześliij oba zdjęcia, by kontynuować"}
+          dataToUpload={[frontImage, backImage]}
+        />
+      </div>
+      <div className={`${DistinguishingStyles.bottomMargin}`}></div>
     </>
   );
 };

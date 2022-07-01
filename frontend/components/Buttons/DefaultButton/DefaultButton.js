@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 const DefaultButton = (props) => {
   const router = useRouter();
-  const { description, style, link, disabled, dataToUpload } = props;
+  const { description, style, link, dataToUpload, tooltip } = props;
 
   console.log("dataToUpload", dataToUpload);
 
@@ -44,11 +44,12 @@ const DefaultButton = (props) => {
 
   return (
     <div
-      className={`${styles[style]}`}
-      onClick={dataToUpload ? uploadFiles : null}
+      className={`${styles[style]} ${tooltip ? styles.tooltip : null}`}
+      onClick={style !== 'primaryDisabled' && dataToUpload ? uploadFiles : null}
     >
-      {disabled && description}
-      {!disabled && link && <Link href={link}>{description}</Link>}
+      {description}
+      {link && <Link href={link}>{description}</Link>}
+      {tooltip && <span class={styles.tooltipText}>{tooltip}</span>}
     </div>
   );
 };

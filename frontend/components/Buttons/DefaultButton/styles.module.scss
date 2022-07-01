@@ -33,6 +33,10 @@
 .primaryDisabled {
   background-color: #bb9d35;
   cursor: default;
+
+  &:hover {
+    cursor: not-allowed;
+  }
 }
 
 .secondaryLarge {
@@ -93,6 +97,47 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltipText {
+  visibility: hidden;
+  width: 250px;
+  bottom: 125%;
+  left: 50%;
+  margin-left: calc(-250px / 2);
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 400;
+
+  position: absolute;
+  z-index: 1;
+
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
 @media screen and (max-width: calc($grid-width + 60px)) {
 
   .primaryBig,
@@ -101,6 +146,5 @@
   .secondary {
     width: 100%;
   }
-
 
 }
