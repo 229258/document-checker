@@ -1,23 +1,21 @@
 @import 'styles/globals.module.scss';
 
-.container {
-  // min-height: 1332px;
-  // display: grid;
-  // grid-template-columns: repeat(12, 58px);
-  // grid-auto-rows: 66.6px;
-
-  // column-gap: 30px;
+.title {
+  grid-column: span 12;
 }
 
-.title,
-.subTitle,
-.buttonContainer {
+.subTitle {
   grid-column: span 12;
+  margin-bottom: 35px;
 }
 
 .progressBar {
   grid-column: span 12;
   margin: 90px 0;
+}
+
+.buttonContainer {
+  grid-column: span 12;
 }
 
 .errorGrid,

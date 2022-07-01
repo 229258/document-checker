@@ -27,13 +27,11 @@ const FirstPage = () => {
           secondBarStatus={"nonActive"}
         />
       </div>
-      {/* TODO: progress bar has some flexing to remove (subtitle doesn't stay in place) */}
-
-      <div className={DistinguishingStyles.subTitle}>
-        <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
-      </div>
 
       <div className={DistinguishingStyles.buttonContainer}>
+        <div className={DistinguishingStyles.subTitle}>
+          <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
+        </div>
         <MethodButton
           leftButton={leftElementData}
           rightButton={rightElementData}
