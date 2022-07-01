@@ -88,3 +88,9 @@
   cursor: pointer;
   position: fixed;
 }
+
+@media screen and (max-width: $mobile-breakpoint-width) {
+  .subTitle {
+    margin-bottom: 25px;
+  } 
+}

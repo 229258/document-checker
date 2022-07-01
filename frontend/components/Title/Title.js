@@ -14,7 +14,7 @@ const Title = (props) => {
       )}
 
       {subTitle && (
-        <h3 className={styles.subTitle}>
+        <h3 className={`${styles.subTitle} ${!title && subTitle ? styles.onlySubTitle : null}`}>
           {subTitle}
         </h3>
       )}
