@@ -15,7 +15,7 @@ const ButtonElement = (props) => {
 
   return (
     <>
-      <div className={`${styles.box} ${uploaded ? styles.uploaded : null}`}>
+      <div className={`${styles.box} ${uploaded ? styles.uploaded : null} ${getFrontImage ? styles.front : styles.back}`}>
         <div className={styles.fileUploader}>
           <FileUploaderComponent
             getImage={getImage}

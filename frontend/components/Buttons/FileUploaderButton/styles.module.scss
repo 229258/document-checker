@@ -50,6 +50,18 @@
   }
 }
 
+.front:after {
+  content: "Przód dokumentu";
+  position: absolute;
+  top: 105%;
+}
+
+.back:after {
+  content: "Tył dokumentu";
+  position: absolute;
+  top: 105%;
+}
+
 .box:hover {
   border: 2px dashed #fad247;
   border-radius: 5px;
@@ -110,5 +122,10 @@
   .picture {
     width: 138px;
     height: 138px;
+  }
+
+  .front::after,
+  .back:after {
+    content: "";
   }
 }
