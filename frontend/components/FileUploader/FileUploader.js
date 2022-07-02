@@ -6,17 +6,13 @@ const fileTypes = ["JPG", "PNG", "GIF"];
 import FileUploaderStyles from "./FileUploader.module.scss";
 
 const FileUploaderComponent = (props) => {
-  const { getFrontImage, getBackImage, setFrontImage, setBackImage, position } =
-    props;
+  const { getImage, setFrontImage, setBackImage, position } = props;
 
   const [firstFile, setFirstFile] = useState(null);
   const [secondFile, setSecondFile] = useState(null);
 
   const [firstPreview, setFirstPreview] = useState(null);
   const [secondPreview, setSecondPreview] = useState(null);
-
-  console.log("firstFile", firstFile);
-  console.log("firstPreview", firstPreview);
 
   useEffect(() => {
     if (firstFile) {
@@ -41,12 +37,12 @@ const FileUploaderComponent = (props) => {
   useEffect(() => {
     if (firstPreview) {
       setFrontImage(firstPreview);
-      getFrontImage(firstPreview);
+      getImage(firstPreview);
     }
 
     if (secondPreview) {
       setBackImage(secondPreview);
-      getBackImage(secondPreview);
+      getImage(secondPreview);
     }
   }, [firstPreview, secondPreview]);
 
