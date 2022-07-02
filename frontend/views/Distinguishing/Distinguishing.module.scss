@@ -1,6 +1,7 @@
-@import 'styles/globals.module.scss';
+@import "styles/globals.module.scss";
 
-.title {
+.title,
+.error {
   grid-column: span 12;
 }
 
@@ -24,41 +25,16 @@
   margin-bottom: 100px;
 }
 
-.errorGrid,
-.grid0 {
-  margin-top: 25px;
-  grid-row-start: 10;
-}
-
-.grid1 {
-  margin-top: 25px;
-  grid-row-start: 13;
-}
-
 .submitButton {
   grid-column: span 12;
   margin: 0 auto;
 }
 
-.returnButtonGrid {
-  margin-top: 25px;
-
-  grid-row-start: 21;
-  grid-row-end: 24;
-  grid-column-start: 1;
-  grid-column-end: 13;
+.returnButton {
+  margin-bottom: 25px;
+  grid-column: span 12;
   display: flex;
   justify-content: center;
-}
-
-.returnButtonDefaultGrid {
-  margin-top: 25px;
-  grid-row-start: 13;
-  grid-column-start: 1;
-  grid-column-end: 13;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .textCamWinGrid {
