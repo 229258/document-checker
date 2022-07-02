@@ -5,16 +5,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 
   color: black;
-  font-family: "Poppins";
   background-color: #ffffff;
   border-radius: 5px;
   padding: 18px 45px;
-  z-index: 2;
+  z-index: 91;
 
   &.expanded {
     border-radius: 5px 5px 0 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -58,17 +59,13 @@
 }
 
 .box {
-  height: 538px;
-
-  color: white;
-  font-family: "Poppins";
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 23px 43px 23px 43px;
+  padding: 25px 45px;
   border-radius: 0 0 5px 5px;
-  z-index: 1;
+  z-index: 90;
+  margin-top: -1px;
 }
 
 .boxText {
@@ -78,25 +75,22 @@
 }
 
 .idCardsComponent {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .idCards {
-  height: 262px;
-  width: 748px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .documentDescription {
   color: black;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }

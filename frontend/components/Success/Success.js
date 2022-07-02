@@ -74,28 +74,26 @@ const Success = (props) => {
           onClick={() => handleClick()}
         />
       </div>
-      <div>
-        {clicked && (
-          <div className={SuccessStyles.box}>
-            <div className={SuccessStyles.boxText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br />
-              Duis non ultricies nibh. Suspendisse imperdiet, lacus eu congue
-              gravida, mi nisi fermentum magna, eu faucibus lorem nunc nec erat.
-              In imperdiet, purus at aliquet viverra, libero purus molestie
-              mauris, ut consequat ligula urna nec enim. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Vestibulum nec consequat lorem. Curabitur ultricies,
-              dolor vel mattis luctus, mauris mauris condimentum libero, sit
-              amet rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
-              scelerisque, dolor justo vulputate erat, nec feugiat turpis est in
-              turpis.
-            </div>
-
-            <IdCards />
+      {clicked && (
+        <div className={SuccessStyles.box}>
+          <div className={SuccessStyles.boxText}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <br />
+            Duis non ultricies nibh. Suspendisse imperdiet, lacus eu congue
+            gravida, mi nisi fermentum magna, eu faucibus lorem nunc nec erat.
+            In imperdiet, purus at aliquet viverra, libero purus molestie
+            mauris, ut consequat ligula urna nec enim. Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos
+            himenaeos. Vestibulum nec consequat lorem. Curabitur ultricies,
+            dolor vel mattis luctus, mauris mauris condimentum libero, sit
+            amet rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
+            scelerisque, dolor justo vulputate erat, nec feugiat turpis est in
+            turpis.
           </div>
-        )}
-      </div>
+
+          <IdCards />
+        </div>
+      )}
     </>
   );
 };
