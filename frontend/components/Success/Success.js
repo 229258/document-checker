@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from '@iconify/react';
 
 import SuccessStyles from "./Success.module.scss";
 
@@ -49,18 +50,19 @@ const Success = (props) => {
   return (
     <>
       <div
-        className={`${SuccessStyles.container} ${
-          clicked ? SuccessStyles.halfBorders : SuccessStyles.fullBorders
-        } ${clicked && SuccessStyles.shadow}`}
+        className={`${SuccessStyles.container} ${clicked ? SuccessStyles.halfBorders : SuccessStyles.fullBorders
+          } ${clicked && SuccessStyles.shadow}`}
       >
         <div className={SuccessStyles.flag}>
-          <Image
+          {/* <Image
             className={SuccessStyles.flagImage}
             src={`/icons/${countryCode}.svg`}
             alt="Country Flag"
             height="50"
             width="50"
-          />
+          /> */}
+          <Icon className={SuccessStyles.flagImage} icon="emojione:flag-for-poland" />
+
         </div>
 
         <div className={SuccessStyles.titleComponent}>
