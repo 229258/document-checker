@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const Main = (props) => {
-  const { args, page, args2 } = props;
+  const { args, page } = props;
   return (
     <>
       {page === "INFORMATION" ? (
@@ -13,7 +13,7 @@ const Main = (props) => {
         </>
       ) : null}
       {/* TODO: remove this if all pages use correct grid system */}
-      {page !== "LANDING" ?
+      {page !== "LANDING" && page !== "CONTACT" && page !== "DISTINGUISHING" ?
         <div style={{ display: "grid", gridColumn: "span 12" }} className={styles.wrapper}>
           {args()}
         </div>

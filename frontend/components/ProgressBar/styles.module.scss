@@ -1,4 +1,8 @@
+@import 'styles/globals.module.scss';
+
 .container {
+  // TODO: this needs rewriting bc position absolute destroys rwd 
+  // width: 100%;
   width: 969px;
   height: 221px;
   display: grid;
@@ -6,11 +10,6 @@
   grid-template-rows: 138px 48px;
   column-gap: 126px;
   row-gap: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  position: absolute;
-  color: white;
-  font-family: "Poppins";
 }
 
 .firstStepGrid {

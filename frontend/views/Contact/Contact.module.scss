@@ -1,18 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
+@import 'styles/globals.module.scss';
 
-.container {
-  min-height: 800px;
-  display: grid;
-  grid-template-columns: repeat(12, 58px);
-  grid-template-rows: repeat(12, 66.6px);
-  column-gap: 30px;
+.title {
+  grid-column: span 12;
 }
 
-.contactTeamGrid {
-  grid-column-start: 1;
-  grid-row-start: 5;
+.contactTeam {
+  grid-column: span 12;
+  margin-top: 100px;
 }
 
-.titleGrid {
-  grid-row-start: 2;
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .contactTeam {
+    margin-top: 160px;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint-width) {
+  .contactTeam {
+    margin-top: 110px;
+  }
 }

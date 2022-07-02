@@ -11,15 +11,15 @@ import { justyna, wojtek, czarek, bartek } from "./helper";
 
 const Team = () => {
   return (
-    <div className={ContactStyles.container}>
-      <div className={ContactStyles.titleGrid}>
+    <>
+      <div className={ContactStyles.title}>
         <Title
           title={"Zespół"}
-          subTitle={"Politechnika Łódzka, WEEIA, informatyka niestacjonarna"}
+          subTitle={"Politechnika Łódzka, WEEIA, informatyka\xa0niestacjonarna"}
         />
       </div>
 
-      <div className={ContactStyles.contactTeamGrid}>
+      <div className={ContactStyles.contactTeam}>
         <ContactTeam
           justyna={justyna}
           wojtek={wojtek}
@@ -27,7 +27,7 @@ const Team = () => {
           bartek={bartek}
         />
       </div>
-    </div>
+    </>
   );
 };
 

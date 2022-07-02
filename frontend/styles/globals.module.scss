@@ -9,7 +9,7 @@ $mobile-breakpoint-width: 480px;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 110px 68px auto;
+    grid-template-rows: 110px 68px min-content;
     column-gap: 30px;
     row-gap: 68px;
 
@@ -22,7 +22,7 @@ $mobile-breakpoint-width: 480px;
 
 @media screen and (max-width: calc($grid-width + 60px)) {
     .mainContainer {
-        grid-template-rows: 90px 36px auto;
+        grid-template-rows: 90px 36px min-content;
         row-gap: 36px;
     }
 }
@@ -34,7 +34,7 @@ $mobile-breakpoint-width: 480px;
 
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 90px 36px auto;
+        grid-template-rows: 90px 36px min-content;
         column-gap: 8px;
         row-gap: 36px;
 
