@@ -9,14 +9,15 @@ const ButtonElement = (props) => {
   const [frontImage, setFrontImage] = useState();
   const [backImage, setBackImage] = useState();
 
+  const getImage = getFrontImage || getBackImage;
+
   return (
     <>
       <div className={styles[`${position}Grid`]}>
         <div className={styles.box}>
           <div className={styles.fileUploader}>
             <FileUploaderComponent
-              getFrontImage={getFrontImage}
-              getBackImage={getBackImage}
+              getImage={getImage}
               setFrontImage={setFrontImage}
               setBackImage={setBackImage}
               position={position}
