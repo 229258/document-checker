@@ -44,7 +44,7 @@ const DefaultButton = (props) => {
       className={`${styles[style]} ${tooltip ? styles.tooltip : null}`}
       onClick={style !== 'primaryDisabled' && dataToUpload ? uploadFiles : null}
     >
-      {description}
+      {!link && description}
       {link && <Link href={link}>{description}</Link>}
       {tooltip && <span class={styles.tooltipText}>{tooltip}</span>}
     </div>
