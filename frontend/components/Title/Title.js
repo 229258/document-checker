@@ -5,19 +5,18 @@ import styles from "./styles.module.scss";
 const Title = (props) => {
   const { title, subTitle } = props;
 
-  const subTitleStyle = title ? styles.subTitle : styles.optionalSubTitle;
   return (
     <div className={styles.container}>
       {title && (
-        <div className={`${styles.title} ${styles.h1Light} ${styles.flex}`}>
+        <h1 className={styles.title}>
           {title}
-        </div>
+        </h1>
       )}
 
       {subTitle && (
-        <div className={`${subTitleStyle} ${styles.h3Light} ${styles.flex}`}>
+        <h3 className={styles.subTitle}>
           {subTitle}
-        </div>
+        </h3>
       )}
     </div>
   );

@@ -3,29 +3,16 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const teamMember = (props) => {
-  const { albumNumber, personName, style, position } = props;
+  const { albumNumber, personName, style } = props;
   return (
-    <>
-      <div className={styles[`${position}Person`]}>
-        <div className={styles[style]} />
-      </div>
+    <div className={styles.teamMember}>
+      <div className={styles[style]} />
 
-      <div
-        className={`${styles[`${position}AlbumNumber`]}
-            ${styles.h4Light} 
-            ${styles.flex}`}
-      >
-        {albumNumber}
+      <div className={styles.personName}>
+        <h4 className={styles.h4Light}>{albumNumber}</h4>
+        <h4 className={styles.h4Light}>{personName}</h4>
       </div>
-
-      <div
-        className={`${styles[`${position}Name`]}
-            ${styles.h4Light}
-            ${styles.flex}`}
-      >
-        {personName}
-      </div>
-    </>
+    </div>
   );
 };
 
