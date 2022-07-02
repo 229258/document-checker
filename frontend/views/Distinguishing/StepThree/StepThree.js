@@ -9,10 +9,12 @@ import Error from "../../../components/Error";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
 import useStepThree from "./StepThree.hook";
 import Success from "../../../components/Success/Success";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const ThirdPage = () => {
   const [errorClicked, setErrorClicked] = useState(false);
   const data = useStepThree();
+  const isMobile = useMediaQuery(480);
 
   console.log("co w data", data);
 
@@ -45,7 +47,7 @@ const ThirdPage = () => {
 
       <div className={DistinguishingStyles.resultContainer}>
         <div className={DistinguishingStyles.title}>
-          <Title title={"Twój wynik"} />
+          <Title title={!isMobile && "Twój wynik"} subTitle={isMobile && "Twój wynik"} />
         </div>
         {!data?.length && (
           <>

@@ -115,4 +115,17 @@
   .bottomMargin {
     margin-bottom: 10px;
   }
+
+  .othersTitle {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+  }
+
+  .resultContainer {
+    .title {
+      display: flex;
+      margin-bottom: 36px;
+    }
+  }
 }
