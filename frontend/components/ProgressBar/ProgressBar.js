@@ -4,7 +4,6 @@ import styles from "./styles.module.scss";
 
 const BarElement = (props) => {
   const {
-    position,
     number,
     firstDescription,
     secondDescription,
@@ -14,26 +13,15 @@ const BarElement = (props) => {
   } = props;
   return (
     <>
-      <div className={styles[`${position}StepGrid`]}>
-        <div className={styles.flex}>
-          <div className={`${styles.elipse} ${styles[status]}`}>
-            <div className={styles.number}>{number}</div>
-          </div>
+      <div className={styles.step}>
+        <div className={`${styles.elipse} ${styles[status]}`}>
+          {number && <div className={styles.number}>{number}</div>}
         </div>
-      </div>
-      {bar && (
-        <div
-          className={`${styles[`${position}StepBarGrid`]} ${
-            styles.flexStepBar
-          }`}
-        >
-          <div className={styles[`${barStatus}StepBar`]} />
-        </div>
-      )}
-
-      <div className={styles[`${position}StepDescriptionGrid`]}>
-        <div className={styles.flex}>{firstDescription}</div>
-        <div className={styles.flex}>{secondDescription}</div>
+        {bar && <div className={`${styles.stepBar} ${styles[`${barStatus}StepBar`]}`}></div>}
+        {number && <div className={styles.description}>
+          <span>{firstDescription}</span>
+          <span>{secondDescription}</span>
+        </div>}
       </div>
     </>
   );
@@ -47,7 +35,7 @@ const ProgressBar = (props) => {
     firstBarStatus,
     secondBarStatus,
   } = props;
-  const isMobile = useMediaQuery(1200);
+  const isMobile = useMediaQuery(1000);
   if (!isMobile) {
     return (
       <div className={styles.container}>
