@@ -59,7 +59,7 @@ const SecondPage = () => {
           getBackImage={getBackImage}
         />
       </div>
-      <div className={`${DistinguishingStyles.submitButton}`}>
+      <div className={DistinguishingStyles.submitButton}>
         <DefaultButton
           description={"prześlij zdjęcia"}
           style={frontImage && backImage ? "primary" : "primaryDisabled"}
@@ -67,7 +67,7 @@ const SecondPage = () => {
           dataToUpload={[frontImage, backImage]}
         />
       </div>
-      <div className={`${DistinguishingStyles.bottomMargin}`}></div>
+      <div className={DistinguishingStyles.bottomMargin}></div>
     </>
   );
 };

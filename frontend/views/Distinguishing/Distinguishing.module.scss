@@ -88,6 +88,16 @@
   position: fixed;
 }
 
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .submitButton {
+    margin: 0;
+  }
+
+  .bottomMargin {
+    margin-bottom: 2px;
+  }
+}
+
 @media screen and (max-width: $mobile-breakpoint-width) {
   .subTitle {
     margin-bottom: 25px;
@@ -95,5 +105,9 @@
 
   .progressBar {
     margin: 0;
+  }
+
+  .bottomMargin {
+    margin-bottom: 10px;
   }
 }

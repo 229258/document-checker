@@ -37,7 +37,7 @@ const FirstPage = () => {
           rightButton={rightElementData}
         />
       </div>
-      <div className={`${DistinguishingStyles.bottomMargin}`}></div>
+      <div className={DistinguishingStyles.bottomMargin}></div>
     </>
   );
 };

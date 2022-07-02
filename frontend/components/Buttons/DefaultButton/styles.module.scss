@@ -141,9 +141,17 @@
 @media screen and (max-width: calc($grid-width + 60px)) {
 
   .primaryBig,
-  .secondaryBig,
+  .secondaryBig {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: $tablet-breakpoint-width) {
+
   .primary,
-  .secondary {
+  .secondary,
+  .primaryDisabled {
     width: 100%;
   }
 

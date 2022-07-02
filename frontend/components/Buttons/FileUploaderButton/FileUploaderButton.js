@@ -1,3 +1,4 @@
+import useMediaQuery from "hooks/useMediaQuery.hook";
 import React, { useState } from "react";
 import FileUploaderComponent from "../../FileUploader/FileUploader";
 
@@ -8,6 +9,7 @@ const ButtonElement = (props) => {
 
   const [frontImage, setFrontImage] = useState();
   const [backImage, setBackImage] = useState();
+  const isTablet = useMediaQuery(768);
 
   const getImage = getFrontImage || getBackImage;
 
@@ -43,11 +45,11 @@ const ButtonElement = (props) => {
               {description}
             </div>
 
-            <div
+            {!isTablet && <div
               className={styles.secondDescription}
             >
               (lub przeciągnij)
-            </div>
+            </div>}
           </>
         )}
       </div>
