@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import ErrorStyles from "./Error.module.scss";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const IdCards = () => {
   return (
@@ -37,7 +38,7 @@ const Element = (props) => {
 
   return (
     <div className={ErrorStyles.elementContainer}>
-      <Image src={"/icons/marked.svg"} alt="Marked" height="24" width="24" />
+      <Image src={"/icons/marked.svg"} className={ErrorStyles.stepImage} alt="Marked" height="24" width="24" />
 
       <div className={ErrorStyles.text}>{text}</div>
     </div>
@@ -63,13 +64,13 @@ const CheckSteps = () => {
 
 const Error = (props) => {
   const { handleClick, clicked } = props;
+  const isTablet = useMediaQuery(768);
 
   return (
     <>
       <div
-        className={`${ErrorStyles.container} ${
-          clicked ? ErrorStyles.halfBorders : ErrorStyles.fullBorders
-        }`}
+        className={`${ErrorStyles.container} ${clicked ? ErrorStyles.expanded : null}`}
+        onClick={() => isTablet && handleClick()}
       >
         <div className={ErrorStyles.warningIcon}>
           <Image
@@ -91,20 +92,18 @@ const Error = (props) => {
           </h1>
         </div>
 
-        <div className={ErrorStyles.angle}>
-          <Image
-            className={ErrorStyles.angleCursor}
-            src={
-              clicked
-                ? "/icons/angle-up-white.svg"
-                : "/icons/angle-down-white.svg"
-            }
-            alt={clicked ? "Angle up" : "Angle down"}
-            height="64"
-            width="64"
-            onClick={() => handleClick()}
-          />
-        </div>
+        {!isTablet && <Image
+          className={ErrorStyles.angle}
+          src={
+            clicked
+              ? "/icons/angle-up-white.svg"
+              : "/icons/angle-down-white.svg"
+          }
+          alt={clicked ? "Angle up" : "Angle down"}
+          height="64"
+          width="64"
+          onClick={() => handleClick()}
+        />}
       </div>
       <div>
         {clicked && (
