@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Icon } from '@iconify/react';
 
 import SuccessStyles from "./Success.module.scss";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const IdCards = () => {
   return (
@@ -38,6 +39,7 @@ const IdCards = () => {
 const Success = (props) => {
   const { countryName, countryCode, prediction } = props;
   const [clicked, setClicked] = useState(false);
+  const isTablet = useMediaQuery(768);
 
   const handleClick = () => {
     if (!clicked) {
@@ -51,6 +53,7 @@ const Success = (props) => {
     <>
       <div
         className={`${SuccessStyles.container} ${clicked ? SuccessStyles.expanded : null}`}
+        onClick={() => isTablet && setClicked(!clicked)}
       >
         {/* TODO: icon should be changed w/ result */}
         <Icon className={SuccessStyles.flag} icon="emojione:flag-for-poland" />
@@ -61,8 +64,8 @@ const Success = (props) => {
           <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>
         </div>
 
-        <Image
-          className={SuccessStyles.angleCursor}
+        {!isTablet && <Image
+          className={SuccessStyles.angle}
           src={
             clicked
               ? "/icons/angle-up-black.svg"
@@ -72,7 +75,7 @@ const Success = (props) => {
           height="64"
           width="64"
           onClick={() => handleClick()}
-        />
+        />}
       </div>
       {clicked && (
         <div className={SuccessStyles.box}>
