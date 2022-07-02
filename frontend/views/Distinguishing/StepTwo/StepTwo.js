@@ -8,10 +8,12 @@ import Title from "../../../components/Title";
 import FileUploaderButton from "../../../components/Buttons/FileUploaderButton/FileUploaderButton";
 import { leftElementData, rightElementData } from "../helper";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const SecondPage = () => {
   const [frontImage, setFrontImage] = useState(null);
   const [backImage, setBackImage] = useState(null);
+  const isMobile = useMediaQuery(480);
 
   const getFrontImage = (data) => {
     if (frontImage) return;
@@ -45,6 +47,9 @@ const SecondPage = () => {
       </div>
 
       <div className={DistinguishingStyles.buttonContainer}>
+        <div className={DistinguishingStyles.subTitle}>
+          <Title subTitle={"Prześlij pliki ze\xa0zdjęciami dowodu"} />
+        </div>
         <FileUploaderButton
           leftButton={{
             ...leftElementData,
@@ -63,7 +68,7 @@ const SecondPage = () => {
         <DefaultButton
           description={"prześlij zdjęcia"}
           style={frontImage && backImage ? "primary" : "primaryDisabled"}
-          tooltip={frontImage && backImage ? null : "Prześliij oba zdjęcia, by kontynuować"}
+          tooltip={(frontImage && backImage) || isMobile ? null : "Prześliij oba zdjęcia, by kontynuować"}
           dataToUpload={[frontImage, backImage]}
         />
       </div>
