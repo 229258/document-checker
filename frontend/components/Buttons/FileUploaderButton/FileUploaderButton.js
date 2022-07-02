@@ -13,8 +13,6 @@ const ButtonElement = (props) => {
 
   const getImage = getFrontImage || getBackImage;
 
-  const getImage = getFrontImage || getBackImage;
-
   return (
     <>
       <div className={`${styles.box} ${uploaded ? styles.uploaded : null} ${getFrontImage ? styles.front : styles.back}`}>

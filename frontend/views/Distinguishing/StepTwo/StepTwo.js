@@ -70,7 +70,7 @@ const SecondPage = () => {
         <DefaultButton
           description={"prześlij zdjęcia"}
           style={frontImage && backImage ? "primary" : "primaryDisabled"}
-          tooltip={(frontImage && backImage) || isMobile ? null : "Prześliij oba zdjęcia, by kontynuować"}
+          tooltip={(frontImage && backImage) || isMobile ? null : "Prześlij oba zdjęcia, by kontynuować"}
           dataToUpload={[frontImage, backImage]}
         />
       </div>
