@@ -50,7 +50,8 @@
 .primary,
 .primaryDisabled,
 .secondary {
-  width: 232px;
+  min-width: 232px;
+  padding: 0 30px;
 }
 
 .secondary,

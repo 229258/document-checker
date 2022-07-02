@@ -77,7 +77,7 @@ const ThirdPage = () => {
 
           <div className={DistinguishingStyles.returnButton}>
             <DefaultButton
-              description={"Spróbuj ponownie"}
+              description={"sprawdź inny dokument"}
               style={"secondary"}
               link={"/distinguishing"}
             />
