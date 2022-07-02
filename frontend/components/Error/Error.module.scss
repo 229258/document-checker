@@ -7,17 +7,13 @@
   justify-content: space-between;
 
   color: white;
-  font-family: "Poppins";
   background-color: #ff6b6c;
-  border-radius: 5px 5px 0 0;
-}
-
-.fullBorders {
   border-radius: 5px;
-}
 
-.halfBorders {
-  border-radius: 5px 5px 0 0;
+  &.expanded {
+    border-radius: 5px 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .warningIcon {

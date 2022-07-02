@@ -62,6 +62,7 @@ const ThirdPage = () => {
                 link={"/distinguishing"}
               />
             </div>
+            <div className={DistinguishingStyles.bottomMargin}></div>
           </>
         )}
         {data?.length && (

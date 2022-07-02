@@ -67,9 +67,7 @@ const Error = (props) => {
   return (
     <>
       <div
-        className={`${ErrorStyles.container} ${
-          clicked ? ErrorStyles.halfBorders : ErrorStyles.fullBorders
-        }`}
+        className={`${ErrorStyles.container} ${clicked ? ErrorStyles.expanded : null}`}
       >
         <div className={ErrorStyles.warningIcon}>
           <Image
@@ -93,7 +91,7 @@ const Error = (props) => {
 
         <div className={ErrorStyles.angle}>
           <Image
-            className={ErrorStyles.angleCursor}
+            className={ErrorStyles.angle}
             src={
               clicked
                 ? "/icons/angle-up-white.svg"
