@@ -50,20 +50,10 @@ const Success = (props) => {
   return (
     <>
       <div
-        className={`${SuccessStyles.container} ${clicked ? SuccessStyles.halfBorders : SuccessStyles.fullBorders
-          } ${clicked && SuccessStyles.shadow}`}
+        className={`${SuccessStyles.container} ${clicked ? SuccessStyles.expanded : null}`}
       >
-        <div className={SuccessStyles.flag}>
-          {/* <Image
-            className={SuccessStyles.flagImage}
-            src={`/icons/${countryCode}.svg`}
-            alt="Country Flag"
-            height="50"
-            width="50"
-          /> */}
-          <Icon className={SuccessStyles.flagImage} icon="emojione:flag-for-poland" />
-
-        </div>
+        {/* TODO: icon should be changed w/ result */}
+        <Icon className={SuccessStyles.flag} icon="emojione:flag-for-poland" />
 
         <div className={SuccessStyles.titleComponent}>
           <h1 className={SuccessStyles.title}>{countryName}</h1>
@@ -71,28 +61,24 @@ const Success = (props) => {
           <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>
         </div>
 
-        <div className={SuccessStyles.angle}>
-          <Image
-            className={SuccessStyles.angleCursor}
-            src={
-              clicked
-                ? "/icons/angle-up-black.svg"
-                : "/icons/angle-down-black.svg"
-            }
-            alt={clicked ? "Angle up" : "Angle down"}
-            height="64"
-            width="64"
-            onClick={() => handleClick()}
-          />
-        </div>
+        <Image
+          className={SuccessStyles.angleCursor}
+          src={
+            clicked
+              ? "/icons/angle-up-black.svg"
+              : "/icons/angle-down-black.svg"
+          }
+          alt={clicked ? "Angle up" : "Angle down"}
+          height="64"
+          width="64"
+          onClick={() => handleClick()}
+        />
       </div>
       <div>
         {clicked && (
           <div className={SuccessStyles.box}>
             <div className={SuccessStyles.boxText}>
-              Jakiś opis zasad dokumentów itede itepe, to wszystko dynamicznie
-              się rozszerza, w kilku krajach może być różna liczba dokumentów,
-              no limit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />
               Duis non ultricies nibh. Suspendisse imperdiet, lacus eu congue
               gravida, mi nisi fermentum magna, eu faucibus lorem nunc nec erat.
