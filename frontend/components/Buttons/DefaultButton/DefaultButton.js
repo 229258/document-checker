@@ -11,24 +11,33 @@ const DefaultButton = (props) => {
   console.log("dataToUpload", dataToUpload);
 
   const uploadFiles = async () => {
-    const response = await fetch("https://dokumenciki.herokuapp.com/predict/", {
-      method: "POST",
-      body: dataToUpload,
-    });
+    try {
+      const response = await fetch(
+        "https://dokumenciki.herokuapp.com/predict/",
+        {
+          method: "POST",
+          body: dataToUpload,
+        }
+      );
 
-    //dataToUpload
-    const status = await response.json();
+      const status = await response.json();
 
-    console.log("co w status", status);
+      console.log("co w status", status);
 
-    if (status) {
-      if (localStorage.getItem("test")) {
+      if (localStorage.getItem("data")) {
         localStorage.clear();
       }
 
       const dataToStore = JSON.stringify(status);
 
-      localStorage.setItem("test", dataToStore); // lub pusty Array
+      localStorage.setItem("data", dataToStore);
+      router.push("/distinguishing/final");
+    } catch (err) {
+      if (localStorage.getItem("data")) {
+        localStorage.clear();
+      }
+
+      localStorage.setItem("data", null);
       router.push("/distinguishing/final");
     }
   };

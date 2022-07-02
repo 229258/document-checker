@@ -11,13 +11,14 @@
 }
 
 .progressBar {
+  display: flex;
   grid-column: span 12;
-  margin-top: 90px;
-  margin-bottom: calc(90px - 68px);
+  margin: 60px 0;
 }
 
 .buttonContainer {
   grid-column: span 12;
+  margin-bottom: 100px;
 }
 
 .buttonGrid {
@@ -49,7 +50,6 @@
   background-size: 300px;
   background-position-x: 53%;
   background-position-y: 35%;
-  /*TODO wstawić większy rozmar obrazka bo mały mnie wkurwia*/
   background-image: url("https://i.ibb.co/5BRrrqR/video.png");
 }
 
@@ -63,4 +63,14 @@
   margin: 10px 0px;
   cursor: pointer;
   position: fixed;
+}
+
+@media screen and (max-width: $mobile-breakpoint-width) {
+  .subTitle {
+    margin-bottom: 25px;
+  } 
+
+  .progressBar {
+    margin: 0;
+  }
 }
