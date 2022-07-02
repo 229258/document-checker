@@ -1,7 +1,8 @@
 @import "styles/globals.module.scss";
 
 .title,
-.error {
+.error,
+.success {
   grid-column: span 12;
 }
 
