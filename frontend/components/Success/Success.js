@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 
 import SuccessStyles from "./Success.module.scss";
 import useMediaQuery from "hooks/useMediaQuery.hook";
+
+import { getName } from "./helper";
 
 const IdCards = () => {
   return (
@@ -49,32 +51,40 @@ const Success = (props) => {
     return setClicked(false);
   };
 
+  const emojiCountryName = getName(countryCode)?.toLowerCase();
+
   return (
     <>
       <div
-        className={`${SuccessStyles.container} ${clicked ? SuccessStyles.expanded : null}`}
+        className={`${SuccessStyles.container} ${
+          clicked ? SuccessStyles.expanded : null
+        }`}
         onClick={() => isTablet && setClicked(!clicked)}
       >
-        {/* TODO: icon should be changed w/ result */}
-        <Icon className={SuccessStyles.flag} icon="emojione:flag-for-poland" />
+        <Icon
+          className={SuccessStyles.flag}
+          icon={`emojione:flag-for-${emojiCountryName}`}
+        />
 
         <div className={SuccessStyles.titleComponent}>
           <h1 className={SuccessStyles.title}>{countryName}</h1>
           <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>
         </div>
 
-        {!isTablet && <Image
-          className={SuccessStyles.angle}
-          src={
-            clicked
-              ? "/icons/angle-up-black.svg"
-              : "/icons/angle-down-black.svg"
-          }
-          alt={clicked ? "Angle up" : "Angle down"}
-          height="64"
-          width="64"
-          onClick={() => handleClick()}
-        />}
+        {!isTablet && (
+          <Image
+            className={SuccessStyles.angle}
+            src={
+              clicked
+                ? "/icons/angle-up-black.svg"
+                : "/icons/angle-down-black.svg"
+            }
+            alt={clicked ? "Angle up" : "Angle down"}
+            height="64"
+            width="64"
+            onClick={() => handleClick()}
+          />
+        )}
       </div>
       {clicked && (
         <div className={SuccessStyles.box}>
@@ -87,8 +97,8 @@ const Success = (props) => {
             mauris, ut consequat ligula urna nec enim. Class aptent taciti
             sociosqu ad litora torquent per conubia nostra, per inceptos
             himenaeos. Vestibulum nec consequat lorem. Curabitur ultricies,
-            dolor vel mattis luctus, mauris mauris condimentum libero, sit
-            amet rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
+            dolor vel mattis luctus, mauris mauris condimentum libero, sit amet
+            rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
             scelerisque, dolor justo vulputate erat, nec feugiat turpis est in
             turpis.
           </div>
