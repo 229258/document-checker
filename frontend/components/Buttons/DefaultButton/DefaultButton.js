@@ -13,7 +13,7 @@ const DefaultButton = (props) => {
   const uploadFiles = async () => {
     const response = await fetch("https://dokumenciki.herokuapp.com/predict/", {
       method: "POST",
-      body: {},
+      body: dataToUpload,
     });
 
     //dataToUpload
