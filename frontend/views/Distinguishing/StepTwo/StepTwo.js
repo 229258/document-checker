@@ -62,6 +62,8 @@ const SecondPage = () => {
           }}
           getFrontImage={getFrontImage}
           getBackImage={getBackImage}
+          frontImage={frontImage}
+          backImage={backImage}
         />
       </div>
       <div className={DistinguishingStyles.submitButton}>

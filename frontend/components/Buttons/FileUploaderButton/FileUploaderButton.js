@@ -5,7 +5,7 @@ import FileUploaderComponent from "../../FileUploader/FileUploader";
 import styles from "./styles.module.scss";
 
 const ButtonElement = (props) => {
-  const { position, image, description, getFrontImage, getBackImage } = props;
+  const { position, image, description, getFrontImage, getBackImage, uploaded } = props;
 
   const [frontImage, setFrontImage] = useState();
   const [backImage, setBackImage] = useState();
@@ -15,7 +15,7 @@ const ButtonElement = (props) => {
 
   return (
     <>
-      <div className={styles.box}>
+      <div className={`${styles.box} ${uploaded ? styles.uploaded : null}`}>
         <div className={styles.fileUploader}>
           <FileUploaderComponent
             getImage={getImage}
@@ -58,7 +58,7 @@ const ButtonElement = (props) => {
 };
 
 const FileUploaderButton = (props) => {
-  const { leftButton, rightButton, getFrontImage, getBackImage } = props;
+  const { leftButton, rightButton, getFrontImage, getBackImage, frontImage, backImage } = props;
 
   return (
     <div className={styles.container}>
@@ -67,6 +67,7 @@ const FileUploaderButton = (props) => {
         image={leftButton.image}
         description={leftButton.description}
         getFrontImage={getFrontImage}
+        uploaded={!!frontImage}
       />
 
       <ButtonElement
@@ -74,6 +75,7 @@ const FileUploaderButton = (props) => {
         image={rightButton.image}
         description={rightButton.description}
         getBackImage={getBackImage}
+        uploaded={!!backImage}
       />
     </div>
   );
