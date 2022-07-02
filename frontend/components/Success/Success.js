@@ -22,7 +22,7 @@ const IdCards = () => {
 
           <div className={SuccessStyles.documentDescription}>Przód</div>
         </div>
-
+        
         <div>
           <Image
             src={"/images/back-id-card.png"}
