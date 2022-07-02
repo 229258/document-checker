@@ -43,7 +43,7 @@ const FirstPage = () => {
 
 const StepOne = () => {
   return (
-    <Fullscreen component={<Main args={FirstPage} page={"DISTINGUISHING"} />} page={"DISTINGUISHING"} />
+    <Fullscreen component={<Main args={FirstPage} />} page={"DISTINGUISHING"} />
   );
 };
 
