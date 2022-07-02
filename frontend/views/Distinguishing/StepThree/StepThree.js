@@ -25,15 +25,15 @@ const ThirdPage = () => {
   };
 
   return (
-    <div className={DistinguishingStyles.container}>
-      <div className={DistinguishingStyles.titleGrid}>
+    <>
+      <div className={DistinguishingStyles.title}>
         <Title
           title={"3 proste kroki"}
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
 
-      <div className={DistinguishingStyles.progressBarGrid}>
+      <div className={DistinguishingStyles.progressBar}>
         <ProgressBar
           statusFirst={"success"}
           statusSecond={"success"}
@@ -64,19 +64,19 @@ const ThirdPage = () => {
 
       {data?.length &&
         (console.log("co w data.length", data),
-        (
-          <>
-            {data.map((item, index) => {
-              return (
-                <div className={DistinguishingStyles[`grid${index}`]}>
-                  <Success
-                    countryName={item.country}
-                    prediction={item.prediction}
-                  />
-                </div>
-              );
-            })}
-            {/* <div className={DistinguishingStyles.errorGrid}>
+          (
+            <>
+              {data.map((item, index) => {
+                return (
+                  <div className={DistinguishingStyles[`grid${index}`]}>
+                    <Success
+                      countryName={item.country}
+                      prediction={item.prediction}
+                    />
+                  </div>
+                );
+              })}
+              {/* <div className={DistinguishingStyles.errorGrid}>
               
               <Success
                 countryName={data[0].country}
@@ -84,23 +84,23 @@ const ThirdPage = () => {
               />
             </div> */}
 
-            <div
-              className={
-                errorClicked
-                  ? DistinguishingStyles.returnButtonGrid
-                  : DistinguishingStyles.returnButtonDefaultGrid
-              }
-            >
-              <Title subTitle={"Inne możliwości"} />
-              {/* <DefaultButton
+              <div
+                className={
+                  errorClicked
+                    ? DistinguishingStyles.returnButtonGrid
+                    : DistinguishingStyles.returnButtonDefaultGrid
+                }
+              >
+                <Title subTitle={"Inne możliwości"} />
+                {/* <DefaultButton
                 description={"Spróbuj ponownie"}
                 style={"secondary"}
                 link={"/distinguishing"}
               /> */}
-            </div>
-          </>
-        ))}
-    </div>
+              </div>
+            </>
+          ))}
+    </>
   );
 };
 

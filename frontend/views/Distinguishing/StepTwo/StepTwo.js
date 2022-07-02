@@ -26,15 +26,15 @@ const SecondPage = () => {
   };
 
   return (
-    <div className={DistinguishingStyles.container}>
-      <div className={DistinguishingStyles.titleGrid}>
+    <>
+      <div className={DistinguishingStyles.title}>
         <Title
           title={"3 proste kroki"}
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
 
-      <div className={DistinguishingStyles.progressBarGrid}>
+      <div className={DistinguishingStyles.progressBar}>
         <ProgressBar
           statusFirst={"success"}
           statusSecond={"active"}
@@ -44,11 +44,7 @@ const SecondPage = () => {
         />
       </div>
 
-      {/* <div className={DistinguishingStyles.textGrid}>
-        <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
-      </div> */}
-
-      <div className={DistinguishingStyles.buttonsGrid}>
+      <div className={DistinguishingStyles.buttonContainer}>
         <FileUploaderButton
           leftButton={{
             ...leftElementData,
@@ -63,6 +59,7 @@ const SecondPage = () => {
           getBackImage={getBackImage}
         />
       </div>
+      {/* TODO: pokaz button tylko ze disabled */}
       {frontImage && backImage && (
         <div className={DistinguishingStyles.buttonGrid}>
           <DefaultButton
@@ -73,7 +70,7 @@ const SecondPage = () => {
           />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

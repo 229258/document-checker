@@ -1,28 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@275;700&display=swap");
+@import 'styles/globals.module.scss';
 
-.container {
-  min-height: 1332px;
-  display: grid;
-  grid-template-columns: repeat(12, 58px);
-  grid-auto-rows: 66.6px;
-
-  column-gap: 30px;
+.title {
+  grid-column: span 12;
 }
 
-.titleGrid {
-  grid-row-start: 2;
+.subTitle {
+  grid-column: span 12;
+  margin-bottom: 35px;
 }
 
-.progressBarGrid {
-  grid-row-start: 5;
+.progressBar {
+  grid-column: span 12;
+  margin-top: 90px;
+  margin-bottom: calc(90px - 68px);
 }
 
-.textGrid {
-  grid-row-start: 9;
-}
-
-.buttonsGrid {
-  grid-row-start: 10;
+.buttonContainer {
+  grid-column: span 12;
 }
 
 .errorGrid,

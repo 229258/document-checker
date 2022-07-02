@@ -10,15 +10,15 @@ import { leftElementData, rightElementData } from "../helper";
 
 const FirstPage = () => {
   return (
-    <div className={DistinguishingStyles.container}>
-      <div className={DistinguishingStyles.titleGrid}>
+    <>
+      <div className={DistinguishingStyles.title}>
         <Title
           title={"3 proste kroki"}
           subTitle={"Dane nie są zapisywane na naszych serwerach"}
         />
       </div>
 
-      <div className={DistinguishingStyles.progressBarGrid}>
+      <div className={DistinguishingStyles.progressBar}>
         <ProgressBar
           statusFirst={"active"}
           statusSecond={"nonActive"}
@@ -28,17 +28,16 @@ const FirstPage = () => {
         />
       </div>
 
-      <div className={DistinguishingStyles.textGrid}>
-        <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
-      </div>
-
-      <div className={DistinguishingStyles.buttonsGrid}>
+      <div className={DistinguishingStyles.buttonContainer}>
+        <div className={DistinguishingStyles.subTitle}>
+          <Title subTitle={"Wybierz metodę wprowadzenia dokumentów"} />
+        </div>
         <MethodButton
           leftButton={leftElementData}
           rightButton={rightElementData}
         />
       </div>
-    </div>
+    </>
   );
 };
 
