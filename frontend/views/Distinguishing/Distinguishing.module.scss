@@ -19,17 +19,16 @@
 
 .buttonContainer {
   grid-column: span 12;
+}
+
+.bottomMargin {
+  grid-column: span 12;
   margin-bottom: 100px;
 }
 
-.buttonGrid {
-  margin-top: 25px;
-  grid-row-start: 16;
-  grid-column-start: 1;
-  grid-column-end: 13;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.submitButton {
+  grid-column: span 12;
+  margin: 0 auto;
 }
 
 .returnButton {
@@ -66,12 +65,26 @@
   position: fixed;
 }
 
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .submitButton {
+    margin: 0;
+  }
+
+  .bottomMargin {
+    margin-bottom: 2px;
+  }
+}
+
 @media screen and (max-width: $mobile-breakpoint-width) {
   .subTitle {
     margin-bottom: 25px;
   } 
 
   .progressBar {
-    margin: 0;
+    margin: 15px 0;
+  }
+
+  .bottomMargin {
+    margin-bottom: 10px;
   }
 }

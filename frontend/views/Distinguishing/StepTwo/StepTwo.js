@@ -8,10 +8,12 @@ import Title from "../../../components/Title";
 import FileUploaderButton from "../../../components/Buttons/FileUploaderButton/FileUploaderButton";
 import { leftElementData, rightElementData } from "../helper";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const SecondPage = () => {
   const [frontImage, setFrontImage] = useState(null);
   const [backImage, setBackImage] = useState(null);
+  const isMobile = useMediaQuery(480);
 
   const getFrontImage = (data) => {
     if (frontImage) return;
@@ -45,6 +47,9 @@ const SecondPage = () => {
       </div>
 
       <div className={DistinguishingStyles.buttonContainer}>
+        <div className={DistinguishingStyles.subTitle}>
+          <Title subTitle={"Prześlij pliki ze\xa0zdjęciami dowodu"} />
+        </div>
         <FileUploaderButton
           leftButton={{
             ...leftElementData,
@@ -57,19 +62,19 @@ const SecondPage = () => {
           }}
           getFrontImage={getFrontImage}
           getBackImage={getBackImage}
+          frontImage={frontImage}
+          backImage={backImage}
         />
       </div>
-      {/* TODO: pokaz button tylko ze disabled */}
-      {frontImage && backImage && (
-        <div className={DistinguishingStyles.buttonGrid}>
-          <DefaultButton
-            description={"Prześlij zdjęcia"}
-            style={"primary"}
-            disabled={true}
-            dataToUpload={[frontImage, backImage]}
-          />
-        </div>
-      )}
+      <div className={DistinguishingStyles.submitButton}>
+        <DefaultButton
+          description={"prześlij zdjęcia"}
+          style={frontImage && backImage ? "primary" : "primaryDisabled"}
+          tooltip={(frontImage && backImage) || isMobile ? null : "Prześlij oba zdjęcia, by kontynuować"}
+          dataToUpload={[frontImage, backImage]}
+        />
+      </div>
+      <div className={DistinguishingStyles.bottomMargin}></div>
     </>
   );
 };

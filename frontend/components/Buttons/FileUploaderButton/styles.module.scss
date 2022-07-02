@@ -1,126 +1,88 @@
+@import 'styles/globals.module.scss';
+
 .container {
-  width: 1024px;
-  max-width: 1140px;
-  height: 380px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 43px 337px;
-  column-gap: 27px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  position: absolute;
-  color: white;
-  font-family: "Poppins";
-}
-
-.leftGrid {
-  grid-row-start: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-.rightGrid {
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-column-end: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 .uploadedImage {
-  max-width: 480px;
-  max-height: 317px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .fileUploader {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
 }
 
 .uploadedImageGrid {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
   z-index: 1;
 }
 
 .box {
-  width: 499px;
-  height: 337px;
-
+  height: 350px;
+  width: 50%;
   border: 2px dashed rgba(255, 255, 255, 0.3);
   border-radius: 5px;
-  display: grid;
-  grid-template-columns: 149.5px 200px 149.5px;
-  grid-template-rows: 54px 200px 19px 30px 34px;
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.uploaded {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.front:after {
+  content: "Przód dokumentu";
+  position: absolute;
+  top: 105%;
+}
+
+.back:after {
+  content: "Tył dokumentu";
+  position: absolute;
+  top: 105%;
 }
 
 .box:hover {
-  // background-color: rgba(196, 196, 196, 0.7);
   border: 2px dashed #fad247;
-  //rgba(255, 255, 255, 0.3);
-  // fad247
   border-radius: 5px;
   cursor: pointer;
-}
 
-.descriptionGrid {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  margin-bottom: 2px;
-}
-
-.secondDescriptionGrid {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 5;
-  margin-bottom: 11px;
-}
-
-.imageGrid {
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-column-end: 4;
+  &.uploaded {
+    border: 2px solid #fad247;
+  }
 }
 
 .description {
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-
-  text-align: center;
 }
 
 .secondDescription {
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-
-  text-align: center;
-  color: #ffffff;
-
   opacity: 0.5;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .picture {
@@ -139,4 +101,31 @@
   width: 200px;
 
   background-image: url("https://i.ibb.co/5BRrrqR/video.png");
+}
+
+@media screen and (max-width: $mobile-breakpoint-width) {
+  .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .box {
+    width: 100%;
+    height: 235px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .camera,
+  .picture {
+    width: 138px;
+    height: 138px;
+  }
+
+  .front:after,
+  .back:after {
+    content: "";
+  }
 }
