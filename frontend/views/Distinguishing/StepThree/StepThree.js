@@ -16,8 +16,6 @@ const ThirdPage = () => {
   const data = useStepThree();
   const isMobile = useMediaQuery(480);
 
-  console.log("co w data", data);
-
   const handleClick = () => {
     if (!errorClicked) {
       return setErrorClicked(true);
@@ -47,7 +45,10 @@ const ThirdPage = () => {
 
       <div className={DistinguishingStyles.resultContainer}>
         <div className={DistinguishingStyles.title}>
-          <Title title={!isMobile && "Twój wynik"} subTitle={isMobile && "Twój wynik"} />
+          <Title
+            title={!isMobile && "Twój wynik"}
+            subTitle={isMobile && "Twój wynik"}
+          />
         </div>
         {!data?.length && (
           <>
@@ -66,9 +67,12 @@ const ThirdPage = () => {
         )}
         {data?.length && (
           <>
-            <div key={"success_country"} className={DistinguishingStyles.success}>
+            <div
+              key={"success_country"}
+              className={DistinguishingStyles.success}
+            >
               <Success
-                countryName={data[0].country}
+                countryName={data[0].country_short}
                 countryCode={data[0].country_code}
                 prediction={data[0].prediction}
               />
@@ -84,7 +88,7 @@ const ThirdPage = () => {
                     return (
                       <div key={index} className={DistinguishingStyles.success}>
                         <Success
-                          countryName={item.country}
+                          countryName={item.country_short}
                           countryCode={item.country_code}
                           prediction={item.prediction}
                         />
@@ -94,7 +98,6 @@ const ThirdPage = () => {
                 </div>
               </div>
             )}
-
 
             <div className={DistinguishingStyles.returnButton}>
               <DefaultButton
