@@ -60,7 +60,6 @@ const Success = (props) => {
 
         <div className={SuccessStyles.titleComponent}>
           <h1 className={SuccessStyles.title}>{countryName}</h1>
-
           <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>
         </div>
 

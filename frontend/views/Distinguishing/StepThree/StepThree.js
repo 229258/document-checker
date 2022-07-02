@@ -43,47 +43,68 @@ const ThirdPage = () => {
         />
       </div>
 
-      <div className={DistinguishingStyles.title}>
-        <Title title={"Twój wynik"} />
-      </div>
-      {!data?.length && (
-        <>
-          <div className={DistinguishingStyles.error}>
-            <Error handleClick={handleClick} clicked={errorClicked} />
-          </div>
+      <div className={DistinguishingStyles.resultContainer}>
+        <div className={DistinguishingStyles.title}>
+          <Title title={"Twój wynik"} />
+        </div>
+        {!data?.length && (
+          <>
+            <div className={DistinguishingStyles.error}>
+              <Error handleClick={handleClick} clicked={errorClicked} />
+            </div>
 
-          <div className={DistinguishingStyles.returnButton}>
-            <DefaultButton
-              description={"spróbuj ponownie"}
-              style={"secondary"}
-              link={"/distinguishing"}
-            />
-          </div>
-        </>
-      )}
-      {data?.length && (
-        <>
-          {data.map((item, index) => {
-            return (
-              <div key={index} className={DistinguishingStyles.success}>
-                <Success
-                  countryName={item.country}
-                  countryCode={item.country_code}
-                  prediction={item.prediction}
-                />
+            <div className={DistinguishingStyles.returnButton}>
+              <DefaultButton
+                description={"spróbuj ponownie"}
+                style={"secondary"}
+                link={"/distinguishing"}
+              />
+            </div>
+          </>
+        )}
+        {data?.length && (
+          <>
+            <div key={"success_country"} className={DistinguishingStyles.success}>
+              <Success
+                countryName={data[0].country}
+                countryCode={data[0].country_code}
+                prediction={data[0].prediction}
+              />
+            </div>
+
+            {data.length > 1 && (
+              <div className={DistinguishingStyles.others}>
+                <h4 className={DistinguishingStyles.othersTitle}>
+                  Inne możliwości
+                </h4>
+                <div className={DistinguishingStyles.othersList}>
+                  {data.slice(1).map((item, index) => {
+                    return (
+                      <div key={index} className={DistinguishingStyles.success}>
+                        <Success
+                          countryName={item.country}
+                          countryCode={item.country_code}
+                          prediction={item.prediction}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            );
-          })}
+            )}
 
-          <div className={DistinguishingStyles.returnButton}>
-            <DefaultButton
-              description={"sprawdź inny dokument"}
-              style={"secondary"}
-              link={"/distinguishing"}
-            />
-          </div>
-        </>
-      )}
+
+            <div className={DistinguishingStyles.returnButton}>
+              <DefaultButton
+                description={"sprawdź inny dokument"}
+                style={"secondary"}
+                link={"/distinguishing"}
+              />
+            </div>
+            <div className={DistinguishingStyles.bottomMargin}></div>
+          </>
+        )}
+      </div>
     </>
   );
 };
