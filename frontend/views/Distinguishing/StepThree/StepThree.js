@@ -61,6 +61,29 @@ const ThirdPage = () => {
           </div>
         </>
       )}
+      {data?.length && (
+        <>
+          {data.map((item, index) => {
+            return (
+              <div key={index} className={DistinguishingStyles.success}>
+                <Success
+                  countryName={item.country}
+                  countryCode={item.country_code}
+                  prediction={item.prediction}
+                />
+              </div>
+            );
+          })}
+
+          <div className={DistinguishingStyles.returnButton}>
+            <DefaultButton
+              description={"spróbuj ponownie"}
+              style={"secondary"}
+              link={"/distinguishing"}
+            />
+          </div>
+        </>
+      )}
     </>
   );
 };
