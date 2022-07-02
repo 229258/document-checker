@@ -50,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   z-index: 98;
 }
 
@@ -95,6 +95,7 @@
 }
 
 @media screen and (max-width: $mobile-breakpoint-width) {
+
   .elipse {
     height: 22px;
     width: 22px;
