@@ -22,7 +22,7 @@ const IdCards = () => {
 
           <div className={SuccessStyles.documentDescription}>Przód</div>
         </div>
-        
+
         <div>
           <Image
             src={"/images/back-id-card.png"}
@@ -56,9 +56,8 @@ const Success = (props) => {
   return (
     <>
       <div
-        className={`${SuccessStyles.container} ${
-          clicked ? SuccessStyles.expanded : null
-        }`}
+        className={`${SuccessStyles.container} ${clicked ? SuccessStyles.expanded : null
+          }`}
         onClick={() => isTablet && setClicked(!clicked)}
       >
         <Icon
@@ -68,7 +67,7 @@ const Success = (props) => {
 
         <div className={SuccessStyles.titleComponent}>
           <h1 className={SuccessStyles.title}>{countryName}</h1>
-          <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>
+          {prediction && <h3 className={SuccessStyles.subTitle}>({prediction} pewności)</h3>}
         </div>
 
         {!isTablet && (

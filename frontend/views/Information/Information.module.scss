@@ -18,10 +18,14 @@
   grid-column: span 12;
 
   // TODO: this needs styling
-  background-color: white;
-  color: black;
-  padding: 25px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 100px;
+  // background-color: white;
+  // color: black;
+  // padding: 25px;
+  // border-radius: 5px;
 }
 
 .firstText {
