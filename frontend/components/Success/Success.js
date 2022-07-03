@@ -88,18 +88,24 @@ const Success = (props) => {
       {clicked && (
         <div className={SuccessStyles.box}>
           <div className={SuccessStyles.boxText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br />
-            Duis non ultricies nibh. Suspendisse imperdiet, lacus eu congue
-            gravida, mi nisi fermentum magna, eu faucibus lorem nunc nec erat.
-            In imperdiet, purus at aliquet viverra, libero purus molestie
-            mauris, ut consequat ligula urna nec enim. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos. Vestibulum nec consequat lorem. Curabitur ultricies,
-            dolor vel mattis luctus, mauris mauris condimentum libero, sit amet
-            rutrum ipsum nulla id urna. Aenean ultricies, risus et tempus
-            scelerisque, dolor justo vulputate erat, nec feugiat turpis est in
-            turpis.
+            Dowód osobisty to dokument, który:
+
+            <ul>
+              <li>potwierdza twoją tożsamość (na przykład możesz potwierdzić swoje dane osobowe w banku lub urzędzie),</li>
+              <li>potwierdza twoje polskie obywatelstwo (na przykład za granicą),</li>
+              <li>pozwala wyjechać za granicę bez paszportu między innymi do krajów strefy Schengen i krajów, które honorują dowód osobisty jako dokument podróży, na przykład Albania i Czarnogóra.</li>
+            </ul>
+
+            Dokument ma postać wielowarstwowej karty poliwęglanowej o wymiarach 85,60 × 53,98 mm (standard ID-1 ISO/IEC 7810), zawierającej podstawowe informacje o jej posiadaczu, dacie wydania, organie wydającym i terminie ważności. Informacje zapisane są zarówno w sposób jawny, jak i zakodowany. <br /><br />
+
+            Numer „plastikowego” dowodu osobistego składa się z trzech liter i sześciu cyfr, z których jedna (pierwsza cyfra od lewej) to cyfra kontrolna. Metoda obliczania cyfry kontrolnej i weryfikacji poprawności numeru dowodu osobistego oparta jest o normę ICAO nr 9303.<br /><br />
+
+            Na dole drugiej strony dowodu osobistego w dolnej części, zgodnie z normą ICAO Document 9303, w strefie MRZ powtórzone są dane właściciela w postaci czytelnej dla komputera, co przyspiesza przetwarzanie danych. Zapis ten składa się z trzech linijek po 30 znaków wydrukowanych krojem pisma OCR-B. Dodatkowo dane te są uzupełnione o cyfrę kontrolną dla każdego pola cyfrowego oraz cyfrę kontrolną na końcu obejmującą większość danych z poprzednich pól. Nazwisko i imię w tym zapisie nie zawiera polskich znaków diakrytycznych.<br /><br />
+
+            Dowód osobisty ważny jest przez 10 lat od wydania, jednak jest wyjątek: osoby, które nie ukończyły 5 lat, otrzymują dokument z pięcioletnim terminem ważności.<br /><br />
+
+            Dowody osobiste starego wzoru (książeczkowe) wydane przed dniem 1 stycznia 2001 utraciły ważność z dniem 1 stycznia 2008.<br /><br />
+
           </div>
 
           <IdCards />
