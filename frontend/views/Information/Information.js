@@ -3,6 +3,7 @@ import Main from "../../components/Main";
 import Fullscreen from "../../components/Layout/Fullscreen";
 
 import InformationStyles from "./Information.module.scss";
+import Success from "components/Success";
 
 const Map = () => {
   return (
@@ -18,6 +19,14 @@ const Description = () => {
       <Map />
 
       <div className={InformationStyles.info}>
+        <div><Success countryName="Polska" countryCode="POL" /></div>
+        <div><Success countryName="Niemcy" countryCode="DEU" /></div>
+        <div><Success countryName="Francja" countryCode="FRA" /></div>
+        <div><Success countryName="Wielka Brytania" countryCode="GBR" /></div>
+        <div><Success countryName="Stany Zjednoczone" countryCode="USA" /></div>
+      </div>
+
+      {/* <div className={InformationStyles.info}>
         <div className={InformationStyles.country}>
           <h4 className={InformationStyles.h4Bold}>
             Rzeczpospolita Republika Polska
@@ -62,7 +71,7 @@ const Description = () => {
             <h3 className={InformationStyles.h3Light}>Tył wzoru dokumentu</h3>
           </div>
         </div>
-      </div>
+      </div> */}
 
     </>
   );

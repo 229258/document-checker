@@ -76,12 +76,14 @@
     grid-column: span 12;
     position: fixed;
     bottom: 42px;
-    width: calc(100% - 116px);
+    left: 58px;
+    right: 58px;
   }
 }
 
 @media screen and (max-width: $tablet-breakpoint-width) {
   .buttonContainer {
-    width: calc(100% - 32px);
+    left: 16px;
+    right: 16px;
   }
 }

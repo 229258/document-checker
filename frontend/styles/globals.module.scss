@@ -10,6 +10,7 @@ $mobile-breakpoint-width: 480px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 110px min-content;
+    grid-auto-rows: minmax(min-content, max-content);
     column-gap: 30px;
     row-gap: 68px;
 
@@ -35,6 +36,7 @@ $mobile-breakpoint-width: 480px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 90px min-content;
+        grid-auto-rows: minmax(min-content, max-content);
         column-gap: 8px;
         row-gap: 36px;
 

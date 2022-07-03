@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
+  min-height: 56px;
   border-radius: 5px;
   font-family: "Poppins";
   font-style: normal;
@@ -50,7 +50,8 @@
 .primary,
 .primaryDisabled,
 .secondary {
-  width: 232px;
+  min-width: 232px;
+  padding: 0 30px;
 }
 
 .secondary,
