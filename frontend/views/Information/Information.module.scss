@@ -2,30 +2,23 @@
 
 .mapa {
   grid-column: span 12;
-  background-color: #DDEBFD;
+  // background-color: #DDEBFD;
+  background-color: white;
   height: 540px;
   border-radius: 5px;
 
-  // TODO: this is a temporary replacement for world map
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: black;
-  font-weight: 700;
+  width: 100%;
 }
 
 .info {
   grid-column: span 12;
 
-  // TODO: this needs styling
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 100px;
-  // background-color: white;
-  // color: black;
-  // padding: 25px;
-  // border-radius: 5px;
 }
 
 .firstText {
