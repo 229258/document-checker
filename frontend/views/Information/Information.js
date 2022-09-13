@@ -221,22 +221,34 @@ const Map = ({ selectedCountry, setSelectedCountry }) => {
   );
 };
 
-const Search = () => {
+const Search = ({ onChange }) => {
   return (
-    <input type="text" className={InformationStyles.search} placeholder="Wyszukaj kraj..." />
+    <input type="text" className={InformationStyles.search} placeholder="Wyszukaj kraj..." onChange={onChange} />
   );
 }
 
 const Description = () => {
+  const initCountries = Object.keys(availableCountries).map((country) => ({ name: availableCountries[country].name, code: availableCountries[country].code }));
   const [selectedCountry, setSelectedCountry] = React.useState('Poland');
   const isMobile = useMediaQuery(480);
+  const [search, setSearch] = React.useState('');
+  const [searchCountries, setSearchCountries] = React.useState(initCountries);
+
+  const findCountries = () => {
+    setSearchCountries(() => initCountries.filter(country => country.name.toLowerCase().includes(search.toLowerCase())));
+  }
+
+  React.useEffect(() => {
+    findCountries();
+  }, [search]);
 
   return (
     <>
       {!isMobile && <Map selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />}
-      {isMobile && <Search />}
+      {isMobile && <Search search={search} onChange={(e) => setSearch(e.target.value)} />}
       <div className={InformationStyles.info}>
-        <div><Success countryName={availableCountries[selectedCountry]?.name} countryCode={availableCountries[selectedCountry]?.code} /></div>
+        {!isMobile && <div><Success countryName={availableCountries[selectedCountry]?.name} countryCode={availableCountries[selectedCountry]?.code} /></div>}
+        {isMobile && searchCountries.map(country => <div><Success countryName={country.name} countryCode={country.code} /></div>)}
       </div>
     </>
   );
