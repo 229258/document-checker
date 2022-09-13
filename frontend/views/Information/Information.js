@@ -69,13 +69,13 @@ const allCountries = [
   'Wales'
 ];
 
-const countriesAvailable = {
+const availableCountries = {
   'Poland': { name: 'Polska', code: 'POL' },
   'Austria': { name: 'Austria', code: 'AUT' },
   'FlemishRegion': { name: 'Belgia', code: 'BEL' },  // TODO: Waloonregion + Felmish Region -> Belgium here?
   'Bulgaria': { name: 'Bułgaria', code: 'BGR' },
   // 'Belgium': { name: 'Cyprus', code: 'CYP' }, // TODO: part of Greece here
-  'CzechRepublic': { name: 'Czechy', code: 'CZE' },
+  'CzechRepublic': { name: 'Czechy', code: 'CZE' }, // TODO: icons
   'Germany': { name: 'Niemcy', code: 'DEU' },
   'Spain': { name: 'Hiszpania', code: 'ESP' },
   'Estonia': { name: 'Estonia', code: 'EST' },
@@ -177,10 +177,9 @@ const Country = ({ geo, type, handleClick }) => {
 
 }
 
-const Map = () => {
+const Map = ({ selectedCountry, setSelectedCountry }) => {
   const geoUrl =
     "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/europe.json";
-  const [selectedCountry, setSelectedCountry] = React.useState('Poland');
 
   const handleClick = (geo) => {
     setSelectedCountry(geo.properties.geounit);
@@ -207,7 +206,7 @@ const Map = () => {
                 return <Country geo={geo} type='SELECTED' />
               }
 
-              if (Object.keys(countriesAvailable).includes(country)) {
+              if (Object.keys(availableCountries).includes(country)) {
                 return <Country geo={geo} type='AVAILABLE' handleClick={handleClick} />
               }
 
@@ -221,17 +220,15 @@ const Map = () => {
 };
 
 const Description = () => {
+  const [selectedCountry, setSelectedCountry] = React.useState('Poland');
+
   return (
     <>
-      <Map />
+      <Map selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
 
-      {/* <div className={InformationStyles.info}>
-        <div><Success countryName="Polska" countryCode="POL" /></div>
-        <div><Success countryName="Niemcy" countryCode="DEU" /></div>
-        <div><Success countryName="Francja" countryCode="FRA" /></div>
-        <div><Success countryName="Wielka Brytania" countryCode="GBR" /></div>
-        <div><Success countryName="Stany Zjednoczone" countryCode="USA" /></div>
-      </div> */}
+      <div className={InformationStyles.info}>
+        <div><Success countryName={availableCountries[selectedCountry]?.name} countryCode={availableCountries[selectedCountry]?.code} /></div>
+      </div>
     </>
   );
 };
