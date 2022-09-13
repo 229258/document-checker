@@ -69,13 +69,14 @@ const allCountries = [
   'Wales'
 ];
 
+// TODO: this needs a second look after we've got list of countries that AI works with
 const availableCountries = {
   'Poland': { name: 'Polska', code: 'POL' },
   'Austria': { name: 'Austria', code: 'AUT' },
   'FlemishRegion': { name: 'Belgia', code: 'BEL' },  // TODO: Waloonregion + Felmish Region -> Belgium here?
   'Bulgaria': { name: 'Bułgaria', code: 'BGR' },
   // 'Belgium': { name: 'Cyprus', code: 'CYP' }, // TODO: part of Greece here
-  'CzechRepublic': { name: 'Czechy', code: 'CZE' }, // TODO: icons
+  'CzechRepublic': { name: 'Czechy', code: 'CZE' },
   'Germany': { name: 'Niemcy', code: 'DEU' },
   'Spain': { name: 'Hiszpania', code: 'ESP' },
   'Estonia': { name: 'Estonia', code: 'EST' },
