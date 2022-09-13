@@ -71,7 +71,29 @@ const allCountries = [
 
 const countriesAvailable = {
   'Poland': { name: 'Polska', code: 'POL' },
-  'Sweden': { name: 'Polska', code: 'POL' },
+  'Austria': { name: 'Austria', code: 'AUT' },
+  'FlemishRegion': { name: 'Belgia', code: 'BEL' },  // TODO: Waloonregion + Felmish Region -> Belgium here?
+  'Bulgaria': { name: 'Bułgaria', code: 'BGR' },
+  // 'Belgium': { name: 'Cyprus', code: 'CYP' }, // TODO: part of Greece here
+  'CzechRepublic': { name: 'Czechy', code: 'CZE' },
+  'Germany': { name: 'Niemcy', code: 'DEU' },
+  'Spain': { name: 'Hiszpania', code: 'ESP' },
+  'Estonia': { name: 'Estonia', code: 'EST' },
+  'Finland': { name: 'Finlandia', code: 'FIN' },
+  'France': { name: 'Francja', code: 'FRA' },
+  'Greece': { name: 'Grecja', code: 'GRC' },
+  'Croatia': { name: 'Chorwacja', code: 'HRV' },
+  'Hungary': { name: 'Węgry', code: 'HUN' },
+  'Italy': { name: 'Włochy', code: 'ITA' },
+  'Lithuania': { name: 'Litwa', code: 'LTU' },
+  'Luxembourg': { name: 'Luksemburg', code: 'LUX' },
+  'Latvia': { name: 'Łotwa', code: 'LVA' },
+  // 'Malta': { name: 'Malta', code: 'MLT' }, // TODO: absent here
+  'Netherlands': { name: 'Holandia', code: 'NLD' },
+  'Portugal': { name: 'Portugalia', code: 'PRT' },
+  'Romania': { name: 'Rumunia', code: 'ROU' },
+  'Slovakia': { name: 'Słowacja', code: 'SVK' },
+  'Sweden': { name: 'Szwecja', code: 'SWE' },
 }
 
 const Country = ({ geo, type, handleClick }) => {
