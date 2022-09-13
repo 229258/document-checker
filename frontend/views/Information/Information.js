@@ -189,12 +189,13 @@ const Map = () => {
   return (
     <div className={InformationStyles.mapa}>
       <ComposableMap
-        width={800}
+        width={1200}
         height={800}
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
-          rotate: [-10.0, -53.0, 0],
-          scale: 1200
+          rotate: [-10.0, -54.0, 0],
+          scale: 1200,
+          center: [5, 0]
         }}
       >
         <Geographies geography={geoUrl}>

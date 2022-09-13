@@ -2,14 +2,13 @@
 
 .mapa {
   grid-column: span 12;
-  // background-color: #DDEBFD;
+  margin-top: -50px;
   background-color: white;
   height: 540px;
   border-radius: 5px;
 
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .info {
