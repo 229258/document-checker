@@ -187,7 +187,7 @@ const Map = ({ selectedCountry, setSelectedCountry }) => {
   }
 
   return (
-    <div className={InformationStyles.mapa}>
+    <div className={InformationStyles.map}>
       <ComposableMap
         width={1200}
         height={800}

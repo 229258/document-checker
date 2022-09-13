@@ -1,6 +1,6 @@
 @import 'styles/globals.module.scss';
 
-.mapa {
+.map {
   grid-column: span 12;
   margin: -50px 0;
   background-color: white;
@@ -135,3 +135,34 @@
   border: none;
   padding: 0;
 }
+
+@media screen and (max-width: calc($grid-width + 60px)) {
+  .map {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint-width) {
+  .map {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 1;
+  }
+
+  .map:after {
+    position: absolute;
+    top: 0;
+    left: -16px;
+    height: 100%;
+    width: calc(100% + 16px + 16px);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    content: " ";
+    background-color: white;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint-width) {}
