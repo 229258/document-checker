@@ -5,6 +5,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
 import InformationStyles from "./Information.module.scss";
 import Success from "components/Success";
+import useMediaQuery from "hooks/useMediaQuery.hook";
 
 const allCountries = [
   'Albania',
@@ -220,13 +221,20 @@ const Map = ({ selectedCountry, setSelectedCountry }) => {
   );
 };
 
+const Search = () => {
+  return (
+    <input type="text" className={InformationStyles.search} placeholder="Wyszukaj kraj..." />
+  );
+}
+
 const Description = () => {
   const [selectedCountry, setSelectedCountry] = React.useState('Poland');
+  const isMobile = useMediaQuery(480);
 
   return (
     <>
-      <Map selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
-
+      {!isMobile && <Map selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />}
+      {isMobile && <Search />}
       <div className={InformationStyles.info}>
         <div><Success countryName={availableCountries[selectedCountry]?.name} countryCode={availableCountries[selectedCountry]?.code} /></div>
       </div>

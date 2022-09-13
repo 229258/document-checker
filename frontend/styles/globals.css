@@ -7,6 +7,17 @@ body {
   background: #171717;
 }
 
+input[type="text"]::placeholder {
+  opacity: 1;
+  color: white;
+}
+
+input[type=text] {
+  background-image: url('/icons/search.svg');
+  background-position: 18px 50%;
+  background-repeat: no-repeat;
+}
+
 a {
   color: inherit;
   text-decoration: none;
