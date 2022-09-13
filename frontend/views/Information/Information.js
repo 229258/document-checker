@@ -71,6 +71,7 @@ const allCountries = [
 
 const countriesAvailable = {
   'Poland': { name: 'Polska', code: 'POL' },
+  'Sweden': { name: 'Polska', code: 'POL' },
 }
 
 const Country = ({ geo, type, handleClick }) => {
@@ -160,7 +161,7 @@ const Map = () => {
   const [selectedCountry, setSelectedCountry] = React.useState('Poland');
 
   const handleClick = (geo) => {
-    console.log(geo);
+    setSelectedCountry(geo.properties.geounit);
   }
 
   return (
