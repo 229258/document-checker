@@ -58,7 +58,7 @@ const countriesList = [
   { code: "CUB", name: "cuba" },
   { code: "CUW", name: "curaçao" },
   { code: "CYP", name: "cyprus" },
-  { code: "CZE", name: "czech-republic" },
+  { code: "CZE", name: "czechia" },
   { code: "DNK", name: "denmark" },
   { code: "DJI", name: "djibouti" },
   { code: "DMA", name: "dominica" },
