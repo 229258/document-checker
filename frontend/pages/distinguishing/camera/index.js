@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import StepThree from "../../../components/views/Distinguishing/StepThree";
+import StepTwoCamera from "../../../views/Distinguishing/StepTwoCamera/StepTwoCamera";
 
 const CameraPage = () => {
-  return <StepThree />;
+  return <StepTwoCamera />;
 };
 
 export default CameraPage;

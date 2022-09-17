@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -6,9 +6,10 @@ import styles from "./styles.module.scss";
 
 const DefaultButton = (props) => {
   const router = useRouter();
-  const { description, style, link, dataToUpload, tooltip } = props;
+  const { description, style, link, dataToUpload, tooltip, onClick, loading, setLoading } = props;
 
   const uploadFiles = async () => {
+    setLoading(true);
     try {
       const response = await fetch(
         "https://dokumenciki.herokuapp.com/predict/",
@@ -24,11 +25,15 @@ const DefaultButton = (props) => {
         localStorage.clear();
       }
 
+      setLoading(false);
+
       const dataToStore = JSON.stringify(status);
 
       localStorage.setItem("data", dataToStore);
       router.push("/distinguishing/final");
     } catch (err) {
+      setLoading(false);
+
       if (localStorage.getItem("data")) {
         localStorage.clear();
       }
@@ -38,10 +43,34 @@ const DefaultButton = (props) => {
     }
   };
 
+  const internalOnClick = () => {
+    if (style === "primaryDisabled") return;
+
+    if (dataToUpload) {
+      uploadFiles();
+      return;
+    }
+
+    if (onClick) {
+      onClick();
+    }
+  }
+
+  if (loading) {
+    return (
+      <div
+        className={`${styles['primaryDisabled']} ${tooltip ? styles.tooltip : null} ${styles['lds-ripple']}`}
+        onClick={internalOnClick}
+      >
+        <div></div><div></div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`${styles[style]} ${tooltip ? styles.tooltip : null}`}
-      onClick={style !== "primaryDisabled" && dataToUpload ? uploadFiles : null}
+      onClick={internalOnClick}
     >
       {!link && description}
       {link && <Link href={link}>{description}</Link>}
