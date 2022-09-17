@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Main from "../../../components/Main";
-import Image from 'next/image';
 import Fullscreen from "../../../components/Layout/Fullscreen";
+import { useRouter } from "next/router";
 import Webcam from "react-webcam";
 
 import DistinguishingStyles from "../Distinguishing.module.scss";
@@ -11,6 +11,7 @@ import DefaultButton from "../../../components/Buttons/DefaultButton";
 const STATE = ['takeFront', 'confirmFront', 'takeBack', 'confirmBack'];
 
 const SecondPage = () => {
+    const router = useRouter();
     const [title, setTitle] = useState("Pokaż przód dokumentu");
     const [frontImage, setFrontImage] = useState(null);
     const [backImage, setBackImage] = useState(null);
@@ -20,6 +21,41 @@ const SecondPage = () => {
     const [loading, setLoading] = useState(false);
 
     const takePhoto = () => webcam.current.getScreenshot();
+
+    const uploadFiles = async (dataToUpload) => {
+        setLoading(true);
+        try {
+            const response = await fetch(
+                "https://dokumenciki.herokuapp.com/predict/",
+                {
+                    method: "POST",
+                    body: dataToUpload,
+                }
+            );
+
+            const status = await response.json();
+
+            if (localStorage.getItem("data")) {
+                localStorage.clear();
+            }
+
+            setLoading(false);
+
+            const dataToStore = JSON.stringify(status);
+
+            localStorage.setItem("data", dataToStore);
+            router.push("/distinguishing/final");
+        } catch (err) {
+            setLoading(false);
+
+            if (localStorage.getItem("data")) {
+                localStorage.clear();
+            }
+
+            localStorage.setItem("data", null);
+            router.push("/distinguishing/final");
+        }
+    };
 
     const submit = () => {
         console.log({ progress, frontImage, backImage });
@@ -38,7 +74,7 @@ const SecondPage = () => {
                 setProgress('confirmBack');
                 break;
             case 'confirmBack':
-                console.log('data ready to send');
+                uploadFiles([frontImage, backImage]);
                 break;
         }
 
