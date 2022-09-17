@@ -1,35 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Main from "../../../components/Main";
+import Image from 'next/image';
 import Fullscreen from "../../../components/Layout/Fullscreen";
 import Webcam from "react-webcam";
 
 import DistinguishingStyles from "../Distinguishing.module.scss";
 import Title from "../../../components/Title";
 import DefaultButton from "../../../components/Buttons/DefaultButton";
-import useMediaQuery from "hooks/useMediaQuery.hook";
+
+const STATE = ['takeFront', 'confirmFront', 'takeBack', 'confirmBack'];
 
 const SecondPage = () => {
     const [title, setTitle] = useState("Pokaż przód dokumentu");
     const [frontImage, setFrontImage] = useState(null);
     const [backImage, setBackImage] = useState(null);
-    const [screenshotView, setScreenshotView] = useState(false);
+    const [progress, setProgress] = useState('takeFront');
     const [cameraAvailable, setCameraAvailable] = useState(false);
-    const isMobile = useMediaQuery(480);
+    const webcam = useRef(null);
 
-    const getFrontImage = (data) => {
-        if (frontImage) return;
+    const takePhoto = () => webcam.current.getScreenshot();
 
-        setFrontImage(data);
-    };
+    const submit = () => {
+        console.log({ progress, frontImage, backImage });
+        switch (progress) {
+            case 'takeFront':
+                setFrontImage(takePhoto());
+                setProgress('confirmFront');
+                console.log('am i here?');
+                break;
+            case 'confirmFront':
+                setProgress('takeBack');
+                setTitle('Pokaż tył dokumentu');
+                break;
+            case 'takeBack':
+                setBackImage(takePhoto());
+                setProgress('confirmBack');
+                break;
+            case 'confirmBack':
+                console.log('data ready to send');
+                break;
+        }
 
-    const getBackImage = (data) => {
-        if (backImage) return;
-
-        setBackImage(data);
-    };
-
-    const takePhoto = () => {
-        getScreenshot({ width: 1920, height: 1080 });
     }
 
     return (
@@ -46,20 +57,30 @@ const SecondPage = () => {
                     <img src="https://i.ibb.co/5BRrrqR/video.png" />
                     <span>Zezwól przeglądarce na dostęp do kamerki internetowej</span>
                 </div>}
-                <Webcam className={DistinguishingStyles.camera} onUserMedia={() => setCameraAvailable(true)} />
+                <Webcam className={DistinguishingStyles.camera} onUserMedia={() => setCameraAvailable(true)} ref={webcam} />
+                {(progress == 'confirmFront' || progress == 'confirmBack') && <Image src={progress == 'confirmFront' ? frontImage : backImage} layout='fill' />}
             </div>
 
             <div className={DistinguishingStyles.submitButton}>
-                {screenshotView && (<DefaultButton
+                {(progress == 'confirmFront' || progress == 'confirmBack') && (<DefaultButton
                     description={"ponów próbę"}
+                    onClick={() => {
+                        console.log('resetting', { progress, frontImage, backImage });
+                        if (progress == 'confirmFront') {
+                            setFrontImage(null);
+                            setProgress('takeFront');
+                        }
+                        if (progress == 'confirmBack') {
+                            setBackImage(null);
+                            setProgress('takeBack');
+                        }
+                    }}
                     style={"primary"}
-                // dataToUpload={[frontImage, backImage]}
                 />)}
                 <DefaultButton
-                    description={screenshotView ? " prześlij zdjęcie" : "zrób zdjęcie"}
-                    onClick={takePhoto}
+                    description={(progress == 'confirmFront' || progress == 'confirmBack') ? "prześlij zdjęcie" : "zrób zdjęcie"}
+                    onClick={submit}
                     style={"primary"}
-                // dataToUpload={[frontImage, backImage]}
                 />
             </div>
             <div className={DistinguishingStyles.bottomMargin}></div>
