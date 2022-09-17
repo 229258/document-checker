@@ -6,8 +6,7 @@ import styles from "./styles.module.scss";
 
 const DefaultButton = (props) => {
   const router = useRouter();
-  const { description, style, link, dataToUpload, tooltip, onClick } = props;
-  const [loading, setLoading] = useState(false);
+  const { description, style, link, dataToUpload, tooltip, onClick, loading, setLoading } = props;
 
   const uploadFiles = async () => {
     setLoading(true);
@@ -60,7 +59,7 @@ const DefaultButton = (props) => {
   if (loading) {
     return (
       <div
-        className={`${styles[style]} ${tooltip ? styles.tooltip : null} ${styles['lds-ripple']}`}
+        className={`${styles['primaryDisabled']} ${tooltip ? styles.tooltip : null} ${styles['lds-ripple']}`}
         onClick={internalOnClick}
       >
         <div></div><div></div>

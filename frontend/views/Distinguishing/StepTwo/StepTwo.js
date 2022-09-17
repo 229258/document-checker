@@ -13,6 +13,7 @@ import useMediaQuery from "hooks/useMediaQuery.hook";
 const SecondPage = () => {
   const [frontImage, setFrontImage] = useState(null);
   const [backImage, setBackImage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const isMobile = useMediaQuery(480);
 
   const getFrontImage = (data) => {
@@ -68,6 +69,8 @@ const SecondPage = () => {
       </div>
       <div className={DistinguishingStyles.submitButton}>
         <DefaultButton
+          loading={loading}
+          setLoading={setLoading}
           description={"prześlij zdjęcia"}
           style={frontImage && backImage ? "primary" : "primaryDisabled"}
           tooltip={(frontImage && backImage) || isMobile ? null : "Prześlij oba zdjęcia, by kontynuować"}

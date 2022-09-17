@@ -17,6 +17,7 @@ const SecondPage = () => {
     const [progress, setProgress] = useState('takeFront');
     const [cameraAvailable, setCameraAvailable] = useState(false);
     const webcam = useRef(null);
+    const [loading, setLoading] = useState(false);
 
     const takePhoto = () => webcam.current.getScreenshot();
 
@@ -77,6 +78,8 @@ const SecondPage = () => {
                     style={"secondary"}
                 />)}
                 <DefaultButton
+                    loading={loading}
+                    setLoading={setLoading}
                     description={(progress == 'confirmFront' || progress == 'confirmBack') ? "prześlij zdjęcie" : "zrób zdjęcie"}
                     onClick={submit}
                     style={cameraAvailable ? "primary" : "primaryDisabled"}
