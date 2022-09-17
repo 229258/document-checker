@@ -80,7 +80,7 @@ const SecondPage = () => {
                 <DefaultButton
                     description={(progress == 'confirmFront' || progress == 'confirmBack') ? "prześlij zdjęcie" : "zrób zdjęcie"}
                     onClick={submit}
-                    style={"primary"}
+                    style={cameraAvailable ? "primary" : "primaryDisabled"}
                 />
             </div>
             <div className={DistinguishingStyles.bottomMargin}></div>
