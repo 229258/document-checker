@@ -58,12 +58,10 @@ const SecondPage = () => {
     };
 
     const submit = () => {
-        console.log({ progress, frontImage, backImage });
         switch (progress) {
             case 'takeFront':
                 setFrontImage(takePhoto());
                 setProgress('confirmFront');
-                console.log('am i here?');
                 break;
             case 'confirmFront':
                 setProgress('takeBack');
