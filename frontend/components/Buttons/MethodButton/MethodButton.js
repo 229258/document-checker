@@ -41,7 +41,7 @@ const MethodButton = (props) => {
       <ButtonElement
         image={rightButton.image}
         description={rightButton.description}
-        nextPage={"/distinguishing/photos"}
+        nextPage={"/distinguishing/camera"}
       />
     </div>
   );
