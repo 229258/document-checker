@@ -135,6 +135,11 @@
     margin-bottom: 25px;
   } 
 
+  .submitButton {
+    flex-direction: column;
+    gap: 15px;
+  }
+
   .progressBar {
     margin: 15px 0;
   }

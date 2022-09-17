@@ -74,7 +74,7 @@ const SecondPage = () => {
                             setProgress('takeBack');
                         }
                     }}
-                    style={"primary"}
+                    style={"secondary"}
                 />)}
                 <DefaultButton
                     description={(progress == 'confirmFront' || progress == 'confirmBack') ? "prześlij zdjęcie" : "zrób zdjęcie"}
