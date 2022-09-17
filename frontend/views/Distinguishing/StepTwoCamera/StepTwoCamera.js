@@ -57,15 +57,14 @@ const SecondPage = () => {
                     <img src="https://i.ibb.co/5BRrrqR/video.png" />
                     <span>Zezwól przeglądarce na dostęp do kamerki internetowej</span>
                 </div>}
-                <Webcam className={DistinguishingStyles.camera} onUserMedia={() => setCameraAvailable(true)} ref={webcam} />
-                {(progress == 'confirmFront' || progress == 'confirmBack') && <Image src={progress == 'confirmFront' ? frontImage : backImage} layout='fill' />}
+                <Webcam style={{ display: (progress == 'confirmFront' || progress == 'confirmBack') ? 'none' : 'block' }} screenshotFormat={'image/jpeg'} audio={false} className={DistinguishingStyles.camera} onUserMedia={() => setCameraAvailable(true)} ref={webcam} />
+                {(progress == 'confirmFront' || progress == 'confirmBack') && <img className={DistinguishingStyles.screenshot} src={progress == 'confirmFront' ? frontImage : backImage} />}
             </div>
 
             <div className={DistinguishingStyles.submitButton}>
                 {(progress == 'confirmFront' || progress == 'confirmBack') && (<DefaultButton
                     description={"ponów próbę"}
                     onClick={() => {
-                        console.log('resetting', { progress, frontImage, backImage });
                         if (progress == 'confirmFront') {
                             setFrontImage(null);
                             setProgress('takeFront');
